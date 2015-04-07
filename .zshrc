@@ -80,14 +80,15 @@ compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # bindkey
-bindkey "^[f" emacs-forward-word
-bindkey "^[b" emacs-backward-word
+bindkey -e
+# bindkey "^[f" emacs-forward-word
+# bindkey "^[b" emacs-backward-word
 
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[p" history-beginning-search-backward-end
-bindkey "^[n" history-beginning-search-forward-end
+# bindkey "^[p" history-beginning-search-backward-end
+# bindkey "^[n" history-beginning-search-forward-end
 
 autoload replace-string
 zle -N replace-string
@@ -98,3 +99,26 @@ if [ "$EMACS" = t ]; then
     stty -echo
     alias ls='ls -F --color'
 fi
+
+#====== 個人設定 ======
+
+# "C-@"でEmacs起動
+# EDITOR_E="$(which emacs) -nw"
+function starteditor() {
+    exec < /dev/tty
+
+    emacs -nw
+    zle reset-prompt
+}
+zle -N starteditor
+bindkey '^@' starteditor
+
+# '...RET'で階層を2つ上がる 
+alias ...='cd ../..'
+
+# cdした先のディレクトリをスタックに追加 'cd -<TAB>'で履歴表示
+setopt auto_pushd
+setopt pushd_ignore_dups
+
+# 間違ったcommandを修正してくれる
+setopt correct
