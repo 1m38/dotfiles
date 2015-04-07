@@ -1,0 +1,6 @@
+[user]
+	name = Masaya Uno
+	email = uno@nlp.ist.i.kyoto-u.ac.jp
+
+[ailas]
+	l = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso
