@@ -15,7 +15,8 @@ esac
 PATH=$_MYPATH:$_CPUPATH:$_SYSPATH
 unset _MYPATH _CPUPATH _SYSPATH
 
-PROMPT="[%m-(%~)] % "
+#PROMPT="[%m-(%~)] % "
+PROMPT="[%m-(%~)]%# "
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=$HOME/.zsh_history
@@ -123,6 +124,8 @@ setopt pushd_ignore_dups
 # 間違ったcommandを修正してくれる
 setopt correct
 
+# 時刻表示
+RPROMPT="[%*]"
 
 # 起動時にssh-agent起動
 echo -n "ssh-agent: "
