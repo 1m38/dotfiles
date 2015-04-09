@@ -1,0 +1,6 @@
+Host *
+     ForwardAgent yes
+
+Host lotus
+     Hostname lotus.kuee.kyoto-u.ac.jp
+     User uno
