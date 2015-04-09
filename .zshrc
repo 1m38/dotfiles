@@ -122,3 +122,20 @@ setopt pushd_ignore_dups
 
 # 間違ったcommandを修正してくれる
 setopt correct
+
+
+# 起動時にssh-agent起動
+echo -n "ssh-agent: "
+source ~/.ssh-agent-info
+ssh-add -l >&/dev/null
+if [ $? == 2 ] ; then
+    echo -n "ssh-agent: restart...."
+    ssh-agent >~/.ssh-agent-info
+    source ~/.ssh-agent-info
+fi
+
+if ssh-add -l >&/dev/null ; then
+    echo "ssh-agent: Identity is already stored."
+else
+    ssh-add
+fi
