@@ -6,4 +6,7 @@
   2. sh dotfiles/link.sh
 
 ・ssh-agentに文句を言われた場合
+  .sshフォルダのパーミッションを700に
   秘密鍵ファイルのパーミッションを600に
+  dotfiles/sshconfig のパーミッションを700に
+  
