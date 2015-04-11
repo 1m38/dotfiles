@@ -171,7 +171,12 @@
 (require 'hlinum)
 (hlinum-activate)
 
-
+;; diredを2つのウィンドウで開いているときに、デフォルトの移動・コピー先をもう一方で開いているディレクトリにする
+(setq dired-dwim-target t)
+;; ディレクトリを再帰的にコピーする
+(setq dired-recursive-copies 'always)
+;; diredバッファでC-sした時にファイル名だけにマッチするように
+(setq dired-isearch-filenames t)
 
 
 ; key-chord キーマップ
