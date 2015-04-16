@@ -1,6 +1,6 @@
 ;;
 ;; .emacs (2012/4/16 Kawahara)
-;;        (2015/1/27 Kishimoto) 
+;;        (2015/1/27 Kishimoto)
 ;;
 
 ;;; basic configuration
@@ -78,6 +78,9 @@
     auto-complete
     magit
     key-chord
+    ruby-end
+;    ruby-block
+    rinari
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
@@ -106,6 +109,12 @@
 (set-face-foreground 'magit-diff-add "white")
 (set-face-background 'magit-item-highlight "green")
 
+; key-chord キーマップ(anything関係)
+(key-chord-define-global "af" 'anything)
+(key-chord-define-global "df" 'descbinds-anything)
+(key-chord-define-global "xf" 'anything-filelist+)
+
+
 ; auto-complete
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
@@ -116,9 +125,20 @@
 ; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 
+; 保存時に行末の空白を削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; バッファの同一ファイル名を区別する
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+; avoid "Symbolic link to SVN-controlled source file; follow link? (yes or no)"
+(setq vc-follow-symlinks t)
+
+;; 鬼軍曹.el (Emacsキーバインド強制)
+(require 'drill-instructor)
+(setq drill-instructor-global t)
+
 
 ;; Window 分割を画面サイズに従って計算する
 ;; http://qiita.com/sho7650/items/7d4a152c08c4f9d4cf14
@@ -177,9 +197,44 @@
 (setq dired-recursive-copies 'always)
 ;; diredバッファでC-sした時にファイル名だけにマッチするように
 (setq dired-isearch-filenames t)
+;; dired実行時のコマンドを "ls -Ahl" に変更
+(setq dired-listing-switches (purecopy "-Ahl"))
+
+;; C-x C-f を使いやすく
+(ffap-bindings)
+
+; smartparens
+;(require 'smartparens-config)
+(smartparens-global-mode t)
+(ad-disable-advice 'delete-backward-char 'before 'sp-delete-pair-advice)
+(ad-activate 'delete-backward-char)
+
+;; 矢印キーをウィンドウ分割の移動に(矢印キーでカーソルが動かなくなる)
+(global-set-key (kbd "<left>")  'windmove-left)
+(global-set-key (kbd "<right>") 'windmove-right)
+(global-set-key (kbd "<up>")    'windmove-up)
+(global-set-key (kbd "<down>")  'windmove-down)
 
 
-; key-chord キーマップ
-(key-chord-define-global "af" 'anything)
-(key-chord-define-global "df" 'descbinds-anything)
-(key-chord-define-global "xf" 'anything-filelist+)
+;; ======== Ruby関係 ========
+;; ruby-block.el --- highlight matching block
+;(require 'ruby-block)
+;(ruby-block-mode t)
+;(setq ruby-block-highlight-toggle t)
+
+;; ruby-end
+(require 'ruby-end)
+
+; rinari
+;; Interactively Do Things (highly recommended, but not strictly required)
+(require 'ido)
+(ido-mode t)
+;; Rinari
+(add-to-list 'load-path "~/path/to/your/elisp/rinari")
+(require 'rinari)
+
+;;; rhtml-mode
+(add-to-list 'load-path "~/path/to/your/elisp/rhtml")
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook
+	      (lambda () (rinari-launch)))
