@@ -3,6 +3,9 @@
 ;;        (2015/1/27 Kishimoto)
 ;;
 
+; 個人設定:load-path
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
+
 ;;; basic configuration
 (menu-bar-mode -1)		   ; menu barを表示しない
 (if window-system                  ; "Symbol's function definition is void" 対策(2015/1/27 修正)
@@ -79,8 +82,9 @@
     magit
     key-chord
     ruby-end
-;    ruby-block
     rinari
+    smartparens
+    rhtml-mode
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
