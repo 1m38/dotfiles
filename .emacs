@@ -8,8 +8,8 @@
 
 ;;; basic configuration
 (menu-bar-mode -1)		   ; menu barを表示しない
-(if window-system                  ; "Symbol's function definition is void" 対策(2015/1/27 修正)
-    ((tool-bar-mode -1)		   ; tool barを表示しない
+(if window-system (progn           ; "Symbol's function definition is void" 対策(2015/1/27 修正)
+     (tool-bar-mode -1)		   ; tool barを表示しない
      (set-scroll-bar-mode 'right)  ; scroll barを右へ
 ))
 (line-number-mode 1)		   ; cursorの行数を表示
