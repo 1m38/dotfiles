@@ -128,9 +128,7 @@ setopt correct
 RPROMPT="[%*]"
 
 # rbenv 設定
-#export PATH="$HOME/.rbenv/bin:$PATH"
-path=(
-    ~/.rbenv/bin(N-/)
-    $path
-    )
-eval "$(rbenv init -)"
+if [[ -d $HOME/.rbenv ]] then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
