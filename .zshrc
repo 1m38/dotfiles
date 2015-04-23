@@ -132,3 +132,6 @@ if [[ -d $HOME/.rbenv ]] then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
+
+# $HOME/local/bin をPATHに追加
+export PATH="$HOME/local/bin:&PATH"
