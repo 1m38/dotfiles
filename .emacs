@@ -65,6 +65,17 @@
 ;;======== 個人設定 ========
 (require 'generic-x)
 
+; バックアップファイルを作らない
+(setq backup-inhibited t)
+; 終了時にオートセーブファイルを消す
+(setq delete-auto-save-files t)
+; バックアップを~/.emacs.d/backup に作成
+(setq backup-directory-alist
+      (cons (cons ".*" (expand-file-name "~/.emacs.d/backup"))
+            backup-directory-alist))
+(setq auto-save-file-name-transforms
+        `((".*", (expand-file-name "~/.emacs.d/backup/") t)))
+
 ; MELPA
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -124,11 +135,6 @@
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 
-
-; バックアップファイルを作らない
-(setq backup-inhibited t)
-; 終了時にオートセーブファイルを消す
-(setq delete-auto-save-files t)
 
 ; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
