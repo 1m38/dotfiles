@@ -4,7 +4,11 @@
 ;;
 
 ; 個人設定:load-path
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
+  (add-to-list 'load-path default-directory)
+  (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+      (normal-top-level-add-subdirs-to-load-path)))
+;(add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 ;;; basic configuration
 (menu-bar-mode -1)		   ; menu barを表示しない
