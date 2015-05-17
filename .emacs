@@ -71,14 +71,18 @@
 
 ; バックアップファイルを作らない
 (setq backup-inhibited t)
+; バックアップファイルの作成を完全に無効化
+(setq make-backup-files nil)  ; <file>~
+(setq auto-save-default nil)  ; #<file>#
+(setq auto-save-list-file-prefix nil)  ; #<file># のリスト
 ; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 ; バックアップを~/.emacs.d/backup に作成
-(setq backup-directory-alist
-      (cons (cons ".*" (expand-file-name "~/.emacs.d/backup"))
-            backup-directory-alist))
-(setq auto-save-file-name-transforms
-        `((".*", (expand-file-name "~/.emacs.d/backup/") t)))
+;; (setq backup-directory-alist
+;;       (cons (cons ".*" (expand-file-name "~/.emacs.d/backup"))
+;;             backup-directory-alist))
+;; (setq auto-save-file-name-transforms
+;;         `((".*", (expand-file-name "~/.emacs.d/backup/") t)))
 
 ; MELPA
 (require 'package)
@@ -101,6 +105,8 @@
     smartparens
     rhtml-mode
     emmet-mode
+    markdown-mode
+    auto-save-buffers-enhanced
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
@@ -122,6 +128,9 @@
 ; key-chord 初期設定
 (require 'key-chord)
 (key-chord-mode 1)
+; C-x C-k k でkey-chord-mode on/off切り替え
+(global-set-key "\C-x\C-kk" 'key-chord-mode)
+
 ; magit
 (require 'magit)
 (setq magit-auto-revert-mode nil)
@@ -149,6 +158,25 @@
 
 ; avoid "Symbolic link to SVN-controlled source file; follow link? (yes or no)"
 (setq vc-follow-symlinks t)
+
+; auto-save-buffers-enhanced
+(require 'auto-save-buffers-enhanced)
+
+;;; 特定のファイルのみ有効にする
+(setq auto-save-buffers-enhanced-include-regexps '(".+")) ;全ファイル
+;; not-save-fileと.ignoreは除外する
+(setq auto-save-buffers-enhanced-exclude-regexps '("^not-save-file" "\\.ignore$"))
+;;; Wroteのメッセージを抑制
+(setq auto-save-buffers-enhanced-quiet-save-p t)
+;;; *scratch*も ~/.emacs.d/scratch に自動保存
+;; (setq auto-save-buffers-enhanced-save-scratch-buffer-to-file-p t)
+;; (setq auto-save-buffers-enhanced-file-related-with-scratch-buffer
+;;       (locate-user-emacs-file "scratch"))
+(auto-save-buffers-enhanced t)
+
+;;; C-x a sでauto-save-buffers-enhancedの有効・無効をトグル
+(global-set-key "\C-xas" 'auto-save-buffers-enhanced-toggle-activity)
+
 
 ;; 鬼軍曹.el (Emacsキーバインド強制)
 (require 'drill-instructor)
