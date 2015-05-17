@@ -159,9 +159,9 @@
 ; avoid "Symbolic link to SVN-controlled source file; follow link? (yes or no)"
 (setq vc-follow-symlinks t)
 
-; auto-save-buffers-enhanced
+;; auto-save-buffers-enhanced
 (require 'auto-save-buffers-enhanced)
-
+(setq auto-save-buffers-enhanced-interval 1) ; 指定のアイドル秒で保存
 ;;; 特定のファイルのみ有効にする
 (setq auto-save-buffers-enhanced-include-regexps '(".+")) ;全ファイル
 ;; not-save-fileと.ignoreは除外する
