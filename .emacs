@@ -141,7 +141,7 @@
 
 
 ; 保存時に行末の空白を削除
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; バッファの同一ファイル名を区別する
 (require 'uniquify)
@@ -266,13 +266,31 @@
 ;(keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
 (define-key emmet-mode-keymap (kbd "C-c C-i") 'emmet-expand-line) ;; C-i で展開')
 
+
+;;markdown-mode
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+; markdown-mode を使用する拡張子
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+; css
+(setq markdown-css-path "/home/masaya/Downloads/markdown.css")
+
+
 ; 安全な変数を記憶: python:"encoding:utf-8"
+; markdown-mode: css
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((encoding . utf-8) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby")))))
+ '(markdown-css-path "/home/masaya/Dropbox/markdown.css")
+ '(safe-local-variable-values
+   (quote
+    ((encoding . utf-8)
+     (ruby-compilation-executable . "ruby")
+     (ruby-compilation-executable . "ruby1.8")
+     (ruby-compilation-executable . "ruby1.9")
+     (ruby-compilation-executable . "rbx")
+     (ruby-compilation-executable . "jruby")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
