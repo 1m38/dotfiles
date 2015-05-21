@@ -137,6 +137,7 @@
 (setq magit-last-seen-setup-instructions "1.4.0")  ;起動時メッセージを表示しない
 (set-face-foreground 'magit-diff-add "white")
 (set-face-background 'magit-item-highlight "green")
+(global-set-key "\C-x\C-m" 'magit-status)  ; C-x C-m でmagit-status起動
 
 ; key-chord キーマップ(anything関係)
 (key-chord-define-global "af" 'anything)
