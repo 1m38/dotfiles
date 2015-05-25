@@ -140,3 +140,7 @@ export PATH="$HOME/local/bin:$PATH"
 # ssh-add alias
 alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
 alias ssh-addb='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
+
+# ulimit(8GB)
+ulimit -m 8000000
+ulimit -v 8000000

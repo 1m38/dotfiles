@@ -4,3 +4,6 @@
 	それぞれk2l.id_rsa,bitbucket.fs_lt34.id_rsa へのalias
 	ついでに3階層上にcdするalias .... も追加
 
+	* .zshrc: ulimit設定(8GB)
+	Todo: ローカルでは適用せず、サーバーでは適用するようにしたい
+
