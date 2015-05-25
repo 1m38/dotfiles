@@ -1,3 +1,10 @@
+2015-05-25    <uno@basil141.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: alias sort,uniq(LANG=C), rep_mail
+	sort,uniqコマンドには自動でLANG=Cをつける
+	'rep_mail コマンド'で、コマンド終了時にメールしてくれる
+	(ssh-addをちゃんとしてる必要あり)
+
 2015-05-25  Masaya Uno  <masaya@masaya-hp-ub1504>
 
 	* .zshrc: alias ssh-addk,ssh-addb追加

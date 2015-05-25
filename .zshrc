@@ -144,3 +144,22 @@ alias ssh-addb='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
 # ulimit(8GB)
 ulimit -m 8000000
 ulimit -v 8000000
+
+# sort,uniq にはLANG=Cをつける
+alias sort='LANG=C sort'
+alias uniq='LANG=C uniq'
+
+# コマンドの実行が終わったらメール
+function rep_mail (){
+    subj="report mail:`hostname -s`"
+    mail_from="uno@nlp.ist.i.kyoto-u.ac.jp"
+    mail_to="uno@nlp.ist.i.kyoto-u.ac.jp"
+
+    cmd=$@
+    text="\"$cmd\" \n 開始 `date \"+%m/%d %H:%M\"` \n"
+
+    trap "ssh lotus \"echo -e \\\" $text 強制終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" INT
+    trap "ssh lotus \"echo -e \\\" $text 異常終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" ERR
+    trap "ssh lotus \"echo -e \\\" $text 正常終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
+    nice -19 $@
+}
