@@ -1,0 +1,6 @@
+2015-05-25  Masaya Uno  <masaya@masaya-hp-ub1504>
+
+	* .zshrc: alias ssh-addk,ssh-addb追加
+	それぞれk2l.id_rsa,bitbucket.fs_lt34.id_rsa へのalias
+	ついでに3階層上にcdするalias .... も追加
+

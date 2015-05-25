@@ -116,6 +116,7 @@ bindkey '^@' starteditor
 
 # '...RET'で階層を2つ上がる
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # cdした先のディレクトリをスタックに追加 'cd -<TAB>'で履歴表示
 setopt auto_pushd
@@ -135,3 +136,7 @@ fi
 
 # $HOME/local/bin をPATHに追加
 export PATH="$HOME/local/bin:$PATH"
+
+# ssh-add alias
+alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
+alias ssh-addb='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
