@@ -1,3 +1,9 @@
+2015-05-26    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: ulimitを12GBに、ebmt,queryへのalias
+	ebmt: kyotoebmt_server実行後、kyotoebmt_client < 日本語文章 で翻訳
+	query: klm_query < 日本語文章(半角spc区切り)
+
 2015-05-25    <uno@basil141.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: alias sort,uniq(LANG=C), rep_mail

@@ -141,9 +141,14 @@ export PATH="$HOME/local/bin:$PATH"
 alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
 alias ssh-addb='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
 
-# ulimit(8GB)
-ulimit -m 8000000
-ulimit -v 8000000
+# ulimit(12GB)
+ulimit -m 12000000
+ulimit -v 12000000
+
+# 実験環境
+alias kyotoebmt_server="~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
+alias kyotoebmt_client='nice -19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 8 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
+alias klm_query="/share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
 
 # sort,uniq にはLANG=Cをつける
 alias sort='LANG=C sort'
