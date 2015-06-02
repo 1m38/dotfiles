@@ -67,9 +67,17 @@
 
 
 ;;======== 個人設定 ========
+; 各種設定ファイルに色をつける
 (require 'generic-x)
 
-; バックアップファイルを作らない
+; mode-line調整
+(size-indication-mode t)
+;(display-time-mode t)
+;(setq display-time-format "%m/%d(%a)%H:%M:%S")
+(setq mode-line-frame-identification " ")  ;複数フレーム開かない人向け:フレーム番号を表示しない
+
+
+; バックアップファイルを作らない(auto-save-buffers-enhanced で代用)
 (setq backup-inhibited t)
 ; バックアップファイルの作成を完全に無効化
 (setq make-backup-files nil)  ; <file>~
@@ -244,6 +252,11 @@
 (setq dired-isearch-filenames t)
 ;; dired実行時のコマンドを "ls -Ahl" に変更
 (setq dired-listing-switches (purecopy "-Ahl"))
+
+;; ファイル名補完で大文字小文字を区別しない
+(setq completion-ignore-case t)
+;; emacs外でファイルが変更されたら再読込する
+(global-auto-revert-mode 1)
 
 ;; C-x C-f を使いやすく
 (ffap-bindings)

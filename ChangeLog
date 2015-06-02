@@ -1,3 +1,9 @@
+2015-06-03  Masaya  <masaya@masaya-vm-ub1504>
+
+	* .emacs: いろいろ設定
+	mode-line調整: フレーム番号省略, ファイルサイズ表示
+	ファイル関係: ファイル名補完で大文字小文字を区別しない, emacs外で更新されたら再読込
+
 2015-05-26    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: ulimitを12GBに、ebmt,queryへのalias
