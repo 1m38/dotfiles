@@ -111,7 +111,7 @@ function starteditor() {
     zle reset-prompt
 }
 zle -N starteditor
-bindkey '^[' starteditor
+bindkey '^[^[' starteditor
 
 # '...RET'で階層を2つ上がる
 alias ...='cd ../..'
