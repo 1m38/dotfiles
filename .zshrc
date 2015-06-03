@@ -104,7 +104,6 @@ fi
 #====== 個人設定 ======
 
 # "C-@"でEmacs起動
-# EDITOR_E="$(which emacs) -nw"
 function starteditor() {
     exec < /dev/tty
 
@@ -112,7 +111,7 @@ function starteditor() {
     zle reset-prompt
 }
 zle -N starteditor
-bindkey '^@' starteditor
+bindkey '^[' starteditor
 
 # '...RET'で階層を2つ上がる
 alias ...='cd ../..'

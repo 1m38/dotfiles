@@ -1,3 +1,7 @@
+2015-06-03    <uno@basil141.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: emacs起動キーバインドをC-[ に変更
+
 2015-06-03  Masaya  <masaya@masaya-vm-ub1504>
 
 	* .emacs: いろいろ設定
