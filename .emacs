@@ -116,7 +116,7 @@
     markdown-mode
     auto-save-buffers-enhanced
     helm
-    ;helm-ls-git
+    helm-ls-git
     helm-descbinds
     ))
 (let ((not-installed (loop for x in installing-package-list
@@ -194,8 +194,6 @@
 ; helm-ls-git
 (require 'helm-ls-git)
 (define-key global-map (kbd "C-x C-d") 'helm-browse-project)
-
-
 
 
 ; auto-complete

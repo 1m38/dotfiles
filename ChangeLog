@@ -1,3 +1,8 @@
+2015-06-05    <uno@basil141.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .emacs: helm-ls-gitを自動インストールする設定に戻した
+	共用計算機でも自家ビルドのEmacs24.5.1を使うことにした
+
 2015-06-04  Masaya  <masaya@masaya-vm-ub1504>
 
 	* .emacs: helm-ls-gitの設定調整など
