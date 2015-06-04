@@ -1,5 +1,10 @@
 2015-06-04  Masaya  <masaya@masaya-vm-ub1504>
 
+	* .emacs: helm-ls-gitの設定調整など
+	helm-ls-gitを自動インストールしない, helm-ls-git関係の設定をひとまとめに
+	C-xC-f の helm-find-files を無効化
+	key-chord "af"を helm-for-filesに変更
+
 	* .emacs: anythingからhelmにとりあえず移行
 
 2015-06-03  Masaya Uno  <masaya@masaya-hp-lub1504>

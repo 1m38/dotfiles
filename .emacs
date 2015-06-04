@@ -116,7 +116,7 @@
     markdown-mode
     auto-save-buffers-enhanced
     helm
-    helm-ls-git
+    ;helm-ls-git
     helm-descbinds
     ))
 (let ((not-installed (loop for x in installing-package-list
@@ -140,17 +140,15 @@
 ;; ====  helm  ====
 ;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
 (require 'helm-config)
-(require 'helm-ls-git)
 (require 'helm-descbinds)
 (helm-mode 1)
 
 (define-key global-map (kbd "M-x")     'helm-M-x)
-(define-key global-map (kbd "C-x C-f") 'helm-find-files)
+;(define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key global-map (kbd "C-x C-r") 'helm-recentf)
 (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
 (define-key global-map (kbd "C-c i")   'helm-imenu)
 (define-key global-map (kbd "C-x b")   'helm-buffers-list)
-;(define-key global-map (kbd "C-x C-d") 'helm-browse-project)
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
 
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
@@ -163,7 +161,6 @@
 (defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
   "Emulate `kill-line' in helm minibuffer"
       (kill-new (buffer-substring (point) (field-end))))
-
 
 ;; tab 2回で新規バッファが作成される点を修正
 (defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
@@ -190,9 +187,14 @@
 ;(key-chord-define-global "af" 'anything)
 ;(key-chord-define-global "df" 'descbinds-anything)
 ;(key-chord-define-global "xf" 'anything-filelist+)
-(key-chord-define-global "af" 'helm-buffers-list)
+(key-chord-define-global "af" 'helm-for-files)
 (key-chord-define-global "df" 'helm-descbinds)
-(key-chord-define-global "xf" 'helm-for-files)
+
+
+; helm-ls-git
+(require 'helm-ls-git)
+(define-key global-map (kbd "C-x C-d") 'helm-browse-project)
+
 
 
 
