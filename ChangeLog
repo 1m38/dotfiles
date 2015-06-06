@@ -1,5 +1,9 @@
 2015-06-06  Masaya  <masaya@masaya-vm-ub1504>
 
+	* emacs_inits/90_ange-ftp-patch.el: "changed on disk; really edit the buffer?"対策
+
+	* link.sh: emacs_inits内のファイルのリンクを張る設定からフォルダごとリンクを張る設定に
+
 	* emacs_init.el: .emacsから移行、init-loaderへ移行
 	他の設定は emacs_inits/ 内から読み込み
 	* link.sh: emacs_init.el, emacs_inits のlnを貼る設定にした
