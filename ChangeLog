@@ -1,3 +1,9 @@
+2015-06-06  Masaya  <masaya@masaya-vm-ub1504>
+
+	* emacs_init.el: .emacsから移行、init-loaderへ移行
+	他の設定は emacs_inits/ 内から読み込み
+	* link.sh: emacs_init.el, emacs_inits のlnを貼る設定にした
+
 2015-06-05    <uno@basil141.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .emacs: helm-ls-gitを自動インストールする設定に戻した
