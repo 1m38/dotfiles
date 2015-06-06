@@ -167,3 +167,9 @@ function rep_mail (){
     trap "ssh lotus \"echo -e \\\" $text 正常終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
     nice -19 $@
 }
+
+# emacs_shellの場合は左プロンプトを簡略化
+if [ "$EMACS" = t ]; then
+    PROMPT="[%2~]%# "
+fi
+
