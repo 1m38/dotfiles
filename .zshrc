@@ -101,17 +101,64 @@ if [ "$EMACS" = t ]; then
     alias ls='ls -F --color'
 fi
 
+#====== gxp3設定 ======
+# gxp3 をパスに追加
+PATH=$HOME/gxp3:$PATH
+
+# prompt に [N/N/N] を表示
+PS1_ORIG=$PS1
+preexec () {
+        if [ "$1" = "quit" ]; then
+            PS1=$PS1_ORIG
+        fi
+}
+precmd () {
+    export PS1='[%m-(%~)'`gxpc prompt 2> /dev/null`'] %'
+}
+
+# alias
+alias e='gxpc e'
+alias ep='gxpc ep'
+alias ecd='gxpc cd'
+alias smask='gxpc smask'
+alias rmask='gxpc rmask'
+alias explore='gxpc explore'
+alias quit='gxpc quit'
+
+# 手元と daemon のディレクトリを同時に変更
+function scd(){
+    gxpc cd $1
+    cd $1
+}
+
+# from http://www.logos.ic.i.u-tokyo.ac.jp/~s1s5/program/shell_commands
+# 前の gxp コマンドが成功/失敗したホストの一覧を出力
+function ghosts(){
+    
+    if [ ""$1 == '-s' ]; then
+        gxpc pushmask
+        gxpc smask
+        gxpc ping
+        gxpc popmask
+        gxpc ping > /dev/null
+    elif [ ""$1 == '-f' ];then
+        gxpc pushmask
+        gxpc smask -
+        gxpc ping
+        gxpc popmask
+        gxpc ping > /dev/null
+    else
+        echo "Unknown option $@"
+        echo "-s : "
+        echo "-f : "
+    fi
+
+}
+
+
 #====== 個人設定 ======
 
-# "C-@"でEmacs起動
-function starteditor() {
-    exec < /dev/tty
-
-    emacs -nw
-    zle reset-prompt
-}
-zle -N starteditor
-bindkey '^[^[' starteditor
+alias E="emacs -nw"
 
 # '...RET'で階層を2つ上がる
 alias ...='cd ../..'
@@ -148,6 +195,10 @@ ulimit -v 12000000
 alias kyotoebmt_server="~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
 alias kyotoebmt_client='nice -19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 8 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
 alias klm_query="/share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
+if [[ -d $HOME/svm_rank ]] then
+   alias svm-rank-learn="~/svm_rank/svm_rank_learn"
+   alias svm-rank-classify="~/svm_rank/svm_rank_classify"
+fi
 
 # sort,uniq にはLANG=Cをつける
 alias sort='LANG=C sort'
