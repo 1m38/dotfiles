@@ -1,4 +1,5 @@
 (require 'magit)
 (setq magit-last-seen-setup-instructions "1.4.0")
+(setq magit-auto-revert-mode nil)
 (set-face-foreground 'magit-diff-add "white")
 (set-face-background 'magit-item-highlight "green")
