@@ -101,60 +101,6 @@ if [ "$EMACS" = t ]; then
     alias ls='ls -F --color'
 fi
 
-#====== gxp3設定 ======
-# gxp3 をパスに追加
-PATH=$HOME/gxp3:$PATH
-
-# prompt に [N/N/N] を表示
-PS1_ORIG=$PS1
-preexec () {
-        if [ "$1" = "quit" ]; then
-            PS1=$PS1_ORIG
-        fi
-}
-precmd () {
-    export PS1='[%m-(%~)'`gxpc prompt 2> /dev/null`'] %'
-}
-
-# alias
-alias e='gxpc e'
-alias ep='gxpc ep'
-alias ecd='gxpc cd'
-alias smask='gxpc smask'
-alias rmask='gxpc rmask'
-alias explore='gxpc explore'
-alias quit='gxpc quit'
-
-# 手元と daemon のディレクトリを同時に変更
-function scd(){
-    gxpc cd $1
-    cd $1
-}
-
-# from http://www.logos.ic.i.u-tokyo.ac.jp/~s1s5/program/shell_commands
-# 前の gxp コマンドが成功/失敗したホストの一覧を出力
-function ghosts(){
-    
-    if [ ""$1 == '-s' ]; then
-        gxpc pushmask
-        gxpc smask
-        gxpc ping
-        gxpc popmask
-        gxpc ping > /dev/null
-    elif [ ""$1 == '-f' ];then
-        gxpc pushmask
-        gxpc smask -
-        gxpc ping
-        gxpc popmask
-        gxpc ping > /dev/null
-    else
-        echo "Unknown option $@"
-        echo "-s : "
-        echo "-f : "
-    fi
-
-}
-
 
 #====== 個人設定 ======
 

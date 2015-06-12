@@ -1,5 +1,7 @@
 2015-06-13  Masaya  <masaya@masaya-vm-ub1504>
 
+	* .zshrc: gxprc削除
+
 	* emacs_inits/99_global-keys.el: C-x SPC で矩形選択(cua版に変更), magitキーバインド変更
 
 	* emacs_inits/50_markdown-mode.el (markdown-mode): cssのpath変更
