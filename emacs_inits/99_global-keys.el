@@ -6,8 +6,11 @@
 ;; Window 分割・移動を C-t で (02_basics.el)
 (global-set-key (kbd "C-t") 'other-window-or-split)
 
+;; C-x SPC で矩形選択(cua版に変更)
+(global-set-key (kbd "C-x SPC") 'cua-rectangle-mark-mode)
+
 ;; magit
-(global-set-key "\C-x\C-m" 'magit-status)  ; C-x C-m でmagit-status起動
+(global-set-key "\C-c m" 'magit-status)  ; C-c SPC m でmagit-status起動
 
 ;; helm
 (define-key global-map (kbd "M-x")     'helm-M-x)

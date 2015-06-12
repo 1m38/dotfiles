@@ -6,5 +6,5 @@
 ; css
 ;(setq markdown-css-path "/home/masaya/Dropbox/markdown.css")
 (custom-set-variables
-  '(markdown-css-paths '("/home/masaya/Dropbox/markdown.css")))
+  '(markdown-css-paths '("markdown.css")))
 
