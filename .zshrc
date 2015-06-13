@@ -211,3 +211,40 @@ ls_abbrev() {
     fi
 }
 
+# [xk]term/screenで実行時、タイトルを設定する
+case "${TERM}" in
+    # [xk]term: user@hostname
+    kterm*|xterm)
+	precmd() {
+	    echo -ne "\033]0;${USER}@${HOST%%.*}\007"
+	}
+	;;
+    # screen: 実行コマンド
+    screen)
+	# コマンド実行前: 実行されたコマンドをタイトルに設定
+	preexec() {
+	    echo -ne "\ek${1%%.*}\e\\"
+	}
+	# プロンプト表示前: sh名を設定
+	precmd() {
+	    echo -ne "\ek$(basename ${0%%.*})\e\\"
+	}
+	;;
+esac
+
+# コマンド実行時にプロンプトをリセット(RPROMPTの時刻を更新)
+re-prompt() {
+    zle .reset-prompt
+    zle .accept-line
+}
+zle -N accept-line re-prompt
+
+
+
+
+
+
+
+
+
+

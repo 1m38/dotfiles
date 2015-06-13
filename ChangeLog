@@ -1,3 +1,9 @@
+2015-06-14  Masaya  <masaya@masaya-vm-ub1504>
+
+	* .zshrc: タイトルを動的に変更、RPROMPTの時刻をコマンド実行時にリセット
+
+	* .screenrc: captionに現在時刻を秒まで、loadを表示
+
 2015-06-13  Masaya  <masaya@masaya-vm-ub1504>
 
 	* .zshrc: gxprc削除, chpwdにls_addrev設定
