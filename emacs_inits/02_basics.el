@@ -48,3 +48,8 @@
 ;; emacs外でファイルが変更されたら再読込する
 ;(global-auto-revert-mode 1)
 
+;; 現在行をハイライト(背景色black)
+(global-hl-line-mode t)
+(custom-set-faces
+ '(hl-line ((t (:background "black"))))
+ )

@@ -1,3 +1,7 @@
+2015-06-15    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/02_basics.el: 現在行をハイライト(背景色black)
+
 2015-06-15  Masaya  <masaya@masaya-vm-ub1504>
 
 	* emacs_inits/00_package.el (installing-package-list): key-combo登録
