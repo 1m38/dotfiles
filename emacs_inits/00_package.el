@@ -18,6 +18,7 @@
     helm
     helm-ls-git
     helm-descbinds
+    key-combo
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
@@ -26,3 +27,5 @@
     (package-refresh-contents)
     (dolist (pkg not-installed)
       (package-install pkg))))
+
+

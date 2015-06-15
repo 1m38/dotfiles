@@ -1,3 +1,14 @@
+2015-06-15  Masaya  <masaya@masaya-vm-ub1504>
+
+	* emacs_inits/00_package.el (installing-package-list): key-combo登録
+
+	* emacs_inits/61_key-combo.el: "="と打つと" = "が入力される、など
+	とりあえず公開されてた設定コピペ。
+
+	* emacs_inits/20_auto-install.el: load-pathにexpand-file-nameを使用
+
+	* emacs_inits/39_drill_instructor.el:
+
 2015-06-14  Masaya  <masaya@masaya-vm-ub1504>
 
 	* .zshrc: タイトルを動的に変更、RPROMPTの時刻をコマンド実行時にリセット
