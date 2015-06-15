@@ -33,3 +33,7 @@
 		      ;; and not required because the directory name is prepended
 		      (substring input-pattern 1)
 		    (concat ".*" input-pattern))))))
+
+(custom-set-faces
+ '(helm-selection ((t (:background "magenta" :distant-foreground "black"))))
+ )
