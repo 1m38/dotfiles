@@ -1,3 +1,11 @@
+2015-06-15  Masaya Uno  <masaya@masaya-hp-lub1504>
+
+	* emacs_inits/27_smartparens.el: 無効化(key-comboで代用)
+
+	* emacs_inits/61_key-combo.el: 一部マクロ変更
+	lisp: ( " を自動で閉じる
+	common: 括弧系を追加、" など開と閉が同じ括弧は2回目に1つだけにしない
+
 2015-06-15    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/30_helm.el: 選択行のハイライト色を変更(magenta)
