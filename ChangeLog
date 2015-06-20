@@ -1,3 +1,8 @@
+2015-06-20    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/36_flymake.el: flymake全般設定
+	flymake-cursorもここで設定
+
 2015-06-15  Masaya Uno  <masaya@masaya-hp-lub1504>
 
 	* emacs_inits/27_smartparens.el: 無効化(key-comboで代用)
