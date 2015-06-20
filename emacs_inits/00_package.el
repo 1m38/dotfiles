@@ -19,6 +19,9 @@
     helm-ls-git
     helm-descbinds
     key-combo
+    flymake-easy
+    flymake-python-pyflakes
+    flymake-cursor
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
