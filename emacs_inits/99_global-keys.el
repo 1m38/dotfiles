@@ -24,9 +24,10 @@
 (key-chord-define-global "df" 'helm-descbinds)
 (key-chord-define-global "xf" 'helm-browse-project)
 
-;;; key-chord
-;; C-x C-k k でkey-chord-mode on/off切り替え
-(global-set-key "\C-x\C-kk" 'key-chord-mode)
+;;; key-chord/key-combo
+;; C-c C-k で上記mode on/off切り替え
+(global-set-key (kbd "C-c C-k") 'my_key-assist-diable)
+
 
 ;;; auto-save-buffers-enhanced
 ;;; C-x a sでauto-save-buffers-enhancedの有効・無効をトグル

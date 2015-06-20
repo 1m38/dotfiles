@@ -1,3 +1,10 @@
+2015-06-21    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/99_global-keys.el: my_key-assist-diable を C-c C-k に登録
+
+	* emacs_inits/38_key-chord.el (my_key-assist-diable):
+	key-chord/key-comboなど、端末越しペーストで邪魔になるキーバインド無効化
+
 2015-06-20    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/57_python_flymake.el: flymake-python-pyflakes設定
