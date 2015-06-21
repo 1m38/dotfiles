@@ -134,9 +134,28 @@ alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
 alias ssh-addb='ssh-add ~/.ssh/bitbucket.uno1038.id_rsa'
 alias ssh-addb2='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
 
-# ulimit(12GB)
-ulimit -m 12000000
-ulimit -v 12000000
+# ulimit (hostごとに変更)
+case `hostname -s` in
+    masaya-*)
+	# 3GB
+	ulimit -m 3000000
+	;;
+    basil300|basil301|basil302|jungle)
+	# 64GB
+	ulimit -m 64000000
+	ulimit -v 64000000
+	;;
+    basil*)
+	# 10GB
+	ulimit -m 10000000
+	ulimit -v 10000000
+	;;
+    *)
+	# 3GB
+	ulimit -m 3000000
+	ulimit -v 3000000
+	;;
+esac
 
 # 実験環境
 alias kyotoebmt_server="~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"

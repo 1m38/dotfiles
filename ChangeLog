@@ -1,5 +1,8 @@
 2015-06-21  Masaya  <masaya@masaya-vm-ub1504>
 
+	* .zshrc: ulimitをhostnameを見て変更するようにした
+	basil[300-302]でのulimitを64GB、local(masaya*)のulimitを3GBにした
+
 	* emacs_inits/65_yatex.el: yatex設定を移動
 	auto-mode対象ファイルを追加, 自動改行を抑制
 
