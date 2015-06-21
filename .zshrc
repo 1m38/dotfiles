@@ -131,7 +131,8 @@ export PATH="$HOME/local/bin:$PATH"
 
 # ssh-add alias
 alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
-alias ssh-addb='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
+alias ssh-addb='ssh-add ~/.ssh/bitbucket.uno1038.id_rsa'
+alias ssh-addb2='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
 
 # ulimit(12GB)
 ulimit -m 12000000

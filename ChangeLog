@@ -1,5 +1,8 @@
 2015-06-21  Masaya  <masaya@masaya-vm-ub1504>
 
+	* .zshrc: ssh-addのalias変更
+	bitbucketのuno1038アカウントにsshキーを登録したので、ssh-addbのaliasを変更
+
 	* emacs_inits/00_package.el: flymake-python系のpackage登録
 
 2015-06-21    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
@@ -12,7 +15,7 @@
 2015-06-20    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/57_python_flymake.el: flymake-python-pyflakes設定
-	pycheckerを使うことにした
+	pychecker(pyflakes+pep8の手書きsh)を使うことにした
 
 	* emacs_inits/56_python.el: rename(51から変更)
 
