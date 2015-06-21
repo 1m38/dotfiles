@@ -28,21 +28,7 @@
 	    ))
 
 ;;; YaTeX
-;(setq load-path (cons (expand-file-name "/usr/share/emacs/site-lisp/yatex") load-path))
-(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp/yatex1.78.4") load-path))
-(setq auto-mode-alist
-      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
-(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
-(setq load-path (cons (expand-file-name "~/src/emacs/yatex") load-path))
-(setq YaTeX-kanji-code 4	; utf-8
-      YaTeX-use-AMS-LaTeX t
-      YaTeX-use-LaTeX2e t)
-(setq tex-command "platex"
-      dvi2-command "pxdvi"
-      dviprint-command-format "pdvips -f %f %t %s | lpr"
-      dviprint-from-format "-p %b"
-      dviprint-to-format "-l %e"
-      section-name "documentclass")
+;;; 65_yatex.el に移動
 
 ;;; ispell (日本語でとまらないように)
 (eval-after-load "ispell"

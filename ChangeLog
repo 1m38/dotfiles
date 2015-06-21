@@ -1,5 +1,10 @@
 2015-06-21  Masaya  <masaya@masaya-vm-ub1504>
 
+	* emacs_inits/65_yatex.el: yatex設定を移動
+	auto-mode対象ファイルを追加, 自動改行を抑制
+
+	* emacs_inits/01_lab.el: yatex設定を65_yatex.elに移動
+
 	* emacs_inits/00_package.el (installing-package-list):
 	flymake解除, flycheck,helm-flymake登録
 
