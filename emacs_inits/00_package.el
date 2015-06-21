@@ -1,5 +1,5 @@
-; 起動時にInstallされていないelispをpackage.elで自動インストール
-; http://kei10in.hatenablog.jp/entry/2012/09/12/220833
+;; 起動時にInstallされていないelispをpackage.elで自動インストール
+;; http://kei10in.hatenablog.jp/entry/2012/09/12/220833
 (require 'cl)
 (defvar installing-package-list
   '(
@@ -19,9 +19,11 @@
     helm-ls-git
     helm-descbinds
     key-combo
-    flymake-easy
-    flymake-python-pyflakes
-    flymake-cursor
+    ; flymake-easy
+    ; flymake-python-pyflakes
+    ; flymake-cursor
+    flycheck
+    helm-flycheck
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))

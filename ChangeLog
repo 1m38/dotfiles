@@ -1,5 +1,11 @@
 2015-06-21  Masaya  <masaya@masaya-vm-ub1504>
 
+	* emacs_inits/00_package.el (installing-package-list):
+	flymake解除, flycheck,helm-flymake登録
+
+	* emacs_inits/36_flycheck.el: flymakeからflycheckに移行
+	helm-flymake導入(bind C-c 1)
+
 	* .zshrc: ssh-addのalias変更
 	bitbucketのuno1038アカウントにsshキーを登録したので、ssh-addbのaliasを変更
 
