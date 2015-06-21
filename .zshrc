@@ -259,7 +259,8 @@ re-prompt() {
 }
 zle -N accept-line re-prompt
 
-
+# PARA
+export PARA_SYSTEM=$HOME/PARA
 
 
 
