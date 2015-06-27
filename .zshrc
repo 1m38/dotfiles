@@ -158,9 +158,9 @@ case `hostname -s` in
 esac
 
 # 実験環境
-alias kyotoebmt_server="~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
-alias kyotoebmt_client='nice -19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 8 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
-alias klm_query="/share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
+alias kyotoebmt_server="nice -n 19 ~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
+alias kyotoebmt_client='nice -n 19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 8 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
+alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
 if [[ -d $HOME/svm_rank ]] then
    alias svm-rank-learn="~/svm_rank/svm_rank_learn"
    alias svm-rank-classify="~/svm_rank/svm_rank_classify"
