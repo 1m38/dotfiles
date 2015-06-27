@@ -3,7 +3,7 @@
 
 # init
 ```
-git clone git@bitbucket.org:fs_lt34/dotfiles.git ~/dotfiles
+git clone git@bitbucket.org:uno1038/dotfiles.git ~/dotfiles
 sh dotfiles/link.sh
 ```
 
