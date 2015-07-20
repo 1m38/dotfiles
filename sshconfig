@@ -5,3 +5,18 @@ Host lotus
      Hostname lotus.kuee.kyoto-u.ac.jp
      User uno
      IdentityFile ~/.ssh/k2l.id_rsa
+
+Host github
+     Hostname github.com
+     IdentityFile ~/.ssh/github_1u38.id_rsa
+     User git
+
+Host bitbucket
+     Hostname bitbucket.org
+     IdentityFile ~/.ssh/bitbucket.uno1038.id_rsa
+     User git
+
+Host bitbucket.fs_lt34
+     Hostname bitbucket.org
+     IdentityFile ~/.ssh/bitbucket.fs_lt34.id_rsa
+     User git
