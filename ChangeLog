@@ -1,3 +1,7 @@
+2015-07-24  Masaya Uno  <masaya@masaya-hp-ub1504>
+
+	* emacs_inits/26_magit.el: faceに関する設定変更
+
 2015-07-20  Masaya  <masaya@masaya-vm-ub1504>
 
 	* sshconfig: github, bitbucketのHost設定
