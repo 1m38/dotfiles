@@ -1,3 +1,12 @@
+2015-07-24  Masaya  <masaya@masaya-vm-ub1504>
+
+	* link.sh: .zlogoutを追加
+
+	* .zlogout: logout時にkillemacs
+
+	* .zshrc: emacsclient設定
+	emacs のaliasをemacsclient(daemon起動)に設定, killemacsでdaemonをkill
+
 2015-07-24  Masaya Uno  <masaya@masaya-hp-ub1504>
 
 	* emacs_inits/26_magit.el: faceに関する設定変更

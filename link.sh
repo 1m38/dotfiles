@@ -7,4 +7,5 @@ ln -sf ~/dotfiles/emacs_inits ~/.emacs.d/inits
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.zlogout ~/.zlogout
 ln -sf ~/dotfiles/sshconfig ~/.ssh/config

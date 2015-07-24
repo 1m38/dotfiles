@@ -104,8 +104,6 @@ fi
 
 #====== 個人設定 ======
 
-alias E="emacs -nw"
-
 # '...RET'で階層を2つ上がる
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -262,9 +260,9 @@ zle -N accept-line re-prompt
 # PARA
 export PARA_SYSTEM=$HOME/PARA
 
-
-
-
+# emacsclient
+alias emacs='emacsclient -c -t -a ""'
+alias killemacs='emacsclient -e "(kill-emacs)"'
 
 
 
