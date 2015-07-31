@@ -3,13 +3,31 @@
 (setq magit-auto-revert-mode nil)
 (eval-after-load 'magit
   '(progn
-     (set-face-foreground 'magit-diff-added-highlight "white")
-     (set-face-background 'magit-diff-added-highlight "green")
-     (set-face-foreground 'magit-diff-removed-highlight "red")
-     (set-face-background 'magit-diff-removed-highlight "green")
+     (set-face-background 'magit-section-highlight nil)
 
-     (set-face-foreground 'magit-diff-added "white")
-     (set-face-background 'magit-diff-added "blue")
-     (set-face-foreground 'magit-diff-removed "black")
-     (set-face-background 'magit-diff-removed "blue")
+     (set-face-attribute 'magit-diff-hunk-heading nil
+			 :foreground "blue"
+			 :background nil)
+
+     (set-face-attribute 'magit-diff-hunk-heading-highlight nil
+			 :foreground "blue"
+			 :background "white")
+
+     (set-face-attribute 'magit-diff-context-highlight nil
+			 :foreground "black"
+			 :background "white")
+
+     (set-face-attribute 'magit-diff-added-highlight nil
+			 :foreground "white"
+			 :background "green")
+     (set-face-attribute 'magit-diff-removed-highlight nil
+			 :foreground "red"
+			 :background "green")
+
+     (set-face-attribute 'magit-diff-added nil
+			 :foreground "green"
+			 :background nil)
+     (set-face-attribute 'magit-diff-removed nil
+			 :foreground "blue"
+			 :background nil)
      ))

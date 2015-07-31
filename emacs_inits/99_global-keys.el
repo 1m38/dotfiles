@@ -32,3 +32,6 @@
 ;;; auto-save-buffers-enhanced
 ;;; C-x a sでauto-save-buffers-enhancedの有効・無効をトグル
 (global-set-key "\C-xas" 'auto-save-buffers-enhanced-toggle-activity)
+
+;;; nav
+(global-set-key (kbd "C-x C-d") 'nav-toggle)
