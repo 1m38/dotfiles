@@ -1,5 +1,7 @@
 2015-08-01  Masaya  <masaya@masaya-vm-ub1504>
 
+	* emacs_inits/00_package.el (installing-package-list): nav追加
+
 	* emacs_inits/99_global-keys.el: "C-x C-d"でnav起動
 
 	* emacs_inits/33_nav.el: インストール
