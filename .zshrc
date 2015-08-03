@@ -264,6 +264,5 @@ export PARA_SYSTEM=$HOME/PARA
 alias emacs='emacsclient -c -t -a ""'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 
-
-
-
+# screen
+alias s='screen'

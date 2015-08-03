@@ -1,3 +1,7 @@
+2015-08-03  Masaya  <masaya@masaya-vm-ub1504>
+
+	* .zshrc: alias s = screen
+
 2015-08-01  Masaya  <masaya@masaya-vm-ub1504>
 
 	* emacs_inits/00_package.el (installing-package-list): nav追加
