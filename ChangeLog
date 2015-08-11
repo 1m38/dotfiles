@@ -1,3 +1,8 @@
+2015-08-12  Masaya  <masaya@masaya-vm-ub1504>
+
+	* link.sh: .vimrc追加
+	* .vimrc: 追加
+
 2015-08-03  Masaya  <masaya@masaya-vm-ub1504>
 
 	* .zshrc: alias s = screen

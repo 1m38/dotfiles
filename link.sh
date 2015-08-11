@@ -9,3 +9,4 @@ ln -sf ~/dotfiles/.screenrc ~/.screenrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.zlogout ~/.zlogout
 ln -sf ~/dotfiles/sshconfig ~/.ssh/config
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
