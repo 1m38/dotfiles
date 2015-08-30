@@ -1,3 +1,7 @@
+2015-08-30  Masaya  <masaya@masaya-vm-ub1504>
+
+	* .zshrc: SKK向け: Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
+
 2015-08-12  Masaya  <masaya@masaya-vm-ub1504>
 
 	* link.sh: .vimrc追加
