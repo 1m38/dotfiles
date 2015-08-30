@@ -1,6 +1,6 @@
 ;;; YaTeX
 ;(setq load-path (cons (expand-file-name "/usr/share/emacs/site-lisp/yatex") load-path))
-(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp/yatex1.78.4") load-path))
+;(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp/yatex1.78.4") load-path))
 ;(setq auto-mode-alist
 ;      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
 ;; http://ksknw.hatenablog.com/entry/2015/02/11/202320

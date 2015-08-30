@@ -2,6 +2,12 @@
 
 	* .zshrc: SKK向け: Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
 
+2015-08-24  Masaya  <masaya@masaya-TP-ub1504>
+
+	* emacs_inits/65_yatex.el: load-path削除(package管理に移行)
+
+	* emacs_inits/00_package.el (installing-package-list): yatex追加
+
 2015-08-12  Masaya  <masaya@masaya-vm-ub1504>
 
 	* link.sh: .vimrc追加
