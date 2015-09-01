@@ -265,7 +265,7 @@ alias emacs='emacsclient -c -t -a ""'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 
 # screen
-alias s='screen'
+alias s='screen -xR'
 
 # Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
 VTE_CJK_WIDTH=1
