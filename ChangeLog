@@ -1,3 +1,7 @@
+2015-09-08    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/10_dired.el: C-t のキーバインドを解除
+
 2015-09-01    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zlogout(delete): 終了時にemacsをkillしない
