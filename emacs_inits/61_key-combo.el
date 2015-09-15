@@ -29,7 +29,8 @@
 	cperl-mode-hook
 	javascript-mode-hook
 	js-mode-hook
-	js2-mode-hook))
+	js2-mode-hook
+	change-log-mode-hook))
 
 (setq key-combo-common-default
       '((","  . (", " ","))
@@ -39,7 +40,8 @@
 	("=*" . " =* ")
 	("+"  . (" + " " += " "+"))
 	("+=" . " += ")
-	("-"  . (" - " " -= " "-"))
+	;("-"  . (" - " " -= " "-"))
+	("-"  . ("-" " - " " -= "))
 	("-=" . " -= ")
 	("->" . " -> ")
 	(">"  . (" > " " => " " >= " ">"))

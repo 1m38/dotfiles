@@ -1,3 +1,10 @@
+2015-09-15    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/26_magit.el: 色変更
+
+	* emacs_inits/61_key-combo.el: "-"の挙動変更(("-" " - " " -= ") の順),
+	change-log-mode-hook追加
+
 2015-09-08    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/10_dired.el: C-t のキーバインドを解除
