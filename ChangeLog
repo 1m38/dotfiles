@@ -1,3 +1,7 @@
+2015-09-15  Masaya  <masaya@FS-TP-ub1504>
+
+	* .zshrc: alias: e > Emacs
+
 2015-09-15    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/26_magit.el: 色変更
