@@ -1,3 +1,7 @@
+2015-09-16  Masaya  <masaya@FS-TP-ub1504>
+
+	* link.sh: .emacs.d ディレクトリを作るように, .zlogoutを削除
+
 2015-09-15  Masaya  <masaya@FS-TP-ub1504>
 
 	* .zshrc: alias: e > Emacs
