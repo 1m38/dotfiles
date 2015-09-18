@@ -1,3 +1,7 @@
+2015-09-18    <masaya@FS-TP-arch>
+
+	* emacs_inits/99_global-keys.el: C-\ で comment-dwim
+
 2015-09-16  Masaya  <masaya@FS-TP-ub1504>
 
 	* link.sh: .emacs.d ディレクトリを作るように, .zlogoutを削除

@@ -35,3 +35,7 @@
 
 ;;; nav
 (global-set-key (kbd "C-x C-d") 'nav-toggle)
+
+;;; comment-dwim
+(global-set-key (kbd "C-\\") 'comment-dwim)
+
