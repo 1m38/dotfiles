@@ -1,3 +1,8 @@
+2015-09-28    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: tmuxのalias設定
+	tで自動attach, tlsでセッション一覧
+
 2015-09-28    <masaya@FS-TP-arch>
 
 	* .zshrc: torch設定(ローカルマシン用))
