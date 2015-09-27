@@ -1,3 +1,7 @@
+2015-09-28    <masaya@FS-TP-arch>
+
+	* .zshrc: torch設定(ローカルマシン用))
+
 2015-09-27    <masaya@FS-VM-arch>
 
 	* .tmux.conf: とりあえずの設定

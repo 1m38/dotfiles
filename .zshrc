@@ -280,3 +280,8 @@ if [[ `hostname -s` == basil* || `hostname -s` == jungle ]]; then
     alias tmux='TERM=screen-256color-bce LD_PRELOAD=/lib64/libncurses.so.5 tmux'
     alias t='TERM=screen-256color-bce LD_PRELOAD=/lib64/libncurses.so.5 tmux'
 fi
+
+# torch(ローカルマシン用)
+if [ -d /home/masaya/torch ]; then
+    . /home/masaya/torch/install/bin/torch-activate
+fi
