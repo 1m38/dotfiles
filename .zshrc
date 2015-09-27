@@ -134,7 +134,7 @@ alias ssh-addb2='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
 
 # ulimit (hostごとに変更)
 case `hostname -s` in
-    masaya-*)
+    masaya-*|FS-*)
 	# 3GB
 	ulimit -m 3000000
 	;;
@@ -239,14 +239,16 @@ case "${TERM}" in
 	;;
     # screen: 実行コマンド
     screen)
-	# コマンド実行前: 実行されたコマンドをタイトルに設定
-	preexec() {
-	    echo -ne "\ek${1%%.*}\e\\"
-	}
-	# プロンプト表示前: sh名を設定
-	precmd() {
-	    echo -ne "\ek$(basename ${0%%.*})\e\\"
-	}
+	if [[ "$TMUX" == "" ]]; then
+	    # コマンド実行前: 実行されたコマンドをタイトルに設定
+	    preexec() {
+		echo -ne "\ek${1%%.*}\e\\"
+	    }
+	    # プロンプト表示前: sh名を設定
+	    precmd() {
+		echo -ne "\ek$(basename ${0%%.*})\e\\"
+	    }
+	fi
 	;;
 esac
 
@@ -270,3 +272,11 @@ alias s='screen -xR'
 
 # Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
 VTE_CJK_WIDTH=1
+
+# tmux
+alias t='tmux'
+# 研究室鯖用alias
+if [[ `hostname -s` == basil* || `hostname -s` == jungle ]]; then
+    alias tmux='TERM=screen-256color-bce LD_PRELOAD=/lib64/libncurses.so.5 tmux'
+    alias t='TERM=screen-256color-bce LD_PRELOAD=/lib64/libncurses.so.5 tmux'
+fi

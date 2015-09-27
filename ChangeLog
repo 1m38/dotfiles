@@ -1,3 +1,14 @@
+2015-09-27    <masaya@FS-VM-arch>
+
+	* .tmux.conf: とりあえずの設定
+
+	* link.sh: .tmux.conf追加
+
+	* .zshrc: tmux向け設定
+	tmuxでscreen向け設定(preexec, precmd)が有効にならないように
+	研究室鯖用alias
+	ついでにulimit設定のmasaya-*のセクションにFS-*を追加
+
 2015-09-18    <masaya@FS-TP-arch>
 
 	* emacs_inits/99_global-keys.el: C-\ で comment-dwim
