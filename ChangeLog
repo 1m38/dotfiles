@@ -1,5 +1,9 @@
 2015-09-28    <masaya@FS-VM-arch>
 
+	* emacs_inits/26_magit.el: theme設定削除
+
+	* emacs_inits/98_theme.el: theme設定(tango-dark)
+
 	* .zshrc: 256色対応(xterm-256color), tmuxのalias変更
 
 	* .tmux.conf: 256色対応, status-bar表示を整理
