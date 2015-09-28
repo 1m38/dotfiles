@@ -1,3 +1,8 @@
+2015-09-28    <masaya@FS-VM-arch>
+
+	* .zshrc: eval-ssh-agentのalias追加
+	ssh-addが通らない場合に
+
 2015-09-28    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: tmuxのalias設定

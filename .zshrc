@@ -131,6 +131,7 @@ export PATH="$HOME/local/bin:$PATH"
 alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
 alias ssh-addb='ssh-add ~/.ssh/bitbucket.uno1038.id_rsa'
 alias ssh-addb2='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
+alias eval-ssh-agent='eval `ssh-agent`'
 
 # ulimit (hostごとに変更)
 case `hostname -s` in
