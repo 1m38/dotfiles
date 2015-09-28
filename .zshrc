@@ -275,12 +275,13 @@ alias s='screen -xR'
 VTE_CJK_WIDTH=1
 
 # tmux
+export TERM=xterm-256color
 alias t='tmux attach || tmux new-session'
 alias tls='tmux ls'
 # 研究室鯖用alias
 if [[ `hostname -s` == basil* || `hostname -s` == jungle ]]; then
-    alias tmux='TERM=screen-256color-bce LD_PRELOAD=/lib64/libncurses.so.5 tmux'
-    alias t='TERM=screen-256color-bce LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
+    alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
+    alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
 fi
 
 # torch(ローカルマシン用)

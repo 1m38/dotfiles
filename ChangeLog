@@ -1,5 +1,9 @@
 2015-09-28    <masaya@FS-VM-arch>
 
+	* .zshrc: 256色対応(xterm-256color), tmuxのalias変更
+
+	* .tmux.conf: 256色対応, status-bar表示を整理
+
 	* .zshrc: eval-ssh-agentのalias追加
 	ssh-addが通らない場合に
 
