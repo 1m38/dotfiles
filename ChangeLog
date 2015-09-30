@@ -1,3 +1,7 @@
+2015-09-30    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .tmux.conf: ウィンドウタイトルを"USER@hostname"にする
+
 2015-09-30    <masaya@FS-TP-arch>
 
 	* .zshrc: tmux時、htopをscreenで起動する
