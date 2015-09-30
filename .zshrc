@@ -283,6 +283,12 @@ if [[ `hostname -s` == basil* || `hostname -s` == jungle ]]; then
     alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
     alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
 fi
+# htopをscreenで起動する
+if [ "$TMUX" = "" ]; then
+    unalias htop 2>/dev/null
+else
+    alias htop='screen htop'
+fi
 
 # torch(ローカルマシン用)
 if [ -d /home/masaya/torch ]; then

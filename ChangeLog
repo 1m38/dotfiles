@@ -1,3 +1,7 @@
+2015-09-30    <masaya@FS-TP-arch>
+
+	* .zshrc: tmux時、htopをscreenで起動する
+
 2015-09-28    <masaya@FS-VM-arch>
 
 	* emacs_inits/26_magit.el: theme設定削除
