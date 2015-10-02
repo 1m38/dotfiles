@@ -13,3 +13,8 @@ ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/sshconfig ~/.ssh/config
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+# powerline
+if [ -d ~/.local/lib/python*/site-packages/powerline ]; then
+    ln -sf ~/.local/lib/python*/site-packages/powerline ~/.local/share/powerline
+fi

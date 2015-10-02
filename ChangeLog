@@ -1,3 +1,10 @@
+2015-10-03    <masaya@FS-VM-arch>
+
+	* link.sh -> init.sh: rename, powerlineのディレクトリへln -sを貼る
+
+	* .zshrc, .tmux.conf: powerline用設定
+	とりあえずtmuxのstatus-line設定はコメントアウト
+
 2015-09-30    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .tmux.conf: ウィンドウタイトルを"USER@hostname"にする

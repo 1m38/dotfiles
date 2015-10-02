@@ -294,3 +294,12 @@ fi
 if [ -d /home/masaya/torch ]; then
     . /home/masaya/torch/install/bin/torch-activate
 fi
+
+# powerline
+export PATH="$HOME/.local/bin:$PATH"
+if [[ `hostname -s` != lotus* ]]; then
+    powerline-daemon -q
+    if [ ! "$EMACS" = t ]; then
+	. ~/.local/share/powerline/bindings/zsh/powerline.zsh
+    fi
+fi
