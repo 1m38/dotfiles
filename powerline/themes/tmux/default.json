@@ -1,0 +1,20 @@
+{
+    "segments": {
+	"right": [
+	    {
+		"function": "powerline.segments.common.sys.system_load",
+		"priority": 50
+	    },
+	    {
+		"function": "powerline.segments.common.time.date",
+		"args": {
+		    "format": "%y/%m/%d %H:%M:%S",
+		    "istime": true
+		}
+	    },
+	    {
+		"function": "powerline.segments.common.net.hostname"
+	    }
+	]
+    }
+}

@@ -1,5 +1,11 @@
 2015-10-03    <masaya@FS-VM-arch>
 
+	* powerline/: powerline本体設定ディレクトリ
+
+	* .tmux.conf: powerline設定調整
+
+	* init.sh: powerlineのconfigディレクトリ作成
+
 	* link.sh -> init.sh: rename, powerlineのディレクトリへln -sを貼る
 
 	* .zshrc, .tmux.conf: powerline用設定

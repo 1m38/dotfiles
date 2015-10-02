@@ -18,3 +18,7 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 if [ -d ~/.local/lib/python*/site-packages/powerline ]; then
     ln -sf ~/.local/lib/python*/site-packages/powerline ~/.local/share/powerline
 fi
+if [ ! -d ~/.config ]; then
+    mkdir ~/.config
+fi
+ln -sf ~/dotfiles/powerline ~/.config
