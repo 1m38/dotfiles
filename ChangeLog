@@ -1,3 +1,7 @@
+2015-10-03    <masaya@FS-VM-arch>
+
+	* powerline/themes/powerline.json: dividers_left のスペース調整
+
 2015-10-03    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/35_aspell.el: aspell(スペルチェッカー)設定
