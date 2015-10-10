@@ -1,5 +1,7 @@
 2015-10-11    <masaya@FS-VM-arch>
 
+	* .tmux.conf: status-line設定
+
 	* init.sh: .aspell.conf
 
 	* .aspell.conf: aspellの言語設定(en_US)

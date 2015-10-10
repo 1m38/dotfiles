@@ -16,7 +16,6 @@ PATH=$_MYPATH:$_CPUPATH:$_SYSPATH
 unset _MYPATH _CPUPATH _SYSPATH
 
 #PROMPT="[%m-(%~)] % "
-PROMPT="[%m-(%~)]%# "
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=$HOME/.zsh_history
@@ -115,6 +114,14 @@ setopt pushd_ignore_dups
 # 間違ったcommandを修正してくれる
 setopt correct
 
+# PROMPT設定
+if [ "$EMACS" = t ]; then
+    # emacs_shellの場合は左プロンプトを簡略化
+    PROMPT="[%2~]%# "
+else
+    PROMPT="[%m-(%~)]%# "
+fi
+
 # 時刻表示
 RPROMPT="[%*]"
 
@@ -183,11 +190,6 @@ function rep_mail (){
     trap "ssh lotus \"echo -e \\\" $text 正常終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
     nice -19 $@
 }
-
-# emacs_shellの場合は左プロンプトを簡略化
-if [ "$EMACS" = t ]; then
-    PROMPT="[%2~]%# "
-fi
 
 # cd時にlsする
 # http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
@@ -303,3 +305,4 @@ fi
 #	. ~/.local/share/powerline/bindings/zsh/powerline.zsh
 #     fi
 # fi
+
