@@ -1,3 +1,9 @@
+2015-10-11    <masaya@FS-VM-arch>
+
+	* init.sh: .aspell.conf
+
+	* .aspell.conf: aspellの言語設定(en_US)
+
 2015-10-10    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc, .tmux.conf: powerline無効化

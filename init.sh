@@ -22,3 +22,5 @@ if [ ! -d ~/.config ]; then
     mkdir ~/.config
 fi
 ln -sf ~/dotfiles/powerline ~/.config
+
+ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
