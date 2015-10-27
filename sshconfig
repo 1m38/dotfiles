@@ -6,6 +6,14 @@ Host lotus
      User uno
      IdentityFile ~/.ssh/k2l.id_rsa
 
+Host lotus/*
+     User uno
+     ProxyCommand ssh -W "$(basename "%h")":%p "$(dirname "%h")"
+
+Host basil*
+     User uno
+     ProxyCommand ssh -W %h:%p lotus
+
 Host github
      Hostname github.com
      IdentityFile ~/.ssh/github_1u38.id_rsa

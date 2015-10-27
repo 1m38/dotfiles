@@ -1,3 +1,7 @@
+2015-10-27    <masaya@FS-TP-arch>
+
+	* sshconfig: lotus/*, basil* に一発でログインできるように
+
 2015-10-11    <masaya@FS-VM-arch>
 
 	* .tmux.conf: status-line設定
