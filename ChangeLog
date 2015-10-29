@@ -1,6 +1,6 @@
 2015-10-29    <masaya@FS-TP-arch>
 
-	* .zshrc: SSH_AUTH_SOCK固定
+	* .zshrc: SSH_AUTH_SOCK固定, ssh-agent自動起動
 
 2015-10-27    <uno@basil130.lang-private.kuee.kyoto-u.ac.jp>
 

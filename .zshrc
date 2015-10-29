@@ -309,6 +309,10 @@ fi
 # SSH_AUTH_SOCK固定
 # Reference: http://unix.stackexchange.com/a/76256/91598
 SOCK="/tmp/ssh-agent-$USER-screen"
+if ! test $SSH_AUTH_SOCK
+then
+    eval `ssh-agent`
+fi
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
 then
     rm -f /tmp/ssh-agent-$USER-screen
