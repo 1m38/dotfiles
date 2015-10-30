@@ -2,6 +2,7 @@
 
 	* .tmux.conf: prefix C-t でペイン移動
 	status-lineを上に表示, hostnameをleftに移動
+	prefix s で synchronize-panes on, status-line:window-list調整
 
 2015-10-29    <masaya@FS-TP-arch>
 
