@@ -1,3 +1,7 @@
+2015-10-30    <masaya@FS-TP-arch>
+
+	* .tmux.conf: prefix C-t でペイン移動
+
 2015-10-29    <masaya@FS-TP-arch>
 
 	* .zshrc: SSH_AUTH_SOCK固定, ssh-agent自動起動
