@@ -1,6 +1,7 @@
 2015-10-30    <masaya@FS-TP-arch>
 
 	* .tmux.conf: prefix C-t でペイン移動
+	status-lineを上に表示, hostnameをleftに移動
 
 2015-10-29    <masaya@FS-TP-arch>
 
