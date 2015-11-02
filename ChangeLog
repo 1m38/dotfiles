@@ -1,6 +1,7 @@
 2015-11-03    <masaya@FS-VM-arch>
 
 	* .zshrc: hostnameごとにtmuxのhostname表示に色をつける
+	hostname表示をboldに, 研究室鯖でメッセージが出ないように
 
 2015-11-02    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 

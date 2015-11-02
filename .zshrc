@@ -304,7 +304,7 @@ if [ "$TMUX" != "" ]; then
 	    tmux_hostname_color="fg=colour22,bg=colour250"
 	    ;;
     esac
-    tmux set-option -g status-left "#[fg=colour234,bg=colour250]#{?client_prefix,#[bg=colour118],}[#S]#[$tmux_hostname_color] #h #[default] "
+    tmux set-option -g status-left "#[fg=colour234,bg=colour250]#{?client_prefix,#[bg=colour118],}[#S]#[$tmux_hostname_color,bold] #h #[default] " > /dev/null
 fi
 
 # torch(ローカルマシン用)
