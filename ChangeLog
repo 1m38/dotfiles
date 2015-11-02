@@ -1,3 +1,7 @@
+2015-11-03    <masaya@FS-VM-arch>
+
+	* .zshrc: hostnameごとにtmuxのhostname表示に色をつける
+
 2015-11-02    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .tmux.conf: バックスクロール行数(history-limit)を20000行に

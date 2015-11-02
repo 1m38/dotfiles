@@ -291,20 +291,26 @@ if [ "$TMUX" = "" ]; then
 else
     alias htop='screen htop'
 fi
+# hostnameの色を変更
+if [ "$TMUX" != "" ]; then
+    case `hostname -s` in
+	masaya-*|FS-*)
+	    tmux_hostname_color="fg=black,bg=colour202"
+	    ;;
+	basil*|jungle)
+	    tmux_hostname_color="fg=white,bg=colour22"
+	    ;;
+	*)
+	    tmux_hostname_color="fg=colour22,bg=colour250"
+	    ;;
+    esac
+    tmux set-option -g status-left "#[fg=colour234,bg=colour250]#{?client_prefix,#[bg=colour118],}[#S]#[$tmux_hostname_color] #h #[default] "
+fi
 
 # torch(ローカルマシン用)
 if [ -d /home/masaya/torch ]; then
     . /home/masaya/torch/install/bin/torch-activate
 fi
-
-# # powerline
-# export PATH="$HOME/.local/bin:$PATH"
-# if [[ `hostname -s` != lotus* ]]; then
-#     powerline-daemon -q
-#     if [ ! "$EMACS" = t ]; then
-#	. ~/.local/share/powerline/bindings/zsh/powerline.zsh
-#     fi
-# fi
 
 # SSH_AUTH_SOCK固定
 # Reference: http://unix.stackexchange.com/a/76256/91598
