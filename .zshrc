@@ -295,7 +295,7 @@ fi
 if [ "$TMUX" != "" ]; then
     case `hostname -s` in
 	masaya-*|FS-*)
-	    tmux_hostname_color="fg=black,bg=colour202"
+	    tmux_hostname_color="fg=black,bg=colour249"
 	    ;;
 	basil*|jungle)
 	    tmux_hostname_color="fg=white,bg=colour22"

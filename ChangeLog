@@ -1,3 +1,9 @@
+2015-11-06    <masaya@FS-TP-arch>
+
+	* emacs_inits/24_hilnum.el (linum-format): 行番号と本文の間に仕切りを追加
+
+	* .zshrc: tmuxのhostname色変更(個人マシンには色をつけない)
+
 2015-11-06    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .tmux.conf: status-lineの色変更(白)
