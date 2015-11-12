@@ -1,3 +1,7 @@
+# 60秒ごとに生存確認、10回失敗で切断
+ServerAliveInterval 60
+ServerAliveCountMax 10
+
 Host *
      ForwardAgent yes
 
@@ -12,7 +16,15 @@ Host lotus/*
 
 Host basil*
      User uno
-     ProxyCommand ssh -W %h:%p lotus
+     ProxyCommand ssh -qW %h:%p lotus
+
+Host jungle
+     User uno
+     ProxyCommand ssh -qW %h:%p lotus
+
+Host baracuda*
+     User uno
+     ProxyCommand ssh -qW %h:%p lotus
 
 Host github
      Hostname github.com
