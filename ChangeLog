@@ -1,3 +1,8 @@
+2015-11-16    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/32_highlight-indentation.el: インデントを表示
+	色設定, python-mode-hook設定
+
 2015-11-12    <masaya@FS-TP-arch>
 
 	* sshconfig: baracuda追加, 多段ssh切断時に"Killed"と出ないように,
