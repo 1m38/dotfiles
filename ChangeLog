@@ -1,3 +1,8 @@
+2015-11-19    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/32_highlight-indentation.el:
+	highlight-indentation-current-column-mode がとても重いので無効化
+
 2015-11-16    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/32_highlight-indentation.el: インデントを表示
