@@ -2,6 +2,7 @@
 
 	* .zshrc: prompt設定
 	RPROMPT廃止, PROMPTを改行, 時刻, 直前コマンドのステータス表示
+	(rep_mail): 終了時刻が開始時刻と同じになってしまうので、終了時刻を削除
 
 2015-11-19    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 

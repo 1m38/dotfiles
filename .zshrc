@@ -188,12 +188,13 @@ function rep_mail (){
     mail_to="uno@nlp.ist.i.kyoto-u.ac.jp"
 
     cmd=$@
-    text="\"$cmd\" \n 開始 `date \"+%m/%d %H:%M\"` \n"
+    start_time=`date "+%m/%d %H:%M:%S"`
+    text="$cmd \n 開始 $start_time \n"
 
-    trap "ssh lotus \"echo -e \\\" $text 強制終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" INT
-    trap "ssh lotus \"echo -e \\\" $text 異常終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" ERR
-    trap "ssh lotus \"echo -e \\\" $text 正常終了 `date \"+%m/%d %H:%M\"` \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
-    nice -19 $@
+    trap "ssh lotus \"echo -e \\\" $text 強制終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" INT
+    trap "ssh lotus \"echo -e \\\" $text 異常終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" ERR
+    trap "ssh lotus \"echo -e \\\" $text 正常終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
+    nice -n 19 $@
 }
 
 # cd時にlsする
