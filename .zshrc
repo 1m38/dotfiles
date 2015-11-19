@@ -114,7 +114,14 @@ setopt pushd_ignore_dups
 # 間違ったcommandを修正してくれる
 setopt correct
 
+# gitのbranch名を表示
+# http://qiita.com/ToruIwashita/items/fa114effda34214c9371
+autoload -Uz vcs_info
+# PROMPT変数内で変数参照する
+setopt prompt_subst
+
 # PROMPT設定
+
 if [ "$EMACS" = t ]; then
     # emacs_shellの場合は左プロンプトを簡略化
     PROMPT="[%2~]%# "
@@ -131,8 +138,8 @@ if [[ -d $HOME/.rbenv ]] then
     eval "$(rbenv init -)"
 fi
 
-# $HOME/local/bin をPATHに追加
-export PATH="$HOME/local/bin:$PATH"
+# $HOME/local/bin, $HOME/.local/bin をPATHに追加
+export PATH="$HOME/local/bin:$HOME/.local/bin:$PATH"
 
 # ssh-add alias
 alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
