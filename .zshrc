@@ -124,13 +124,11 @@ setopt prompt_subst
 
 if [ "$EMACS" = t ]; then
     # emacs_shellの場合は左プロンプトを簡略化
-    PROMPT="[%2~]%# "
+    PROMPT="[%2~]:%? %# "
 else
-    PROMPT="[%m-(%~)]%# "
+    PROMPT="[%B%F{yellow}%m%f%b-(%F{yellow}%~%f):%? | %*]
+ %# "
 fi
-
-# 時刻表示
-RPROMPT="[%*]"
 
 # rbenv 設定
 if [[ -d $HOME/.rbenv ]] then

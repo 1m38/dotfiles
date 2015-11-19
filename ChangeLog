@@ -1,3 +1,8 @@
+2015-11-20    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: prompt設定
+	RPROMPT廃止, PROMPTを改行, 時刻, 直前コマンドのステータス表示
+
 2015-11-19    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* sshconfig_k2l: basil, jungle, baracudaへ鍵設定
