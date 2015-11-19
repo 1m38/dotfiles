@@ -10,7 +10,13 @@ ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 # ln -sf ~/dotfiles/.zlogout ~/.zlogout
-ln -sf ~/dotfiles/sshconfig ~/.ssh/config
+# ln -sf ~/dotfiles/sshconfig ~/.ssh/config
+# 研究室内ではlocal鍵を使う
+if [ `hostname -d` = "lang-private.kuee.kyoto-u.ac.jp" ]; then
+    ln -sf ~/dotfiles/sshconfig_k2l ~/.ssh/config
+else
+    ln -sf ~/dotfiles/sshconfig ~/.ssh/config
+fi
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 

@@ -2,13 +2,13 @@
 ServerAliveInterval 60
 ServerAliveCountMax 10
 
-# Host *
-#      ForwardAgent yes
+Host *
+     ForwardAgent yes
 
 Host lotus
      Hostname lotus.kuee.kyoto-u.ac.jp
      User uno
-     IdentityFile ~/.ssh/k2l.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_rsa
 
 Host lotus/*
      User uno
