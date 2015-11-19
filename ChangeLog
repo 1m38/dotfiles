@@ -1,5 +1,7 @@
 2015-11-19    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
+	* sshconfig_k2l: basil, jungle, baracudaへ鍵設定
+
 	* init.sh: 研究室鯖ではsshconfig_k2lにリンクを張る
 
 	* sshconfig: 個人マシン用設定
