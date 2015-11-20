@@ -1,3 +1,7 @@
+2015-11-20    <masaya@FS-TP-arch>
+
+	* .zshrc (PROMPT): ステータスコード調整 (失敗時は色を変える)
+
 2015-11-20    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: prompt設定
