@@ -1,3 +1,7 @@
+2015-11-25    <masaya@FS-TPVM-arch>
+
+	* .zshrc (PROMPT): カレントディレクトリ表示調整
+
 2015-11-20    <masaya@FS-TP-arch>
 
 	* .tmux.conf: window分割時にカレントディレクトリに移動する
