@@ -259,6 +259,7 @@ export PARA_SYSTEM=$HOME/PARA
 alias emacs='emacsclient -c -t -a ""'
 alias e='emacsclient -c -t -a ""'
 alias killemacs='emacsclient -e "(kill-emacs)"'
+alias restartemacs='killemacs; e'
 
 # screen
 alias s='screen -xR'
