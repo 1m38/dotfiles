@@ -1,3 +1,7 @@
+2015-11-26    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* gxprc: (add) プロンプト表示を変更
+
 2015-11-26    <masaya@FS-TP-arch>
 
 	* .zshrc: プロンプトのhostnameの色をhostで変える
