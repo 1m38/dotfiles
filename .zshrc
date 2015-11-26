@@ -120,8 +120,8 @@ if [[ -d $HOME/.rbenv ]] then
     eval "$(rbenv init -)"
 fi
 
-# $HOME/local/bin, $HOME/.local/bin をPATHに追加
-export PATH="$HOME/local/bin:$HOME/.local/bin:$PATH"
+# $HOME/bin, $HOME/local/bin, $HOME/.local/bin をPATHに追加
+export PATH="$HOME/bin:$HOME/local/bin:$HOME/.local/bin:$PATH"
 
 # ssh-add alias
 alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
