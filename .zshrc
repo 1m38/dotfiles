@@ -114,22 +114,6 @@ setopt pushd_ignore_dups
 # 間違ったcommandを修正してくれる
 setopt correct
 
-# gitのbranch名を表示
-# http://qiita.com/ToruIwashita/items/fa114effda34214c9371
-autoload -Uz vcs_info
-# PROMPT変数内で変数参照する
-setopt prompt_subst
-
-# PROMPT設定
-
-if [ "$EMACS" = t ]; then
-    # emacs_shellの場合は左プロンプトを簡略化
-    PROMPT="[%2~]:%? %# "
-else
-    PROMPT="[ %B%F{yellow}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %* ]
- %# "
-fi
-
 # rbenv 設定
 if [[ -d $HOME/.rbenv ]] then
     export PATH="$HOME/.rbenv/bin:$PATH"
@@ -286,31 +270,51 @@ VTE_CJK_WIDTH=1
 export TERM=xterm-256color
 alias t='tmux attach || tmux new-session'
 alias tls='tmux ls'
-# 研究室鯖用alias
-if [[ `hostname -s` == basil* || `hostname -s` == jungle ]]; then
-    alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
-    alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
-fi
 # htopをscreenで起動する
 if [ "$TMUX" = "" ]; then
     unalias htop 2>/dev/null
 else
     alias htop='screen htop'
 fi
-# hostnameの色を変更
+
+# hostごとの設定
+# tmux, PROMPT: hostnameの色を変更
+# 研究室鯖: tmuxのalias
+case `hostname -s` in
+    masaya-*|FS-*)
+	tmux_hostname_color="fg=black,bg=colour249"
+	prompt_hostname_color="green"
+	;;
+    basil*|jungle)
+	tmux_hostname_color="fg=white,bg=colour22"
+	prompt_hostname_color="yellow"
+	alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
+	alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
+	;;
+    *)
+	tmux_hostname_color="fg=colour22,bg=colour250"
+	prompt_hostname_color="white"
+	;;
+esac
+
+# tmux: ステータスライン設定反映
 if [ "$TMUX" != "" ]; then
-    case `hostname -s` in
-	masaya-*|FS-*)
-	    tmux_hostname_color="fg=black,bg=colour249"
-	    ;;
-	basil*|jungle)
-	    tmux_hostname_color="fg=white,bg=colour22"
-	    ;;
-	*)
-	    tmux_hostname_color="fg=colour22,bg=colour250"
-	    ;;
-    esac
     tmux set-option -g status-left "#[fg=colour234,bg=colour250]#{?client_prefix,#[bg=colour118],}[#S]#[$tmux_hostname_color,bold] #h #[default] " > /dev/null
+fi
+
+# PROMPT設定
+# gitのbranch名を表示
+# http://qiita.com/ToruIwashita/items/fa114effda34214c9371
+autoload -Uz vcs_info
+# PROMPT変数内で変数参照する
+setopt prompt_subst
+
+if [ "$EMACS" = t ]; then
+    # emacs_shellの場合は左プロンプトを簡略化
+    PROMPT="[%2~]:%? %# "
+else
+    PROMPT="[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %* ]
+ %# "
 fi
 
 # torch(ローカルマシン用)

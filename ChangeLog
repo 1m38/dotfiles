@@ -1,3 +1,8 @@
+2015-11-26    <masaya@FS-TP-arch>
+
+	* .zshrc: プロンプトのhostnameの色をhostで変える
+	hostごとの設定の一部(alias tmux, tmux statusline/PROMPTのhostname color)をまとめた
+
 2015-11-25    <masaya@FS-TPVM-arch>
 
 	* .zshrc (PROMPT): カレントディレクトリ表示調整
