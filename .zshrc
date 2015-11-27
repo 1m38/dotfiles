@@ -284,16 +284,19 @@ fi
 case `hostname -s` in
     masaya-*|FS-*)
 	tmux_hostname_color="fg=black,bg=colour249"
-	prompt_hostname_color="green"
+	tmux_window_color="colour20"
+	prompt_hostname_color="blue"
 	;;
     basil*|jungle)
 	tmux_hostname_color="fg=white,bg=colour22"
-	prompt_hostname_color="yellow"
+	tmux_window_color="colour22"
+	prompt_hostname_color="green"
 	alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
 	alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
 	;;
     *)
 	tmux_hostname_color="fg=colour22,bg=colour250"
+	tmux_window_color="colour130"
 	prompt_hostname_color="white"
 	;;
 esac
@@ -301,6 +304,8 @@ esac
 # tmux: ステータスライン設定反映
 if [ "$TMUX" != "" ]; then
     tmux set-option -g status-left "#[fg=colour234,bg=colour250]#{?client_prefix,#[bg=colour118],}[#S]#[$tmux_hostname_color,bold] #h #[default] " > /dev/null
+    tmux set-option -g window-status-current-format "#{?pane_synchronized,#[fg=colour0]#[bg=colour11]#[bold],#[fg=colour255]#[bg=$tmux_window_color]#[bold]} #I: #W #[default]"
+    tmux set-option -g window-status-last-style "fg=$tmux_window_color"
 fi
 
 # PROMPT設定
