@@ -304,8 +304,8 @@ esac
 # tmux: ステータスライン設定反映
 if [ "$TMUX" != "" ]; then
     tmux set-option -g status-left "#[fg=colour234,bg=colour250]#{?client_prefix,#[bg=colour118],}[#S]#[$tmux_hostname_color,bold] #h #[default] " > /dev/null
-    tmux set-option -g window-status-current-format "#{?pane_synchronized,#[fg=colour0]#[bg=colour11]#[bold],#[fg=colour255]#[bg=$tmux_window_color]#[bold]} #I: #W #[default]"
-    tmux set-option -g window-status-last-style "fg=$tmux_window_color"
+    tmux set-option -g window-status-current-format "#{?pane_synchronized,#[fg=colour0]#[bg=colour11]#[bold],#[fg=colour255]#[bg=$tmux_window_color]#[bold]} #I: #W #[default]" > /dev/null
+    tmux set-option -g window-status-last-style "fg=$tmux_window_color" > /dev/null
 fi
 
 # PROMPT設定
