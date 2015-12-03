@@ -39,3 +39,5 @@
 ;;; comment-dwim
 (global-set-key (kbd "C-\\") 'comment-dwim)
 
+;;; open-junk-file
+(global-set-key (kbd "C-x j") 'open-junk-file)
