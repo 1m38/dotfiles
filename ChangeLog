@@ -1,3 +1,7 @@
+2015-12-08    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/56_python.el: py-autopep8追加
+
 2015-12-03    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/80_open_junk_file.el: 追加
