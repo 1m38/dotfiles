@@ -1,3 +1,7 @@
+2015-12-09    <masaya@FS-TP-arch>
+
+	* init.sh: powerline設定削除
+
 2015-12-08    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/56_python.el: py-autopep8追加
