@@ -1,3 +1,20 @@
+;;; el-get
+;; 指定されたディレクトリを.emacs.dとして利用
+;; $ emacs -q -l ~/path/to/somewhere/init.el
+;; ref: http://d.hatena.ne.jp/tarao/20150221/1424518030#tips-isolated-setup
+(when load-file-name
+  (setq user-emacs-directory (file-name-directory load-file-name)))
+
+(add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+
+;;; package, init-loader
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -6,7 +23,7 @@
     (package-refresh-contents)
     (package-install 'init-loader))
   (require 'init-loader)
-  (init-loader-load "~/.emacs.d/inits")
+  (init-loader-load (concat user-emacs-directory "inits"))
   )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
