@@ -1,3 +1,9 @@
+2015-12-19    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/21_auto-insert.el: python用テンプレート設定
+
+	* emacs_inits/00_package.el, 56_python.el: Elpy追加
+
 2015-12-17    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_init.el: el-get導入

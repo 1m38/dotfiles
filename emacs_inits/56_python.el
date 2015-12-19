@@ -3,6 +3,10 @@
    '((encoding . utf-8)
      )))
 
+;;; elpy
+(elpy-enable)
+(elpy-use-ipython)
+(elpy-clean-modeline)
 ;; autopep8
 ;; http://qiita.com/fujimisakari/items/74e32eddb78dff4be585
 ;; source: github:fujimisakari/py-autopep8.el

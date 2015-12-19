@@ -27,6 +27,7 @@
     nav
     yatex
     open-junk-file
+    elpy
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
