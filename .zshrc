@@ -140,6 +140,11 @@ case `hostname -s` in
 	ulimit -m 128000000
 	ulimit -v 128000000
 	;;
+    basil2*|basil3*|basil4*)
+	# basil200/300/400series: 32GB
+	ulimit -m 32000000
+	ulimit -v 32000000
+	;;
     basil*)
 	# 10GB
 	ulimit -m 10000000
