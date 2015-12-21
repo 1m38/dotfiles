@@ -1,3 +1,7 @@
+2015-12-21    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/56_python.el: elpy-clean-modeline削除
+
 2015-12-19    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/21_auto-insert.el: python用テンプレート設定
