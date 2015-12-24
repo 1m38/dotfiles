@@ -323,7 +323,7 @@ if [ "$EMACS" = t ]; then
     # emacs_shellの場合は左プロンプトを簡略化
     PROMPT="[%2~]:%? %# "
 else
-    PROMPT="[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %* ]
+    PROMPT="[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
  %# "
 fi
 
