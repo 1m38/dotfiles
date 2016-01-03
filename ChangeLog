@@ -1,3 +1,7 @@
+2016-01-04    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc (rep_mail): デフォルトでniceを設定しない
+
 2015-12-24    <uno@basil141.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc (PROMPT): 日付追加

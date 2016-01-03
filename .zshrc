@@ -183,7 +183,7 @@ function rep_mail (){
     trap "ssh lotus \"echo -e \\\" $text 強制終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" INT
     trap "ssh lotus \"echo -e \\\" $text 異常終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" ERR
     trap "ssh lotus \"echo -e \\\" $text 正常終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
-    nice -n 19 $@
+    $@
 }
 
 # cd時にlsする
