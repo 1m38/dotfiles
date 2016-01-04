@@ -312,6 +312,19 @@ if [ "$TMUX" != "" ]; then
     tmux set-option -g window-status-last-style "fg=$tmux_window_color" > /dev/null
 fi
 
+# tmux: ssh時にwindow名を接続先host名にする
+# http://qiita.com/shrkw/items/167be53796d4507c736b
+function ssh_tmux() {
+    local window_name=$(tmux display -p '#{window_name}')
+    tmux rename-window -- "$@[-1]" # zsh specified
+    # tmux rename-window -- "${!#}" # for bash
+    command ssh $@
+    tmux rename-window $window_name
+}
+if [[ -n $(printenv TMUX) ]]; then
+    alias ssh=ssh_tmux
+fi
+
 # PROMPT設定
 # gitのbranch名を表示
 # http://qiita.com/ToruIwashita/items/fa114effda34214c9371

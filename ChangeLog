@@ -1,5 +1,7 @@
 2016-01-04    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
+	* .zshrc (ssh_tmux): tmux/ssh時にwindow名を接続先host名にする
+
 	* init.sh: ~/.vimbackup を作成
 
 	* .vimrc: backupディレクトリの場所を変更(~/.vimbackup)
