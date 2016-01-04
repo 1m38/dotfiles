@@ -19,6 +19,9 @@ else
     ln -sf ~/dotfiles/sshconfig ~/.ssh/config
 fi
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+if [ ! -d ~/.vimbackup ]; then
+    mkdir -p ~/.vimbackup
+fi
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf

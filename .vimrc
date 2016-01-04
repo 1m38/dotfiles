@@ -1,7 +1,7 @@
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "バックアップファイルを作るディレクトリ
-set backupdir=$HOME/vimbackup
+set backupdir=$HOME/.vimbackup
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer 
 "クリップボードをWindowsと連携
@@ -9,7 +9,7 @@ set clipboard=unnamed
 "Vi互換をオフ
 set nocompatible
 "スワップファイル用のディレクトリ
-set directory=$HOME/vimbackup
+set directory=$HOME/.vimbackup
 "タブの代わりに空白文字を挿入する
 set expandtab
 "変更中のファイルでも、保存しないで他のファイルを表示
