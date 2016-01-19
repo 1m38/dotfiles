@@ -1,3 +1,7 @@
+2016-01-19    <masaya@FS-TP-arch>
+
+	* .latexmkrc, emacs_inits/65_yatex.el, init.sh: latexmk導入
+
 2016-01-04    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc (ssh_tmux): tmux/ssh時にwindow名を接続先host名にする

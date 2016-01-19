@@ -29,3 +29,6 @@
 ;; 自動改行を抑制 これがないと長い文章のよくわからないところで改行される
 (add-hook ' yatex-mode-hook
 	    '(lambda () (auto-fill-mode -1)))
+
+;; latexmkを使う
+(setq tex-command "latexmk")
