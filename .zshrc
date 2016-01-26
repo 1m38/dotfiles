@@ -62,7 +62,7 @@ alias ls='ls -F --color=tty'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias h='history'
+# alias h='history'
 alias -g L='| lv'
 alias -g H='| head'
 alias -g T='| tail'
@@ -115,7 +115,7 @@ setopt pushd_ignore_dups
 setopt correct
 
 # rbenv 設定
-if [[ -d $HOME/.rbenv ]] then
+if [[ -d $HOME/.rbenv ]]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
@@ -158,10 +158,12 @@ case `hostname -s` in
 esac
 
 # 実験環境
-alias kyotoebmt_server="nice -n 19 ~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
-alias kyotoebmt_client='nice -n 19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
-alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
-if [[ -d $HOME/svm_rank ]] then
+if [[ -d $HOME/kyotoebmt ]]; then
+    alias kyotoebmt_server="nice -n 19 ~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
+    alias kyotoebmt_client='nice -n 19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
+    alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
+fi
+if [[ -d $HOME/svm_rank ]]; then
    alias svm-rank-learn="~/svm_rank/svm_rank_learn"
    alias svm-rank-classify="~/svm_rank/svm_rank_classify"
 fi
@@ -169,6 +171,10 @@ fi
 # sort,uniq にはLANG=Cをつける
 alias sort='LANG=C sort'
 alias uniq='LANG=C uniq'
+
+# history
+alias h='history -i'
+alias histgrep='history -i 1 | grep --color=auto'
 
 # コマンドの実行が終わったらメール
 function rep_mail (){
@@ -257,16 +263,13 @@ re-prompt() {
 }
 zle -N accept-line re-prompt
 
-# PARA
-export PARA_SYSTEM=$HOME/PARA
-
 # emacsclient
 alias e='emacsclient -c -t -a ""'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 alias restartemacs='killemacs; e'
 
 # screen
-alias s='screen -xR'
+# alias s='screen -xR'
 
 # Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
 VTE_CJK_WIDTH=1
@@ -286,7 +289,7 @@ fi
 # tmux, PROMPT: hostnameの色を変更
 # 研究室鯖: tmuxのalias
 case `hostname -s` in
-    masaya-*|FS-*)
+    masaya-*|FS-*|fs-*)
 	tmux_hostname_color="fg=black,bg=colour249"
 	tmux_window_color="colour20"
 	prompt_hostname_color="blue"

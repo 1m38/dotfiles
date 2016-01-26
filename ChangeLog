@@ -1,5 +1,9 @@
 2016-01-26    <uno@basil130.lang-private.kuee.kyoto-u.ac.jp>
 
+	* .zshrc: history周り修正
+	h: history -i (実行時刻表示)
+	histgrep: history全体からgrep
+
 	* .zshrc (ssh_tmux): 一旦差し戻し
 
 2016-01-04    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
