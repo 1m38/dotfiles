@@ -314,21 +314,21 @@ fi
 
 # tmux: ssh時にwindow名を接続先host名にする
 # http://qiita.com/shrkw/items/167be53796d4507c736b
-function ssh_tmux() {
-    local window_name=$(tmux display -p '#{window_name}')
-    tmux rename-window -- "$@[-1]" # zsh specified
-    # tmux rename-window -- "${!#}" # for bash
-    command ssh $@
-    tmux rename-window $window_name
-}
-if [[ -n $(printenv TMUX) ]]; then
-    alias ssh=ssh_tmux
-fi
+# function ssh_tmux() {
+#     local window_name=$(tmux display -p '#{window_name}')
+#     tmux rename-window -- "$@[-1]" # zsh specified
+#     # tmux rename-window -- "${!#}" # for bash
+#     command ssh $@
+#     tmux rename-window $window_name
+# }
+# if [[ -n $(printenv TMUX) ]]; then
+#     alias ssh=ssh_tmux
+# fi
 
 # PROMPT設定
 # gitのbranch名を表示
 # http://qiita.com/ToruIwashita/items/fa114effda34214c9371
-autoload -Uz vcs_info
+# autoload -Uz vcs_info
 # PROMPT変数内で変数参照する
 setopt prompt_subst
 
@@ -341,9 +341,9 @@ else
 fi
 
 # torch(ローカルマシン用)
-if [ -d /home/masaya/torch ]; then
-    . /home/masaya/torch/install/bin/torch-activate
-fi
+# if [ -d /home/masaya/torch ]; then
+#     . /home/masaya/torch/install/bin/torch-activate
+# fi
 
 # SSH_AUTH_SOCK固定
 # Reference: http://unix.stackexchange.com/a/76256/91598

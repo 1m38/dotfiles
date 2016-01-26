@@ -1,3 +1,7 @@
+2016-01-26    <uno@basil130.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc (ssh_tmux): 一旦差し戻し
+
 2016-01-04    <uno@basil131.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc (ssh_tmux): tmux/ssh時にwindow名を接続先host名にする
