@@ -25,3 +25,4 @@ fi
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
+ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
