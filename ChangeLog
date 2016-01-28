@@ -1,3 +1,7 @@
+2016-01-28    <masaya@FS-TP-arch>
+
+	* emacs_inits/00_package.el (installing-package-list): add resize-window
+
 2016-01-26    <uno@basil130.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: history周り修正
