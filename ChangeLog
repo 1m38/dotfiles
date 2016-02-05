@@ -1,3 +1,11 @@
+2016-02-05    <masaya@FS-TP-arch>
+
+	* emacs_inits/00_package.el: add ag, wgrep-ag
+
+	* emacs_inits/28_ag.el: grep all files in dir
+
+	* emacs_inits/99_global-keys.el: set key for ag
+
 2016-01-28    <masaya@FS-TP-arch>
 
 	* emacs_inits/00_package.el (installing-package-list): add resize-window

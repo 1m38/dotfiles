@@ -41,3 +41,6 @@
 
 ;;; open-junk-file
 (global-set-key (kbd "C-x j") 'open-junk-file)
+
+;;; ag
+(global-set-key (kbd "C-x g") 'ag)
