@@ -1,5 +1,7 @@
 2016-02-05    <masaya@FS-TP-arch>
 
+	* emacs_inits/99_global-keys.el: set key for ag
+
 	* emacs_inits/28_ack.el: agが研究室サーバーに入らなかったのでackに移行
 
 	* emacs_inits/00_package.el: add ag, wgrep-ag
