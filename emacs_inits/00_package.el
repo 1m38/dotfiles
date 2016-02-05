@@ -29,8 +29,8 @@
     open-junk-file
     elpy
     resize-window
-    ag
-    wgrep-ag
+    ack
+    wgrep
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
