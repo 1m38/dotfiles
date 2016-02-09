@@ -1,3 +1,7 @@
+2016-02-09    <masaya@FS-TP-arch>
+
+	* emacs_inits/99_global-keys.el: suspend無効化, key-comboスイッチをC-z C-kへ
+
 2016-02-05    <masaya@FS-TP-arch>
 
 	* emacs_inits/99_global-keys.el: set key for ag
