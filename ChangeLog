@@ -1,3 +1,9 @@
+2016-02-11    <masaya@FS-TP-arch>
+
+	* emacs_inits/00_package.el (installing-package-list): undo-tree導入
+
+	* emacs_inits/25_undo-tree.el: 導入
+
 2016-02-09    <masaya@FS-TP-arch>
 
 	* emacs_inits/99_global-keys.el: suspend無効化, key-comboスイッチをC-z C-kへ
