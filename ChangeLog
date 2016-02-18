@@ -1,3 +1,8 @@
+2016-02-18    <masaya@FS-TP-arch>
+
+	* emacs_inits/99_global-keys.el: magitキーバインド変更
+	C-c SPC m -> C-x m
+
 2016-02-11    <masaya@FS-TP-arch>
 
 	* emacs_inits/00_package.el (installing-package-list): undo-tree導入

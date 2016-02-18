@@ -13,7 +13,8 @@
 (global-set-key (kbd "C-x SPC") 'cua-rectangle-mark-mode)
 
 ;; magit
-(global-set-key "\C-c m" 'magit-status)  ; C-c SPC m でmagit-status起動
+(global-unset-key (kbd "C-x m"))
+(global-set-key (kbd "C-x m") 'magit-status)  ; C-x m でmagit-status起動
 
 ;; helm
 (define-key global-map (kbd "M-x")     'helm-M-x)
