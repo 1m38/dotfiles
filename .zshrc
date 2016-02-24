@@ -160,14 +160,24 @@ case `hostname -s` in
 esac
 
 # 実験環境
-if [[ -d $HOME/kyotoebmt ]]; then
-    alias kyotoebmt_server="nice -n 19 ~/kyotoebmt/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
-    alias kyotoebmt_client='nice -n 19 ~/kyotoebmt/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | ~/kyotoebmt/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
-    alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query ~/mt_pre/ems_test/lm/ja"
+KyotoEBMT_DIR=$HOME/tools/kyotoebmt
+if [[ -d $KyotoEBMT_DIR ]]; then
+    alias kyotoebmt_server="nice -n 19 $KyotoEBMT_DIR/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
+    alias kyotoebmt_client='nice -n 19 $KyotoEBMT_DIR/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | $KyotoEBMT_DIR/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
+    alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query /windroot/uno/kyotoebmt_ems/lm/ja"
 fi
 if [[ -d $HOME/svm_rank ]]; then
    alias svm-rank-learn="~/svm_rank/svm_rank_learn"
    alias svm-rank-classify="~/svm_rank/svm_rank_classify"
+fi
+STP_DIR=$HOME/tools/stanford-parser-full-2015-04-20
+if [[ -d $STP_DIR ]]; then
+    alias stanford-parser="/share/usr-x86_64/bin/java -mx4000m -cp $STP_DIR/\* edu.stanford.nlp.parser.lexparser.LexicalizedParser -tokenized -maxLength 200 -outputFormat penn,typedDependencies -escaper edu.stanford.nlp.process.PTBEscapingProcessor -sentences newline edu/stanford/nlp/models/lexparser/englishRNN.ser.gz -"
+fi
+STCore_DIR=$HOME/tools/stanford-corenlp-full-2015-12-09
+if [[ -d $STCore_DIR ]]; then
+    alias stanford-corenlp="/share/usr-x86_64/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -ssplit.eolonly true"
+    alias stanford-corenlp-zh="/share/usr-x86_64/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
 fi
 
 # sort,uniq にはLANG=Cをつける
