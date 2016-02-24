@@ -1,3 +1,8 @@
+2016-02-24  U-FS-TP-WIN10\cemiu  <cemiu@FS-TP-win10>
+
+	* .zshrc: win環境の場合、ulimitを実行しない
+	cygwinなど/`hostname`に'win'が入っている場合
+
 2016-02-18    <masaya@FS-TP-arch>
 
 	* emacs_inits/99_global-keys.el: magitキーバインド変更

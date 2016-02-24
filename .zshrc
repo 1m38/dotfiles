@@ -133,7 +133,9 @@ alias eval-ssh-agent='eval `ssh-agent`'
 case `hostname -s` in
     masaya-*|FS-*)
 	# 3GB
-	ulimit -m 3000000
+	if [[ `hostname -s | grep -v 'win' ` ]]; then
+	    ulimit -m 3000000
+	fi
 	;;
     basil300|basil301|basil302|jungle)
 	# 128GB
