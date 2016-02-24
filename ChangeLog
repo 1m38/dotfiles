@@ -1,3 +1,7 @@
+2016-02-24    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc (ulimit): 研究室サーバーで動かない問題修正
+
 2016-02-24  U-FS-TP-WIN10\cemiu  <cemiu@FS-TP-win10>
 
 	* .zshrc: win環境の場合、ulimitを実行しない
