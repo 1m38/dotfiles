@@ -30,7 +30,7 @@
     elpy
     resize-window
     ack
-    wgrep
+    wgrep-ack
     undo-tree
     ))
 (let ((not-installed (loop for x in installing-package-list
