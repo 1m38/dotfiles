@@ -1,5 +1,7 @@
 2016-03-25    <masaya@FS-TP-arch>
 
+	* emacs_inits/56_python.el: autopep8を削除(elpyを使用)
+
 	* emacs_inits/61_key-combo.el (key-combo-lisp-default):
 	lisp: "."の扱いを変更
 
