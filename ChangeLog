@@ -1,3 +1,9 @@
+2016-03-25    <masaya@FS-TP-arch>
+
+	* emacs_inits/emacs_inits/29_shackle.el: create
+
+	* emacs_inits/00_package.el (installing-package-list): add shackle
+
 2016-03-19    <masaya@FS-VB-arch>
 
 	* emacs_inits/00_package.el: wgrep -> wgrep-ack
