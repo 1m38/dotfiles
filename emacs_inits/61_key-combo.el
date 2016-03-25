@@ -11,7 +11,7 @@
 	scheme-mode-hook))
 
 (setq key-combo-lisp-default
-      '(("."  . " . ")
+      '(("."  . ("." " . " "..."))
 	(","  . (key-combo-execute-orignal))
 	(",@" . " ,@")
 	;(";"  . (";;;; " ";"))
