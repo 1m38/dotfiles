@@ -12,7 +12,12 @@ i686)
     ;;
 esac
 
-PATH=$_MYPATH:$_CPUPATH:$_SYSPATH
+PATH=$_CPUPATH:$_SYSPATH
+# /orange/brew (kuro-lab_cluster)
+if [[ -d /orange/brew ]]; then
+    source /orange/brew/brew.zsh
+fi
+PATH=$_MYPATH:$PATH
 unset _MYPATH _CPUPATH _SYSPATH
 
 #PROMPT="[%m-(%~)] % "
@@ -310,8 +315,8 @@ case `hostname -s` in
 	tmux_hostname_color="fg=white,bg=colour22"
 	tmux_window_color="colour22"
 	prompt_hostname_color="green"
-	alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
-	alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
+	# alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
+	# alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
 	;;
     *)
 	tmux_hostname_color="fg=colour22,bg=colour250"

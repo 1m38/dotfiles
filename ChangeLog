@@ -1,3 +1,7 @@
+2016-03-29    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: (研究室鯖)/orange/brew に対応, tmux修正
+
 2016-03-25    <masaya@FS-TP-arch>
 
 	* emacs_inits/56_python.el: autopep8を削除(elpyを使用)
