@@ -1,5 +1,8 @@
 2016-03-31    <masaya@FS-VB-arch>
 
+	* emacs_inits/61_key-combo.el: C言語用設定
+	"<" 2回押しで "<>"を入力
+
 	* .zshrc: コマンドラインスタック設定
 
 2016-03-30    <masaya@FS-TP-arch>
