@@ -1,3 +1,8 @@
+2016-03-30    <masaya@FS-TP-arch>
+
+	* .zshrc: 補完設定
+	補完menu表示、interactiveに絞り込み、大文字小文字を区別しない
+
 2016-03-29    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: (研究室鯖)/orange/brew に対応, tmux修正

@@ -79,10 +79,12 @@ alias j='juman -e2 -B'
 alias jk='juman -e2 -B | knp'
 
 # completion
-autoload -U compinit
-compinit
-
+autoload -U compinit && compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select interactive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+setopt menu_complete
+
 
 # bindkey
 bindkey -e
