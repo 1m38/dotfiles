@@ -1,3 +1,7 @@
+2016-03-31    <masaya@FS-VB-arch>
+
+	* .zshrc: コマンドラインスタック設定
+
 2016-03-30    <masaya@FS-TP-arch>
 
 	* .zshrc: 補完設定
