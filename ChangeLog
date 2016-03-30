@@ -1,5 +1,7 @@
 2016-03-31    <masaya@FS-VB-arch>
 
+	* emacs_inits/68_c.el: セミコロンで自動改行
+
 	* emacs_inits/61_key-combo.el: C言語用設定
 	"<" 2回押しで "<>"を入力
 
