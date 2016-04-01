@@ -360,7 +360,7 @@ else
     zstyle ':vcs_info:git:*' check-for-changes true
     zstyle ':vcs_info:git:*' stagedstr " %F{green}!%f"
     zstyle ':vcs_info:git:*' unstagedstr " %F{red}+%f"
-    zstyle ':vcs_info:*' formats "| %F{yellow}%b%f %c%u"
+    zstyle ':vcs_info:*' formats "| %F{yellow}%b%f%c%u "
     zstyle ':vcs_info:*' actionformats '%b | %a'
     precmd () { vcs_info }
     PROMPT='[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %D %* ${vcs_info_msg_0_}]
