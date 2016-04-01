@@ -1,3 +1,7 @@
+2016-04-01    <masaya@FS-TP-arch>
+
+	* .zshrc: プロンプトにgitステータスを表示
+
 2016-04-01    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .zshrc: (研究室鯖)shareの判定を微修正

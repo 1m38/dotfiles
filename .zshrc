@@ -348,18 +348,23 @@ fi
 # fi
 
 # PROMPT設定
-# gitのbranch名を表示
-# http://qiita.com/ToruIwashita/items/fa114effda34214c9371
-# autoload -Uz vcs_info
-# PROMPT変数内で変数参照する
-setopt prompt_subst
 
 if [ "$EMACS" = t ]; then
     # emacs_shellの場合は左プロンプトを簡略化
     PROMPT="[%2~]:%? %# "
 else
-    PROMPT="[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
- %# "
+    # gitのbranch名を表示
+    # http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
+    autoload -Uz vcs_info
+    setopt prompt_subst
+    zstyle ':vcs_info:git:*' check-for-changes true
+    zstyle ':vcs_info:git:*' stagedstr "%F{green}!%f"
+    zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
+    zstyle ':vcs_info:*' formats "| %F{yellow}%b%f %c%u "
+    zstyle ':vcs_info:*' actionformats '%b | %a'
+    precmd () { vcs_info }
+    PROMPT='[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %D %* ${vcs_info_msg_0_}]
+ %# '
 fi
 
 # torch(ローカルマシン用)
