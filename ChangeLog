@@ -1,3 +1,7 @@
+2016-04-01    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: (研究室鯖)shareの判定を微修正
+
 2016-03-31    <masaya@FS-VB-arch>
 
 	* emacs_inits/68_c.el: セミコロンで自動改行

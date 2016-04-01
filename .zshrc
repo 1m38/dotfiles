@@ -14,8 +14,8 @@ esac
 
 PATH=$_CPUPATH:$_SYSPATH
 # /orange/brew (kuro-lab_cluster)
-if [[ -d /orange/brew ]]; then
-    source /orange/brew/brew.zsh
+if [[ -f /mnt/orange/brew/brew.zsh ]]; then
+    source /mnt/orange/brew/brew.zsh
 fi
 PATH=$_MYPATH:$PATH
 unset _MYPATH _CPUPATH _SYSPATH
