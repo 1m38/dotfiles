@@ -14,8 +14,8 @@ esac
 
 PATH=$_CPUPATH:$_SYSPATH
 # /orange/brew (kuro-lab_cluster)
-if [[ -d /orange/brew ]]; then
-    source /orange/brew/brew.zsh
+if [[ -f /mnt/orange/brew/brew.zsh ]]; then
+    source /mnt/orange/brew/brew.zsh
 fi
 PATH=$_MYPATH:$PATH
 unset _MYPATH _CPUPATH _SYSPATH
@@ -85,10 +85,12 @@ alias j='juman -e2 -B'
 alias jk='juman -e2 -B | knp'
 
 # completion
-autoload -U compinit
-compinit
-
+autoload -U compinit && compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select interactive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+setopt menu_complete
+
 
 # bindkey
 bindkey -e
@@ -352,18 +354,23 @@ fi
 # fi
 
 # PROMPT設定
-# gitのbranch名を表示
-# http://qiita.com/ToruIwashita/items/fa114effda34214c9371
-# autoload -Uz vcs_info
-# PROMPT変数内で変数参照する
-setopt prompt_subst
 
 if [ "$EMACS" = t ]; then
     # emacs_shellの場合は左プロンプトを簡略化
     PROMPT="[%2~]:%? %# "
 else
-    PROMPT="[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f | %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
- %# "
+    # gitのbranch名を表示
+    # http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
+    autoload -Uz vcs_info
+    setopt prompt_subst
+    zstyle ':vcs_info:git:*' check-for-changes true
+    zstyle ':vcs_info:git:*' stagedstr " %B%F{yellow}!%b%f"
+    zstyle ':vcs_info:git:*' unstagedstr " %B%F{red}+%b%f"
+    zstyle ':vcs_info:*' formats "%F{green}%b%f%c%u "
+    zstyle ':vcs_info:*' actionformats '%b | %a'
+    precmd () { vcs_info }
+    PROMPT='[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f ${vcs_info_msg_0_}| %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
+ %# '
 fi
 
 # torch(ローカルマシン用)
@@ -384,3 +391,13 @@ then
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
 fi
+
+# コマンドラインスタック
+# http://d.hatena.ne.jp/kei_q/20110308/1299594629
+show_buffer_stack() {
+      POSTDISPLAY="
+stack: $LBUFFER"
+      zle push-line
+}
+zle -N show_buffer_stack
+bindkey "^[q" show_buffer_stack

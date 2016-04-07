@@ -137,7 +137,7 @@
 
 2015-11-27    <masaya@FS-TP-arch>
 
-	* .zshrc: hostごとにPROMPTの色, tmuxのwindow色変更(local:blue, 研究室鯖:green)
+	* .zshrc: hostごとにPROMPTの色, tmuxのwindow色変更(local:blue, 研究室鯖:gre<en)
 
 2015-11-26    <masaya@FS-VM-arch>
 
