@@ -20,6 +20,12 @@ fi
 PATH=$_MYPATH:$PATH
 unset _MYPATH _CPUPATH _SYSPATH
 
+# mac: TeX Live
+_TeXPATH=/usr/local/texlive/2015/bin/x86_64-darwin
+if [[ -d  $_TeXPATH ]]; then
+    PATH=$PATH:$_TeXPATH
+fi
+
 #PROMPT="[%m-(%~)] % "
 HISTSIZE=100000
 SAVEHIST=100000
