@@ -1,0 +1,9 @@
+#!/bin/sh
+case ${OSTYPE} in
+    darwin*)
+	uptime | awk -F\  '{print $(NF - 2),$(NF - 1),$NF}'
+	;;
+    linux*)
+	cut -d' ' -f-3 /proc/loadavg
+	;;
+esac

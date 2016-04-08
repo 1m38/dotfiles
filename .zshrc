@@ -20,12 +20,6 @@ fi
 PATH=$_MYPATH:$PATH
 unset _MYPATH _CPUPATH _SYSPATH
 
-# mac: TeX Live
-_TeXPATH=/usr/local/texlive/2015/bin/x86_64-darwin
-if [[ -d  $_TeXPATH ]]; then
-    PATH=$PATH:$_TeXPATH
-fi
-
 #PROMPT="[%m-(%~)] % "
 HISTSIZE=100000
 SAVEHIST=100000
@@ -141,36 +135,6 @@ alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
 alias ssh-addb='ssh-add ~/.ssh/bitbucket.uno1038.id_rsa'
 alias ssh-addb2='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
 alias eval-ssh-agent='eval `ssh-agent`'
-
-# ulimit (hostごとに変更)
-case `hostname -s` in
-    masaya-*|FS-*)
-	# 3GB
-	if [ `hostname -s | grep -v 'win'` ]; then
-	    ulimit -m 3000000
-	fi
-	;;
-    basil300|basil301|basil302|jungle)
-	# 128GB
-	ulimit -m 128000000
-	ulimit -v 128000000
-	;;
-    basil2*|basil3*|basil4*)
-	# basil200/300/400series: 32GB
-	ulimit -m 32000000
-	ulimit -v 32000000
-	;;
-    basil*)
-	# 10GB
-	ulimit -m 10000000
-	ulimit -v 10000000
-	;;
-    *)
-	# 3GB
-	ulimit -m 3000000
-	ulimit -v 3000000
-	;;
-esac
 
 # 実験環境
 KyotoEBMT_DIR=$HOME/tools/kyotoebmt
@@ -310,9 +274,57 @@ else
     alias htop='screen htop'
 fi
 
-# hostごとの設定
+# loadaverage(OSごとの設定)
+# http://yonchu.hatenablog.com/entry/20120414/1334422075
+if [[ -d $HOME/dotfiles/bin ]]; then
+    PATH=$PATH:$HOME/dotfiles/bin
+fi
+
+# OS,hostごとの設定
+# ulimit
+# mac: TeX Live
 # tmux, PROMPT: hostnameの色を変更
 # 研究室鯖: tmuxのalias
+case ${OSTYPE} in
+    darwin*)			# mac
+	# TeX Live
+	_TeXPATH=/usr/local/texlive/2015/bin/x86_64-darwin
+	if [[ -d  $_TeXPATH ]]; then
+	    PATH=$PATH:$_TeXPATH
+	fi
+    ;;
+    linux*)
+	# ulimit (hostごとに変更)
+	case `hostname -s` in
+	    masaya-*|FS-*)
+		# 3GB
+		if [ `hostname -s | grep -v 'win'` ]; then
+		    ulimit -m 3000000
+		fi
+		;;
+	    basil300|basil301|basil302|jungle)
+		# 128GB
+		ulimit -m 128000000
+		ulimit -v 128000000
+		;;
+	    basil2*|basil3*|basil4*)
+		# basil200/300/400series: 32GB
+		ulimit -m 32000000
+		ulimit -v 32000000
+		;;
+	    basil*)
+		# 10GB
+		ulimit -m 10000000
+		ulimit -v 10000000
+		;;
+	    *)
+		# 3GB
+		ulimit -m 3000000
+		ulimit -v 3000000
+		;;
+	esac
+esac
+
 case `hostname -s` in
     masaya-*|FS-*|fs-*)
 	tmux_hostname_color="fg=black,bg=colour249"

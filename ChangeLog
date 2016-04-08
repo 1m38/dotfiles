@@ -1,6 +1,11 @@
 2016-04-08  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* .tmux.conf: loadavgの表示コマンド変更
+
+	* bin/loadavg: mac, linuxで動くように
+
 	* .zshrc: macでのTeX Live用のPATHを追加
+	loadavgがmacでも動くように
 
 2016-03-29    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
