@@ -292,6 +292,7 @@ case ${OSTYPE} in
 	if [[ -d  $_TeXPATH ]]; then
 	    PATH=$PATH:$_TeXPATH
 	fi
+	alias ls='ls -FG'
     ;;
     linux*)
 	# ulimit (hostごとに変更)

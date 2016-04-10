@@ -1,3 +1,7 @@
+2016-04-10  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .zshrc: macでlsが動くようalias修正
+
 2016-04-08  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .tmux.conf: loadavgの表示コマンド変更
