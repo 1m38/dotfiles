@@ -1,5 +1,9 @@
 2016-04-11  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* emacs_inits/61_key-combo.el: matlab-modeで効くように
+
+	* emacs_inits/70_matlab.el: unbind C-h
+
 	* .zshrc: pyenv設定
 
 2016-04-10  Masaya Uno  <masaya@FS-MC-pca308>
