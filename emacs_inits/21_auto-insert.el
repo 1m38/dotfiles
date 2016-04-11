@@ -37,4 +37,5 @@
 	       ;; ("\\.howm$" .  ["template.howm" my:template])
 	       ;; ("\\.org$"  .  ["template.org"  my:template])
 	       ;; ("\\.muse$" .  ["template.muse" my:template])
+	       ("\\.c$"    .  ["template.c"  my:template])
 	       ) auto-insert-alist))
