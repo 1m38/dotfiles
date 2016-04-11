@@ -1,5 +1,7 @@
 2016-04-11  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* .zshrc: mac: lsの色を変更
+
 	* emacs_inits/21_auto-insert.el: .c ファイル追加
 
 	* emacs_inits/61_key-combo.el (key-combo-common-default):

@@ -300,6 +300,7 @@ case ${OSTYPE} in
 	    PATH=$PATH:$_TeXPATH
 	fi
 	alias ls='ls -FG'
+	export LSCOLORS=gxfxcxdxbxegedabagacad
     ;;
     linux*)
 	# ulimit (hostごとに変更)
