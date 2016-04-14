@@ -1,3 +1,8 @@
+2016-04-14  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/02_basics.el (other-window-or-split):
+	縦画面対応(縦画面では上下に分割)
+
 2016-04-13  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/61_key-combo.el (key-combo-common-default):
