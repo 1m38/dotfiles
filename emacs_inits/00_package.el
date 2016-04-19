@@ -35,6 +35,7 @@
     shackle
     matlab-mode
     haskell-mode
+    recentf-ext
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))

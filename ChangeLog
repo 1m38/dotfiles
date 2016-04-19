@@ -1,5 +1,10 @@
 2016-04-19  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* emacs_inits/05_recentf.el: recentf-ext設定
+
+	* emacs_inits/00_package.el (installing-package-list):
+	recentf-ext
+
 	* emacs_inits/62_haskell.el (haskell-mode): add
 
 	* emacs_inits/00_package.el (installing-package-list):
