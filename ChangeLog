@@ -1,5 +1,8 @@
 2016-04-19  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* emacs_inits/00_package.el (installing-package-list):
+	haskell-mode
+
 	* emacs_inits/61_key-combo.el (key-combo-common-default):
 	c言語用設定(削除: &)
 	Matlabその他用設定(')
