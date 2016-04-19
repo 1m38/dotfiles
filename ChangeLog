@@ -1,5 +1,7 @@
 2016-04-19  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* emacs_inits/24_hlinum.el -> 24_linum.el: hilnum無効化，git-gutter追加
+
 	* emacs_inits/00_package.el (installing-package-list):
 	haskell-mode
 
