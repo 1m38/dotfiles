@@ -1,3 +1,11 @@
+2016-04-20  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/24_hlinum.el: 軽量化対策
+	linumの更新を遅延させる
+
+	* emacs_inits/02_basics.el: 軽量化対策
+	hl-line を遅延させる
+
 2016-04-19  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/05_recentf.el: recentf-ext設定

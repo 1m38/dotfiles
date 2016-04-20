@@ -51,7 +51,15 @@
 ;(global-auto-revert-mode 1)
 
 ;; 現在行をハイライト(背景色black)
-(global-hl-line-mode t)
+;; http://rubikitch.com/2015/05/14/global-hl-line-mode-timer/
+(require 'hl-line)
+(defun global-hl-line-timer-function ()
+  (global-hl-line-unhighlight-all)
+  (let ((global-hl-line-mode t))
+    (global-hl-line-highlight)))
+(setq global-hl-line-timer
+      (run-with-idle-timer 0.03 t 'global-hl-line-timer-function))
+;; (cancel-timer global-hl-line-timer)
 (custom-set-faces
  '(hl-line ((t (:background "black"))))
  )
