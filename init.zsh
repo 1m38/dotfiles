@@ -29,6 +29,11 @@ ln -sf ~/dotfiles/.vimrc ~/.vimrc
 if [[ ! -d ~/.vimbackup ]]; then
     mkdir -p ~/.vimbackup
 fi
+if [[ ! -d ~/.vim ]]; then
+    # install vim-plug
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf

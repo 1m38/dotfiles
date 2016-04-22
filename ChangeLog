@@ -1,5 +1,8 @@
 2016-04-22  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* init.zsh: vim-plug 自動インストール
+	windows/cygwinで動くか未検証
+
 	* .vimrc: caw導入
 	C-kでコメントアウト
 
