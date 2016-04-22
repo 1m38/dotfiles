@@ -1,3 +1,7 @@
+2016-04-22  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .vimrc: NeoBundle -> vim-plug
+
 2016-04-20  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/24_hlinum.el: 軽量化対策
