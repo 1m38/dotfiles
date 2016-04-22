@@ -5,6 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
+Plug 'tyru/caw.vim'
 call plug#end()
 
 
@@ -31,3 +32,6 @@ set listchars=tab:>\ ,extends:<
 " 行番号を表示する
 set number
 
+" caw: comment-out
+nmap <C-K> <Plug>(caw:i:toggle)
+vmap <C-K> <Plug>(caw:i:toggle)
