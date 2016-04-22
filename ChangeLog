@@ -2,6 +2,10 @@
 
 	* .vimrc: NeoBundle -> vim-plug
 
+2016-04-20    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: pyenv初期設定変更
+
 2016-04-20  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/24_hlinum.el: 軽量化対策
