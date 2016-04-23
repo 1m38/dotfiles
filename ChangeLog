@@ -1,3 +1,7 @@
+2016-04-23    <masaya@FS-VM-arch-l>
+
+	* .tmux.conf: delete utf8 option
+
 2016-04-22  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* init.zsh: vim-plug 自動インストール
