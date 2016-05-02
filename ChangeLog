@@ -1,3 +1,7 @@
+2016-05-02  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .zshrc: [Mac] ipythonの色をlinux準拠に
+
 2016-04-22  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* init.zsh: vim-plug 自動インストール

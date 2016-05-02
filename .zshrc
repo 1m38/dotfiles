@@ -424,3 +424,6 @@ stack: $LBUFFER"
 }
 zle -N show_buffer_stack
 bindkey "^[q" show_buffer_stack
+
+# ipython: 色をlinux準拠に
+alias ipython='ipython --colors=linux'
