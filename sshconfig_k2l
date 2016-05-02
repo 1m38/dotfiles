@@ -29,7 +29,7 @@ Host baracuda*
 
 Host github
      Hostname github.com
-     IdentityFile ~/.ssh/github_1u38.id_rsa
+     IdentityFile ~/.ssh/github_1m38.id_rsa
      User git
 
 Host bitbucket
