@@ -4,7 +4,7 @@
 (global-set-key "\C-h" 'delete-backward-char)
 
 ;; suspend frame (C-z) を無効
-(global-unset-key (kbd "C-z"))
+; (global-unset-key (kbd "C-z"))
 
 ;; Window 分割・移動を C-t で (02_basics.el)
 (global-set-key (kbd "C-t") 'other-window-or-split)
@@ -29,8 +29,8 @@
 (key-chord-define-global "xf" 'helm-browse-project)
 
 ;;; key-chord/key-combo
-;; C-z C-k で上記mode on/off切り替え
-(global-set-key (kbd "C-z C-k") 'my_key-assist-diable)
+;; C-x C-k で上記mode on/off切り替え
+(global-set-key (kbd "C-x C-k") 'my_key-assist-diable)
 
 
 ;;; auto-save-buffers-enhanced
