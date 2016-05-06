@@ -40,3 +40,9 @@ Host bitbucket.fs_lt34
      Hostname bitbucket.org
      IdentityFile ~/.ssh/bitbucket.fs_lt34.id_rsa
      User git
+
+Host arch
+     Hostname 127.0.0.1
+     Port 57691
+     User masaya
+     IdentityFile ~/.ssh/fs-vb-arch-ng.id_rsa
