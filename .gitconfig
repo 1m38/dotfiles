@@ -2,5 +2,7 @@
 	name = Masaya Uno
 	email = uno@nlp.ist.i.kyoto-u.ac.jp
 
-[ailas]
-	l = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso
+[alias]
+	# http://qiita.com/peccul/items/90dd469e2f72babbc106
+	l = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(yellow)%cn %Cred%d %Creset%s'
+	wdiff = diff --word-diff
