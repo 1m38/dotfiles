@@ -2,6 +2,11 @@
 
 	* sshconfig: ローカル仮想Linux(arch)を設定
 
+2016-05-06  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits: elscreenを試す
+	00_package.el, 34_elscreen.el, 99_global-keys.el
+
 2016-05-03  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* sshconfig: github:1u38 -> 1m38
