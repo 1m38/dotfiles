@@ -1,3 +1,7 @@
+2016-05-11  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/23_company.el: auto-completeからcompanyへ移行
+
 2016-05-11    <masaya@FS-VB-arch-ng>
 
 	* emacs_inits/61_key-combo.el (key-combo-common-default):

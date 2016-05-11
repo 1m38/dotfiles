@@ -5,7 +5,7 @@
   '(
     ;; ここに使っているパッケージを書く。
     auto-install
-    auto-complete
+    company
     magit
     key-chord
     ruby-end
