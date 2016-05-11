@@ -1,5 +1,9 @@
 2016-05-11  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* yasnippet-snippets: 公式snippet集
+
+	* emacs_inits/85_yasnippet.el: yasnippet導入
+
 	* emacs_inits/23_company.el: auto-completeからcompanyへ移行
 
 2016-05-11    <masaya@FS-VB-arch-ng>
