@@ -28,6 +28,8 @@
 (key-chord-define-global "df" 'helm-descbinds)
 (key-chord-define-global "xf" 'helm-browse-project)
 
+(key-chord-define-global "jk" 'view-mode)
+
 ;;; key-chord/key-combo
 ;; C-x C-k で上記mode on/off切り替え
 (global-set-key (kbd "C-x C-k") 'my_key-assist-diable)

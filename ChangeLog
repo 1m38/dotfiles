@@ -1,3 +1,9 @@
+2016-05-13  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/99_global-keys.el: key-chord: "jk"でview-mode
+
+	* emacs_inits/12_view_mode.el: 追加
+
 2016-05-11  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* yasnippet-snippets: 公式snippet集
