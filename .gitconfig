@@ -8,3 +8,4 @@
 	wdiff = diff --word-diff
 	b = branch -v
 	br = branch -avv
+	s = status
