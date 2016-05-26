@@ -1,3 +1,7 @@
+2016-05-27    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* emacs_inits/24_hlinum.el -> 24_linum.el: hilnum削除、nlinumへ移行
+
 2016-05-14  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .gitconfig: alias追加
