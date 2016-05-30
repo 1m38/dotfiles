@@ -1,3 +1,8 @@
+2016-05-30    <masaya@FS-VB-arch-ng>
+
+	* emacs_inits/32_highlight-indentation.el: 削除
+	軽量化対策
+
 2016-05-27    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
 	* emacs_inits/24_hlinum.el -> 24_linum.el: hilnum削除、nlinumへ移行
