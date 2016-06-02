@@ -46,3 +46,8 @@ Host arch
      Port 57691
      User masaya
      IdentityFile ~/.ssh/fs-vb-arch-ng.id_rsa
+
+Host tp-arch
+     Hostname 192.168.111.202
+     User masaya
+     IdentityFile ~/.ssh/fs-tp-arch.id_rsa

@@ -1,3 +1,7 @@
+2016-06-03    <masaya@FS-VB-arch-ng>
+
+	* sshconfig: tp-arch追加
+
 2016-05-30    <masaya@FS-VB-arch-ng>
 
 	* emacs_inits/32_highlight-indentation.el: 削除
