@@ -133,6 +133,7 @@ if [[ -d $HOME/.pyenv ]]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     if builtin command -v pyenv > /dev/null; then
 	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
     fi
 fi
 

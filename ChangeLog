@@ -1,3 +1,7 @@
+2016-06-03    <masaya@FS-TP-arch>
+
+	* .zshrc: pyenv-virtualenv追加
+
 2016-06-03    <masaya@FS-VB-arch-ng>
 
 	* sshconfig: tp-arch追加
