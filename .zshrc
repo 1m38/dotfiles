@@ -1,5 +1,18 @@
 # .zshrc
 
+# /orange/brew (kuro-lab_cluster)
+if [[ -f /mnt/orange/brew/brew.zsh ]]; then
+    source /mnt/orange/brew/brew.zsh
+    BREW_ZSH=/mnt/orange/brew/data/bin/zsh
+    if [[ -x $BREW_ZSH ]]; then
+	BREW_VER=$($BREW_ZSH --version | cut -f 2 -d ' ')
+	if [[ $BREW_VER != $ZSH_VERSION ]]; then
+	    exec $BREW_ZSH
+	    return
+	fi
+    fi
+fi
+
 _MYPATH=$HOME/usr/bin
 _SYSPATH=/usr/local/bin:/usr/X11R6/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
@@ -13,10 +26,6 @@ i686)
 esac
 
 PATH=$_CPUPATH:$_SYSPATH
-# /orange/brew (kuro-lab_cluster)
-if [[ -f /mnt/orange/brew/brew.zsh ]]; then
-    source /mnt/orange/brew/brew.zsh
-fi
 PATH=$_MYPATH:$PATH
 unset _MYPATH _CPUPATH _SYSPATH
 
