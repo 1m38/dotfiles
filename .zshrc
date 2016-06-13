@@ -312,6 +312,9 @@ case ${OSTYPE} in
 	fi
 	alias ls='ls -FG'
 	export LSCOLORS=gxfxcxdxbxegedabagacad
+	if ! [[ -z $TMUX ]]; then
+	    alias open='reattach-to-user-namespace open'
+	fi
     ;;
     linux*)
 	# ulimit (hostごとに変更)
