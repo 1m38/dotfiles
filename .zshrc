@@ -306,7 +306,7 @@ fi
 case ${OSTYPE} in
     darwin*)			# mac
 	# TeX Live
-	_TeXPATH=/usr/local/texlive/2015/bin/x86_64-darwin
+	_TeXPATH=/usr/local/texlive/2016/bin/x86_64-darwin
 	if [[ -d  $_TeXPATH ]]; then
 	    PATH=$PATH:$_TeXPATH
 	fi
