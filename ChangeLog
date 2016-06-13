@@ -1,3 +1,7 @@
+2016-06-14  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .latexmkrc: Macでのpreviewerをskimに変更
+
 2016-06-13  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .zshrc: MacのTeX Liveを2015 -> 2016へ更新
