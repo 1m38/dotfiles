@@ -34,6 +34,12 @@ if [[ ! -d ~/.vim ]]; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+# neovim
+if [[ ! -d ~/.config ]]; then
+    mkdir -p ~/.config
+fi
+ln -sf ~/.vim ~/.config/nvim
+ln -sf ~/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
