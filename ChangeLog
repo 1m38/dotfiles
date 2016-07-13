@@ -1,3 +1,9 @@
+2016-07-13    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .zshrc: 補完設定を修正
+	matcher-list の行が重かったので削除
+	menu-select を2回目のtabキーで有効にする
+
 2016-06-30  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* init.zsh: neovim用設定
