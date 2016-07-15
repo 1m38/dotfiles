@@ -90,7 +90,7 @@ alias jk='juman -e2 -B | knp'
 autoload -U compinit && compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select interactive
-
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # bindkey
 bindkey -e
