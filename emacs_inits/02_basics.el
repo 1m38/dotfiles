@@ -48,7 +48,7 @@
 ;; ファイル名補完で大文字小文字を区別しない
 (setq completion-ignore-case t)
 ;; emacs外でファイルが変更されたら再読込する
-;(global-auto-revert-mode 1)
+(global-auto-revert-mode 1)
 
 ;; 現在行をハイライト(背景色black)
 ;; http://rubikitch.com/2015/05/14/global-hl-line-mode-timer/

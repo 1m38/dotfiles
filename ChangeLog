@@ -1,5 +1,7 @@
 2016-07-16    <masaya@FS-VB-arch>
 
+	* emacs_inits/02_basics.el: global-auto-revert-modeを有効化
+
 	* .zshrc: 補完設定を修正
 	matcher-list の行を復活(重さの原因は特定できていない)
 
