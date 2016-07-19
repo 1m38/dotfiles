@@ -8,8 +8,8 @@
     company
     magit
     key-chord
-    ruby-end
-    rinari
+    ;; ruby-end
+    ;; rinari
     smartparens
     rhtml-mode
     emmet-mode
