@@ -1,3 +1,7 @@
+2016-07-19  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/56_python.el: elpy無効化、python-mode有効化
+
 2016-07-16    <masaya@FS-VB-arch>
 
 	* emacs_inits/02_basics.el: global-auto-revert-modeを有効化

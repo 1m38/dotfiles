@@ -27,7 +27,8 @@
     nav
     yatex
     open-junk-file
-    elpy
+    ;; elpy
+    python-mode
     resize-window
     ack
     wgrep-ack
