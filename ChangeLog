@@ -1,3 +1,8 @@
+2016-07-22  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/22_auto-save-buffers.el -> 22_real-auto-save.el
+	移行(Changed on disk警告が1回しか出ない問題修正)
+
 2016-07-19  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/27_smartparens.el: 有効化

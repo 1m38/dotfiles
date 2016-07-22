@@ -14,7 +14,8 @@
     rhtml-mode
     emmet-mode
     markdown-mode
-    auto-save-buffers-enhanced
+    ;; auto-save-buffers-enhanced
+    real-auto-save
     helm
     helm-ls-git
     helm-descbinds
