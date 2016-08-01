@@ -1,5 +1,9 @@
 2016-08-01  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* emacs_inits/61_key-combo.el: haskell-mode-hook追加
+
+	* emacs_inits/62_haskell.el: flymake無効化
+
 	* emacs_inits/56_python.el: python-mode削除
 
 2016-07-22  Masaya Uno  <masaya@FS-MC-pca308>

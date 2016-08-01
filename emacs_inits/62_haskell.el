@@ -12,4 +12,4 @@
 (add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
 
 ;; flymake
-(add-hook 'haskell-mode-hook (lambda () (flymake-mode)))
+;; (add-hook 'haskell-mode-hook (lambda () (flymake-mode)))

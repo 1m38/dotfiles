@@ -31,7 +31,8 @@
 	js-mode-hook
 	js2-mode-hook
 	change-log-mode-hook
-	matlab-mode-hook))
+	matlab-mode-hook
+	haskell-mode-hook))
 
 (setq key-combo-common-default
       '((","  . (", " ","))
