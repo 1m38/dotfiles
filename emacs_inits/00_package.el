@@ -37,6 +37,7 @@
     shackle
     matlab-mode
     haskell-mode
+    company-ghc
     recentf-ext
     elscreen
     yasnippet

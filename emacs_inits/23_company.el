@@ -50,3 +50,8 @@
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-active-map (kbd "M-m") 'company-complete-selection)
 (define-key company-active-map (kbd "C-s") 'company-filter-candidates)
+
+
+;; haskell: ghc-mod連携
+(add-to-list 'company-backends 'company-ghc)
+(custom-set-variables '(company-ghc-show info t))
