@@ -179,7 +179,8 @@ alias uniq='LANG=C uniq'
 
 # history
 alias h='history -i'
-alias histgrep='history -i 1 | grep --color=auto'
+alias history-all='history -i 1'
+alias histgrep='history-all | grep --color=auto'
 
 # コマンドの実行が終わったらメール
 function rep_mail (){
