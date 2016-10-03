@@ -438,3 +438,6 @@ bindkey "^[q" show_buffer_stack
 
 # ipython: 色をlinux準拠に
 alias ipython='ipython --colors=linux'
+
+# rでRコンソールを起動
+disable r

@@ -1,3 +1,7 @@
+2016-10-03  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .zshrc: disable r
+
 2016-09-07  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .zshrc: history周りのalias修正
