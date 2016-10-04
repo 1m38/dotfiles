@@ -1,5 +1,7 @@
 2016-10-04  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* .zshrc: less用設定
+
 	* emacs_inits/40_r.el: R言語
 
 	* emacs_inits/61_key-combo.el: R-modeで動作
