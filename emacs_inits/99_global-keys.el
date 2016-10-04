@@ -47,6 +47,7 @@
 
 ;;; open-junk-file
 (global-set-key (kbd "C-x j") 'open-junk-file)
+(global-set-key (kbd "C-x J") 'my-open-junk-dir)
 
 ;;; ack
 (global-set-key (kbd "C-x g") 'ack)

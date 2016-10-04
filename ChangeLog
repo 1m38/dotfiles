@@ -1,5 +1,7 @@
 2016-10-04  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* emacs_inits/80_open_junk_file.el: my-open-junk-dir
+
 	* .zshrc: less用設定
 
 	* emacs_inits/40_r.el: R言語
