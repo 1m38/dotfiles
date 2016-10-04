@@ -42,6 +42,7 @@
     elscreen
     yasnippet
     nlinum
+    ess
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))

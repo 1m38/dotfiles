@@ -1,3 +1,11 @@
+2016-10-04  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/40_r.el: R言語
+
+	* emacs_inits/61_key-combo.el: R-modeで動作
+
+	* emacs_inits/00_package.el (installing-package-list): ess追加
+
 2016-10-03  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .zshrc: disable r
