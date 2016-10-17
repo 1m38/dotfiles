@@ -457,3 +457,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
 if which lesspipe.sh > /dev/null; then
     export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
+
+# nodebrew
+if [[ -d $HOME/.nodebrew ]]; then
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
