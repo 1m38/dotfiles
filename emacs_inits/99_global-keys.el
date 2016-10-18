@@ -1,7 +1,7 @@
 ;;;研究室標準
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
 (global-set-key "\C-cg" 'goto-line)
-(global-set-key "\C-h" 'delete-backward-char)
+(define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
 
 ;; suspend frame (C-z) を無効
 ; (global-unset-key (kbd "C-z"))

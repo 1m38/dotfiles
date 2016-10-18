@@ -1,3 +1,7 @@
+2016-10-18    <masaya@FS-TP-arch>
+
+	* emacs_inits/99_global-keys.el: minibufferでもC-hでDeleteする
+
 2016-10-04  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/80_open_junk_file.el: my-open-junk-dir
