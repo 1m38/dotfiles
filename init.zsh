@@ -44,3 +44,15 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
+
+# dotfilesへのURL変更
+read Answer\?"dotfiles リポジトリのremote URLを変更しますか [Y/n] "
+case $yn in
+    [nN]*)
+	break;
+	;;
+    [yY]*|'')
+	cd `dirname $0`
+	git remote set-url origin github:1m38/dotfiles.git
+	;;
+esac

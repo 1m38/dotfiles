@@ -1,3 +1,7 @@
+2016-10-19    <masaya@FS-TP-arch>
+
+	* init.zsh: dotfilesリポジトリのremoteURL自動変更
+
 2016-10-18    <masaya@FS-TP-arch>
 
 	* emacs_inits/99_global-keys.el: minibufferでもC-hでDeleteする
