@@ -4,4 +4,6 @@
 (ad-disable-advice 'delete-backward-char 'before 'sp-delete-pair-advice)
 (ad-activate 'delete-backward-char)
 
-
+;; カッコ挿入時、カッコ内をハイライトしない
+(custom-set-faces
+ '(sp-pair-overlay-face ((t nil))))
