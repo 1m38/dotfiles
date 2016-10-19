@@ -1,3 +1,8 @@
+2016-10-19  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/22_rainbow-delimiters.el: 括弧に色を付ける
+	色の自動設定ができなかったので、custom-set-facesに色設定を列挙した
+
 2016-10-19    <masaya@FS-TP-arch>
 
 	* init.zsh: dotfilesリポジトリのremoteURL自動変更
