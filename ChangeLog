@@ -1,3 +1,7 @@
+2016-10-20    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
+
+	* .gitconfig: alias ll: git log全部入り(他branchの情報も表示する)
+
 2016-10-19  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/22_rainbow-delimiters.el: 色変更
