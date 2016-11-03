@@ -12,6 +12,7 @@ ln -sf ~/dotfiles/emacs_inits ~/.emacs.d/inits
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+mkdir -p ~/.ssh
 # hostごとの設定
 case $OSTYPE in
     linux*)

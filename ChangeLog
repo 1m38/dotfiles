@@ -2,6 +2,7 @@
 
 	* init.zsh: リポジトリURLの変更をコマンドライン引数で指定できるように
 	Dockerなどで自動設定するため
+	~/.ssh ディレクトリを作るようにした
 
 2016-10-20    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
