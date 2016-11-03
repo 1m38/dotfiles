@@ -1,3 +1,8 @@
+2016-11-04  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* init.zsh: リポジトリURLの変更をコマンドライン引数で指定できるように
+	Dockerなどで自動設定するため
+
 2016-10-20    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
 	* .gitconfig: alias ll: git log全部入り(他branchの情報も表示する)

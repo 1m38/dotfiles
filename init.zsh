@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+local -A opthash
+zparseopts -D -A opthash -- -change-repo -no-change-repo
+
 if [[ ! -d ~/.emacs.d ]]; then
     mkdir -p ~/.emacs.d
 fi
@@ -46,13 +49,18 @@ ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
 
 # dotfilesへのURL変更
-read Answer\?"dotfiles リポジトリのremote URLを変更しますか [Y/n] "
-case $yn in
-    [nN]*)
-	break;
-	;;
-    [yY]*|'')
-	cd `dirname $0`
-	git remote set-url origin github:1m38/dotfiles.git
-	;;
-esac
+function change-repo-url() {
+    cd `dirname $1`
+    git remote set-url origin github:1m38/dotfiles.git
+}
+
+if [[ -n "${opthash[(i)--change-repo]}" ]]; then
+    change-repo-url $0
+elif [[ ! -n "${opthash[(i)--no-change-repo]}" ]]; then
+    read Answer\?"dotfiles リポジトリのremote URLを変更しますか [Y/n] "
+    case $Answer in
+	[yY]*|'')
+	    change-repo-url $0
+	    ;;
+    esac
+fi
