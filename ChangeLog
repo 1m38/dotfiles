@@ -1,3 +1,7 @@
+2016-12-06  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .tmux.conf: mouse on
+
 2016-11-04  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* init.zsh: リポジトリURLの変更をコマンドライン引数で指定できるように
