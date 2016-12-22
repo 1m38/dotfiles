@@ -462,3 +462,29 @@ fi
 if [[ -d $HOME/.nodebrew ]]; then
     export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
+
+
+# zplug test
+if [[ ! -d $HOME/.zplug ]]; then
+    curl -sL zplug.sh/installer | zsh
+fi
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-history-substring-search"
+zplug "b4b4r07/enhancd"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
+
+if zplug check zsh-users/zsh-history-substring-search; then
+    bindkey -M emacs '^P' history-substring-search-up
+    bindkey -M emacs '^N' history-substring-search-down
+fi
