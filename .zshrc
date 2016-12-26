@@ -141,6 +141,9 @@ if [[ -d $HOME/.pyenv ]]; then
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
     fi
+elif [[ -e $HOME/.local/bin/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source $HOME/.local/bin/virtualenvwrapper.sh
 fi
 
 # $HOME/bin, $HOME/local/bin, $HOME/.local/bin をPATHに追加

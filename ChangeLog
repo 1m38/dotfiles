@@ -2,6 +2,10 @@
 
 	* .zshrc: install zplug
 
+2016-12-19    <uno@basil127>
+
+	* .zshrc: virtualenvwrapperを設定
+
 2016-12-06  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .tmux.conf: mouse on
