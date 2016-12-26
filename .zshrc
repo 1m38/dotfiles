@@ -168,12 +168,12 @@ if [[ -d $HOME/svm_rank ]]; then
 fi
 STP_DIR=$HOME/tools/stanford-parser-full-2015-04-20
 if [[ -d $STP_DIR ]]; then
-    alias stanford-parser="/share/usr-x86_64/bin/java -mx4000m -cp $STP_DIR/\* edu.stanford.nlp.parser.lexparser.LexicalizedParser -tokenized -maxLength 200 -outputFormat penn,typedDependencies -escaper edu.stanford.nlp.process.PTBEscapingProcessor -sentences newline edu/stanford/nlp/models/lexparser/englishRNN.ser.gz -"
+    alias stanford-parser="/mnt/orange/brew/data/bin/java -mx4000m -cp $STP_DIR/\* edu.stanford.nlp.parser.lexparser.LexicalizedParser -tokenized -maxLength 200 -outputFormat penn,typedDependencies -escaper edu.stanford.nlp.process.PTBEscapingProcessor -sentences newline edu/stanford/nlp/models/lexparser/englishRNN.ser.gz -"
 fi
 STCore_DIR=$HOME/tools/stanford-corenlp-full-2015-12-09
 if [[ -d $STCore_DIR ]]; then
-    alias stanford-corenlp="/share/usr-x86_64/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -ssplit.eolonly true"
-    alias stanford-corenlp-zh="/share/usr-x86_64/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
+    alias stanford-corenlp="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -ssplit.eolonly true"
+    alias stanford-corenlp-zh="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
 fi
 
 # sort,uniq にはLANG=Cをつける
