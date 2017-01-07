@@ -194,17 +194,17 @@ alias histgrep='history-all | grep --color=auto'
 
 # コマンドの実行が終わったらメール
 function rep_mail (){
-    subj="report mail:`hostname -s`"
+    subj="report mail:$HOSTNAME_S"
     mail_from="uno@nlp.ist.i.kyoto-u.ac.jp"
     mail_to="uno@nlp.ist.i.kyoto-u.ac.jp"
 
     cmd=$@
     start_time=`date "+%m/%d %H:%M:%S"`
-    text="$cmd \n 開始 $start_time \n"
+    text="${cmd}\n開始 ${start_time}\n"
 
-    trap "ssh lotus \"echo -e \\\" $text 強制終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" INT
-    trap "ssh lotus \"echo -e \\\" $text 異常終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" ERR
-    trap "ssh lotus \"echo -e \\\" $text 正常終了 \\\" | mail -s \\\"${subj}\\\" ${mail_to} -- -f ${mail_from}\" ;trap INT  EXIT ERR;" EXIT
+    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}強制終了\"  ;trap INT  EXIT ERR;" INT
+    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}異常終了\"  ;trap INT  EXIT ERR;" ERR
+    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}正常終了\"  ;trap INT  EXIT ERR;" EXIT
     $@
 }
 
