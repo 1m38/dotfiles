@@ -391,6 +391,12 @@ else
     echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
 fi
 
+# python virtualenv
+if [[ -e $HOME/.local/bin/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source $HOME/.local/bin/virtualenvwrapper.sh
+fi
+
 
 # 実験環境
 KyotoEBMT_DIR=$HOME/tools/kyotoebmt
