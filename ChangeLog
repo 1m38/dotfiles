@@ -6,6 +6,7 @@
 	zplugのインストールコマンドを表示するようにした
 	fzf, anyframe, enhancd
 	fzfは手動インストールする
+	(fshow): git logをfzfで表示
 
 2017-01-19  Masaya Uno  <masaya@FS-MC-pca308>
 
