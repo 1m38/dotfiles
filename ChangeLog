@@ -4,6 +4,7 @@
 	baracuda用設定追加
 	LS_COLORS
 	zplugのインストールコマンドを表示するようにした
+	fzf, anyframe, enhancd
 
 2017-01-19  Masaya Uno  <masaya@FS-MC-pca308>
 

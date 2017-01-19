@@ -19,8 +19,11 @@ source ~/.zplug/init.zsh
 
 if builtin command -v zplug > /dev/null; then
     zplug "zsh-users/zsh-history-substring-search"
-    zplug "b4b4r07/enhancd"
+    zplug "b4b4r07/enhancd", use:init.sh
     zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+    zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
+    zplug "mollifier/anyframe"
 
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
@@ -109,7 +112,9 @@ setopt pushd_ignore_dups
 
 setopt correct			# 間違ったcommandを修正
 
-
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
 
 
 # ===========
