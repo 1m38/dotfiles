@@ -382,6 +382,16 @@ if which lesspipe.sh > /dev/null; then
 fi
 
 
+# anyenv
+if [[ -d $HOME/.anyenv ]]; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init - --no-rehash)"
+else
+    echo "anyenv not installed."
+    echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
+fi
+
+
 # 実験環境
 KyotoEBMT_DIR=$HOME/tools/kyotoebmt
 if [[ -d $KyotoEBMT_DIR ]]; then
