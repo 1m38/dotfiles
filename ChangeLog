@@ -1,3 +1,8 @@
+2017-01-19    <uno@basil127>
+
+	* .zshrc: 整理
+	/orange/brew 読み込み時にcompinitが警告しないようになった
+
 2017-01-08    <uno@basil127>
 
 	* .zshrc (rep_mail): 動作するように

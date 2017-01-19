@@ -1,19 +1,38 @@
-# .zshrc
+# basic env
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export LANG=ja_JP.UTF-8
 
-_MYPATH=$HOME/usr/bin
-_SYSPATH=/usr/local/bin:/usr/X11R6/bin:/sbin:/bin:/usr/sbin:/usr/bin
-case $CPUTYPE in
-x86_64)
-    _CPUPATH=/share/usr-x86_64/bin
-    ;;
-i686)
-    _CPUPATH=/share/usr/bin
-    ;;
-esac
+# =========
+#   zplug
+# =========
 
-PATH=$_CPUPATH:$_SYSPATH
-PATH=$_MYPATH:$PATH
-unset _MYPATH _CPUPATH _SYSPATH
+# install
+if [[ ! -d $HOME/.zplug ]] && (( $+commands[curl] )); then
+    curl -sL zplug.sh/installer | zsh
+fi
+source ~/.zplug/init.zsh
+
+if builtin command -v zplug > /dev/null; then
+    zplug "zsh-users/zsh-history-substring-search"
+    zplug "b4b4r07/enhancd"
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+    # Install plugins if there are plugins that have not been installed
+    if ! zplug check --verbose; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+
+    zplug load --verbose
+
+    if zplug check zsh-users/zsh-history-substring-search; then
+        bindkey -M emacs '^P' history-substring-search-up
+        bindkey -M emacs '^N' history-substring-search-down
+    fi
+fi
+
 
 # /orange/brew (kuro-lab_cluster)
 if [[ -f /mnt/orange/brew/brew.zsh ]]; then
@@ -35,25 +54,21 @@ if [[ -d $HOME/.linuxbrew ]]; then
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
-#PROMPT="[%m-(%~)] % "
+# =================
+#   env variables
+# =================
+export PATH=$HOME/usr/bin:$HOME/bin:$HOME/local/bin:$HOME/.local/bin:$PATH
+export EDITOR=emacsclient
+
+# history
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=$HOME/.zsh_history
-WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
-export LANG=ja_JP.UTF-8
-export EDITOR=emacsclient
-export LS_COLORS=':no=00:fi=00:di=36:ln=35:pi=33:so=32:bd=34;46:cd=34;43:ex=31:'
-export PERL5LIB=$HOME/usr/lib/perl
-export CVSROOT=reed:/share/service/cvs
-export CVS_RSH=ssh
-export XMODIFIERS="@im=kinput2"
-
-export TEXINPUTS=.:$HOME/TeX/inputs//:
-export BIBINPUTS=.:$HOME/TeX/inputs//:
-export BSTINPUTS=.:$HOME/TeX/inputs//:
-
-# options
+# ===========
+#   options
+# ===========
+bindkey -e
 setopt auto_cd
 setopt auto_param_slash
 setopt auto_pushd
@@ -76,114 +91,26 @@ setopt hist_ignore_dups
 setopt hist_reduce_blanks
 
 unsetopt promptcr
-
-# aliases
-alias ls='ls -F --color=tty'
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-# alias h='history'
-alias -g L='| lv'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g W='| wc'
-alias -g G='| grep'
-alias gomi='rm -f *~'
-alias cpan='perl -MCPAN -e shell'
-alias j='juman -e2 -B'
-alias jk='juman -e2 -B | knp'
-
-# completion
-autoload -U compinit && compinit
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' menu select interactive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# bindkey
-bindkey -e
-# bindkey "^[f" emacs-forward-word
-# bindkey "^[b" emacs-backward-word
-
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-# bindkey "^[p" history-beginning-search-backward-end
-# bindkey "^[n" history-beginning-search-forward-end
-
-autoload replace-string
-zle -N replace-string
-bindkey "^[%" replace-string
-
-if [ "$EMACS" = t ]; then
-    unsetopt zle
-    stty -echo
-    alias ls='ls -F --color'
-fi
-
-
-#====== 個人設定 ======
-
-# '...RET'で階層を2つ上がる
-alias ...='cd ../..'
-alias ....='cd ../../..'
+disable r
 
 # cdした先のディレクトリをスタックに追加 'cd -<TAB>'で履歴表示
 setopt auto_pushd
 setopt pushd_ignore_dups
 
-# 間違ったcommandを修正してくれる
-setopt correct
+setopt correct			# 間違ったcommandを修正
 
-# rbenv 設定
-if [[ -d $HOME/.rbenv ]]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
 
-# pyenv 設定
-if [[ -d $HOME/.pyenv ]]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    if builtin command -v pyenv > /dev/null; then
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-    fi
-elif [[ -e $HOME/.local/bin/virtualenvwrapper.sh ]]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source $HOME/.local/bin/virtualenvwrapper.sh
-fi
 
-# $HOME/bin, $HOME/local/bin, $HOME/.local/bin をPATHに追加
-export PATH="$HOME/bin:$HOME/local/bin:$HOME/.local/bin:$PATH"
 
-# ssh-add alias
-alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
-alias ssh-addb='ssh-add ~/.ssh/bitbucket.uno1038.id_rsa'
-alias ssh-addb2='ssh-add ~/.ssh/bitbucket.fs_lt34.id_rsa'
-alias eval-ssh-agent='eval `ssh-agent`'
-
-# 実験環境
-KyotoEBMT_DIR=$HOME/tools/kyotoebmt
-if [[ -d $KyotoEBMT_DIR ]]; then
-    alias kyotoebmt_server="nice -n 19 $KyotoEBMT_DIR/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
-    alias kyotoebmt_client='nice -n 19 $KyotoEBMT_DIR/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | $KyotoEBMT_DIR/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
-    alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query /windroot/uno/kyotoebmt_ems/lm/ja"
-fi
-if [[ -d $HOME/svm_rank ]]; then
-   alias svm-rank-learn="~/svm_rank/svm_rank_learn"
-   alias svm-rank-classify="~/svm_rank/svm_rank_classify"
-fi
-STP_DIR=$HOME/tools/stanford-parser-full-2015-04-20
-if [[ -d $STP_DIR ]]; then
-    alias stanford-parser="/mnt/orange/brew/data/bin/java -mx4000m -cp $STP_DIR/\* edu.stanford.nlp.parser.lexparser.LexicalizedParser -tokenized -maxLength 200 -outputFormat penn,typedDependencies -escaper edu.stanford.nlp.process.PTBEscapingProcessor -sentences newline edu/stanford/nlp/models/lexparser/englishRNN.ser.gz -"
-fi
-STCore_DIR=$HOME/tools/stanford-corenlp-full-2015-12-09
-if [[ -d $STCore_DIR ]]; then
-    alias stanford-corenlp="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -ssplit.eolonly true"
-    alias stanford-corenlp-zh="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
-fi
-
-# sort,uniq にはLANG=Cをつける
+# ===========
+#   aliases
+# ===========
+alias ls='ls -F --color=tty'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias j='jumanpp'
+alias jk='jumanpp | knp'
 alias sort='LANG=C sort'
 alias uniq='LANG=C uniq'
 
@@ -192,21 +119,33 @@ alias h='history -i'
 alias history-all='history -i 1'
 alias histgrep='history-all | grep --color=auto'
 
-# コマンドの実行が終わったらメール
-function rep_mail (){
-    subj="report mail:$HOSTNAME_S"
-    mail_from="uno@nlp.ist.i.kyoto-u.ac.jp"
-    mail_to="uno@nlp.ist.i.kyoto-u.ac.jp"
+# '...RET'で階層を2つ上がる
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
-    cmd=$@
-    start_time=`date "+%m/%d %H:%M:%S"`
-    text="${cmd}\n開始 ${start_time}\n"
+alias ssh-addk='ssh-add ~/.ssh/k2l.id_rsa'
+alias eval-ssh-agent='eval `ssh-agent`'
 
-    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}強制終了\"  ;trap INT  EXIT ERR;" INT
-    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}異常終了\"  ;trap INT  EXIT ERR;" ERR
-    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}正常終了\"  ;trap INT  EXIT ERR;" EXIT
-    $@
-}
+# emacsclient
+alias e='emacsclient -c -t -a ""'
+alias killemacs='emacsclient -e "(kill-emacs)"'
+alias restartemacs='killemacs; e'
+
+
+# completion
+autoload -U compinit && compinit
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select interactive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+autoload replace-string
+zle -N replace-string
 
 # cd時にlsする
 # http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
@@ -279,16 +218,6 @@ re-prompt() {
 }
 zle -N accept-line re-prompt
 
-# emacsclient
-alias e='emacsclient -c -t -a ""'
-alias killemacs='emacsclient -e "(kill-emacs)"'
-alias restartemacs='killemacs; e'
-
-# screen
-# alias s='screen -xR'
-
-# Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
-VTE_CJK_WIDTH=1
 
 # tmux
 export TERM=xterm-256color
@@ -300,6 +229,7 @@ if [ "$TMUX" = "" ]; then
 else
     alias htop='screen htop'
 fi
+
 
 # loadaverage(OSごとの設定)
 # http://yonchu.hatenablog.com/entry/20120414/1334422075
@@ -384,20 +314,9 @@ if [ "$TMUX" != "" ]; then
     tmux set-option -g window-status-last-style "fg=$tmux_window_color" > /dev/null
 fi
 
-# tmux: ssh時にwindow名を接続先host名にする
-# http://qiita.com/shrkw/items/167be53796d4507c736b
-# function ssh_tmux() {
-#     local window_name=$(tmux display -p '#{window_name}')
-#     tmux rename-window -- "$@[-1]" # zsh specified
-#     # tmux rename-window -- "${!#}" # for bash
-#     command ssh $@
-#     tmux rename-window $window_name
-# }
-# if [[ -n $(printenv TMUX) ]]; then
-#     alias ssh=ssh_tmux
-# fi
-
-# PROMPT設定
+# ==========
+#   PROMPT
+# ==========
 
 if [ "$EMACS" = t ]; then
     # emacs_shellの場合は左プロンプトを簡略化
@@ -417,10 +336,6 @@ else
  %# '
 fi
 
-# torch(ローカルマシン用)
-# if [ -d /home/masaya/torch ]; then
-#     . /home/masaya/torch/install/bin/torch-activate
-# fi
 
 # SSH_AUTH_SOCK固定
 # Reference: http://unix.stackexchange.com/a/76256/91598
@@ -449,8 +364,6 @@ bindkey "^[q" show_buffer_stack
 # ipython: 色をlinux準拠に
 alias ipython='ipython --colors=linux'
 
-# rでRコンソールを起動
-disable r
 
 # less設定
 export LESS='-g -i -M -R'
@@ -468,33 +381,44 @@ if which lesspipe.sh > /dev/null; then
     export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-# nodebrew
-if [[ -d $HOME/.nodebrew ]]; then
-    export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# 実験環境
+KyotoEBMT_DIR=$HOME/tools/kyotoebmt
+if [[ -d $KyotoEBMT_DIR ]]; then
+    alias kyotoebmt_server="nice -n 19 $KyotoEBMT_DIR/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
+    alias kyotoebmt_client='nice -n 19 $KyotoEBMT_DIR/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | $KyotoEBMT_DIR/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
+    alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query /windroot/uno/kyotoebmt_ems/lm/ja"
+fi
+if [[ -d $HOME/svm_rank ]]; then
+   alias svm-rank-learn="~/svm_rank/svm_rank_learn"
+   alias svm-rank-classify="~/svm_rank/svm_rank_classify"
+fi
+STP_DIR=$HOME/tools/stanford-parser-full-2015-04-20
+if [[ -d $STP_DIR ]]; then
+    alias stanford-parser="/mnt/orange/brew/data/bin/java -mx4000m -cp $STP_DIR/\* edu.stanford.nlp.parser.lexparser.LexicalizedParser -tokenized -maxLength 200 -outputFormat penn,typedDependencies -escaper edu.stanford.nlp.process.PTBEscapingProcessor -sentences newline edu/stanford/nlp/models/lexparser/englishRNN.ser.gz -"
+fi
+STCore_DIR=$HOME/tools/stanford-corenlp-full-2015-12-09
+if [[ -d $STCore_DIR ]]; then
+    alias stanford-corenlp="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -ssplit.eolonly true"
+    alias stanford-corenlp-zh="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
 fi
 
 
-# zplug test
-if [[ ! -d $HOME/.zplug ]]; then
-    curl -sL zplug.sh/installer | zsh
-fi
-source ~/.zplug/init.zsh
+# コマンドの実行が終わったらメール
+function rep_mail (){
+    subj="report mail:$HOSTNAME_S"
+    mail_from="uno@nlp.ist.i.kyoto-u.ac.jp"
+    mail_to="uno@nlp.ist.i.kyoto-u.ac.jp"
 
-zplug "zsh-users/zsh-history-substring-search"
-zplug "b4b4r07/enhancd"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    cmd=$@
+    start_time=`date "+%m/%d %H:%M:%S"`
+    text="${cmd}\n開始 ${start_time}\n"
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}強制終了\"  ;trap INT  EXIT ERR;" INT
+    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}異常終了\"  ;trap INT  EXIT ERR;" ERR
+    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}正常終了\"  ;trap INT  EXIT ERR;" EXIT
+    $@
+}
 
-zplug load --verbose
-
-if zplug check zsh-users/zsh-history-substring-search; then
-    bindkey -M emacs '^P' history-substring-search-up
-    bindkey -M emacs '^N' history-substring-search-down
-fi
+# Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
+VTE_CJK_WIDTH=1
