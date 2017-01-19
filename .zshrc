@@ -1,6 +1,7 @@
 # basic env
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export LANG=ja_JP.UTF-8
+HOSTNAME_S=`hostname -s`
 
 # =========
 #   zplug
@@ -33,9 +34,12 @@ if builtin command -v zplug > /dev/null; then
     fi
 fi
 
-
-# /orange/brew (kuro-lab_cluster)
-if [[ -f /mnt/orange/brew/brew.zsh ]]; then
+if [[ $HOSTNAME_S =~ baracuda.* ]]; then
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+    export CUDA_HOME="/usr/local/cuda"
+    export PATH="$PATH:/usr/local/cuda/bin"
+elif [[ -f /mnt/orange/brew/brew.zsh ]]; then
+    # /orange/brew (kuro-lab_cluster)
     BREW_ZSH=/mnt/orange/brew/data/bin/zsh
     if [[ -x $BREW_ZSH ]]; then
 	BREW_VER=$($BREW_ZSH --version | cut -f 2 -d ' ')
@@ -257,7 +261,7 @@ case ${OSTYPE} in
     ;;
     linux*)
 	# ulimit (hostごとに変更)
-	case `hostname -s` in
+	case $HOSTNAME_S in
 	    masaya-*|FS-*)
 		# 3GB
 		if [ `hostname -s | grep -v 'win'` ]; then
@@ -287,7 +291,7 @@ case ${OSTYPE} in
 	esac
 esac
 
-case `hostname -s` in
+case $HOSTNAME_S in
     masaya-*|FS-*|fs-*)
 	tmux_hostname_color="fg=black,bg=colour249"
 	tmux_window_color="colour20"
