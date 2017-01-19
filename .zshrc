@@ -8,8 +8,12 @@ HOSTNAME_S=`hostname -s`
 # =========
 
 # install
-if [[ ! -d $HOME/.zplug ]] && (( $+commands[curl] )); then
-    curl -sL zplug.sh/installer | zsh
+if [[ ! -d $HOME/.zplug ]]; then
+    if (( $+commands[curl] )); then
+	curl -sL zplug.sh/installer | zsh
+    else
+	echo "zplug install: curl -sL zplug.sh/installer | zsh"
+    fi
 fi
 source ~/.zplug/init.zsh
 
