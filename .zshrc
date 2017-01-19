@@ -69,6 +69,8 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=$HOME/.zsh_history
 
+export LS_COLORS=':no=00:fi=00:di=36:ln=35:pi=33:so=32:bd=34;46:cd=34;43:ex=31:'
+
 # ===========
 #   options
 # ===========
