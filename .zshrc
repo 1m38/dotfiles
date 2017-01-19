@@ -21,8 +21,6 @@ if builtin command -v zplug > /dev/null; then
     zplug "zsh-users/zsh-history-substring-search"
     zplug "b4b4r07/enhancd", use:init.sh
     zplug "zsh-users/zsh-syntax-highlighting", defer:2
-    zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-    zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
     zplug "mollifier/anyframe"
 
     # Install plugins if there are plugins that have not been installed
@@ -146,6 +144,17 @@ alias eval-ssh-agent='eval `ssh-agent`'
 alias e='emacsclient -c -t -a ""'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 alias restartemacs='killemacs; e'
+
+# =======
+#   fzf
+# =======
+if [[ ! -d $HOME/.fzf ]]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+fi
+export FZF_TMUX=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 
 
 # completion
