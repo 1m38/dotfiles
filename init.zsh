@@ -48,6 +48,7 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
+ln -sf ~/dotfiles/.flake8 ~/.flake8
 
 # dotfilesへのURL変更
 function change-repo-url() {

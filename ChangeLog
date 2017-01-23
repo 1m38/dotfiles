@@ -1,3 +1,9 @@
+2017-01-23    <uno@basil127>
+
+	* init.zsh: flake8の設定へのリンクを貼る
+
+	* emacs_inits/56_python.el: elpy有効化
+
 2017-01-19    <uno@basil127>
 
 	* .zshrc: virtualenvwrapper
