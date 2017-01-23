@@ -1,5 +1,8 @@
 2017-01-23    <uno@basil127>
 
+	* .zshrc: ulimit, tmux色設定変更
+	baracudaの設定追加, それ以外のhostではulimit設定しない
+
 	* init.zsh: flake8の設定へのリンクを貼る
 
 	* emacs_inits/56_python.el: elpy有効化

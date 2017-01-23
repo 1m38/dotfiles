@@ -294,12 +294,6 @@ case ${OSTYPE} in
     linux*)
 	# ulimit (hostごとに変更)
 	case $HOSTNAME_S in
-	    masaya-*|FS-*)
-		# 3GB
-		if [ `hostname -s | grep -v 'win'` ]; then
-		    ulimit -m 3000000
-		fi
-		;;
 	    basil300|basil301|basil302|jungle)
 		# 128GB
 		ulimit -m 128000000
@@ -315,10 +309,10 @@ case ${OSTYPE} in
 		ulimit -m 10000000
 		ulimit -v 10000000
 		;;
-	    *)
-		# 3GB
-		ulimit -m 3000000
-		ulimit -v 3000000
+	    baracuda*)
+		# 20GB
+		ulimit -m 20000000
+		ulimit -v 20000000
 		;;
 	esac
 esac
@@ -333,12 +327,15 @@ case $HOSTNAME_S in
 	tmux_hostname_color="fg=white,bg=colour22"
 	tmux_window_color="colour22"
 	prompt_hostname_color="green"
-	# alias tmux='LD_PRELOAD=/lib64/libncurses.so.5 tmux'
-	# alias t='LD_PRELOAD=/lib64/libncurses.so.5 tmux attach || tmux new-session'
+	;;
+    baracuda*)
+	tmux_hostname_color="fg=white,bg=colour166"
+	tmux_window_color="colour166"
+	prompt_hostname_color="green"
 	;;
     *)
-	tmux_hostname_color="fg=colour22,bg=colour250"
-	tmux_window_color="colour130"
+	tmux_hostname_color="fg=white,bg=colour52"
+	tmux_window_color="colour52"
 	prompt_hostname_color="white"
 	;;
 esac
