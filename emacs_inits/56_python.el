@@ -4,5 +4,5 @@
      )))
 
 ;;; elpy
-;; (elpy-enable)
-;; (elpy-use-ipython)
+(elpy-enable)
+(elpy-use-ipython)
