@@ -17,7 +17,8 @@ if [[ ! -d $HOME/.zplug ]]; then
 fi
 source ~/.zplug/init.zsh
 
-if builtin command -v zplug > /dev/null; then
+# tmux内でのみload
+if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
     zplug "zsh-users/zsh-history-substring-search"
     zplug "b4b4r07/enhancd", use:init.sh
     zplug "zsh-users/zsh-syntax-highlighting", defer:2
