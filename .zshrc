@@ -3,6 +3,13 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export LANG=ja_JP.UTF-8
 HOSTNAME_S=`hostname -s`
 
+# linuxbrew(local)
+if [[ -d $HOME/.linuxbrew ]]; then
+    export PATH="/home/masaya/.linuxbrew/bin:$PATH"
+    export MANPATH="/home/masaya/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="/home/masaya/.linuxbrew/share/info:$INFOPATH"
+fi
+
 # =========
 #   zplug
 # =========
@@ -40,7 +47,7 @@ if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
     fi
 fi
 
-if [[ $HOSTNAME_S =~ baracuda.* ]]; then
+if [[ -f /usr/local/cuda/bin/nvcc ]]; then
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
     export CUDA_HOME="/usr/local/cuda"
     export PATH="$PATH:/usr/local/cuda/bin"

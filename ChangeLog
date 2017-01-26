@@ -1,3 +1,8 @@
+2017-01-27  Masaya Uno  <masaya@FS-PC-ub1604>
+
+	* .zshrc: local用設定
+	CUDA設定を変更(Ubuntu環境でデフォルト設定なら動くはず)
+
 2017-01-25  Masaya Uno  <masaya@FS-MC-pca308.local>
 
 	* .zshrc: tmux内でのみzplugをload
