@@ -45,6 +45,9 @@ if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
         bindkey -M emacs '^P' history-substring-search-up
         bindkey -M emacs '^N' history-substring-search-down
     fi
+    if zplug check zsh-users/zsh-syntax-highlighting; then
+	ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+    fi
 fi
 
 if [[ -f /usr/local/cuda/bin/nvcc ]]; then

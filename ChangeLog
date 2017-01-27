@@ -1,3 +1,7 @@
+2017-01-27  Masaya Uno  <masaya@FS-MC-pca308.local>
+
+	* .zshrc (zsh-syntax-highlighting): globbing(*)の色を変更
+
 2017-01-27  Masaya Uno  <masaya@FS-PC-ub1604>
 
 	* .zshrc: local用設定
