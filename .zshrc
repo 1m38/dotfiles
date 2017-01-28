@@ -5,9 +5,9 @@ HOSTNAME_S=`hostname -s`
 
 # linuxbrew(local)
 if [[ -d $HOME/.linuxbrew ]]; then
-    export PATH="/home/masaya/.linuxbrew/bin:$PATH"
-    export MANPATH="/home/masaya/.linuxbrew/share/man:$MANPATH"
-    export INFOPATH="/home/masaya/.linuxbrew/share/info:$INFOPATH"
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
 # =========
@@ -44,6 +44,9 @@ if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
     if zplug check zsh-users/zsh-history-substring-search; then
         bindkey -M emacs '^P' history-substring-search-up
         bindkey -M emacs '^N' history-substring-search-down
+    fi
+    if zplug check zsh-users/zsh-syntax-highlighting; then
+	ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
     fi
 fi
 
