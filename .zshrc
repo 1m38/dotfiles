@@ -427,9 +427,27 @@ fi
 if [[ -d $HOME/.anyenv ]]; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init - --no-rehash)"
+
+    if ! builtin command -v pyenv > /dev/null; then
+	echo "pyenv not installed."
+	printf "Install? [y/N]: "
+        if read -q; then
+	    anyenv install pyenv
+	    git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenvwrapper
+        fi
+    else
+	pyenv virtualenvwrapper
+    fi
 else
     echo "anyenv not installed."
-    echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
+    if builtin command -v git > /dev/null; then
+	printf "Install? [y/N]: "
+        if read -q; then
+	    git clone https://github.com/riywo/anyenv ~/.anyenv
+        fi
+    else
+	echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
+    fi
 fi
 
 # python virtualenv
