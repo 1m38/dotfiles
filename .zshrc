@@ -5,9 +5,9 @@ HOSTNAME_S=`hostname -s`
 
 # linuxbrew(local)
 if [[ -d $HOME/.linuxbrew ]]; then
-    export PATH="/home/masaya/.linuxbrew/bin:$PATH"
-    export MANPATH="/home/masaya/.linuxbrew/share/man:$MANPATH"
-    export INFOPATH="/home/masaya/.linuxbrew/share/info:$INFOPATH"
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
 # =========
@@ -428,9 +428,27 @@ fi
 if [[ -d $HOME/.anyenv ]]; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init - --no-rehash)"
+
+    if ! builtin command -v pyenv > /dev/null; then
+	echo "pyenv not installed."
+	printf "Install? [y/N]: "
+        if read -q; then
+	    anyenv install pyenv
+	    git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenvwrapper
+        fi
+    else
+	pyenv virtualenvwrapper
+    fi
 else
     echo "anyenv not installed."
-    echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
+    if builtin command -v git > /dev/null; then
+	printf "Install? [y/N]: "
+        if read -q; then
+	    git clone https://github.com/riywo/anyenv ~/.anyenv
+        fi
+    else
+	echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
+    fi
 fi
 
 # python virtualenv

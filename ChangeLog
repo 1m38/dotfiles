@@ -3,6 +3,11 @@
 	* .zshrc: TERM設定
 	tmux内ではscreen-256color
 
+2017-01-28  Masaya Uno  <masaya@FS-PC-ub1604>
+
+	* .zshrc: pyenvのインストールを自動化
+	pyenv/virtualenvwrapperを設定
+
 2017-01-27  Masaya Uno  <masaya@FS-MC-pca308.local>
 
 	* .zshrc (zsh-syntax-highlighting): globbing(*)の色を変更
