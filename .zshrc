@@ -267,14 +267,12 @@ zle -N accept-line re-prompt
 
 
 # tmux
-export TERM=xterm-256color
 alias t='tmux attach || tmux new-session'
 alias tls='tmux ls'
-# htopをscreenで起動する
 if [ "$TMUX" = "" ]; then
-    unalias htop 2>/dev/null
+    export TERM=xterm-256color
 else
-    alias htop='screen htop'
+    export TERM=screen-256color
 fi
 
 
