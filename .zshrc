@@ -2,6 +2,9 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export LANG=ja_JP.UTF-8
 HOSTNAME_S=`hostname -s`
+if [[ -f ~/.my_zsh_envs ]]; then
+    source ~/.my_zsh_envs
+fi
 
 # linuxbrew(local)
 if [[ -d $HOME/.linuxbrew ]]; then
@@ -33,10 +36,7 @@ if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
 
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
+        zplug install
     fi
 
     zplug load --verbose
@@ -161,7 +161,7 @@ alias restartemacs='killemacs; e'
 # =======
 if [[ ! -d $HOME/.fzf ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+    ~/.fzf/install --key-bindings --no-completion --no-update-rc
 fi
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -429,24 +429,25 @@ if [[ -d $HOME/.anyenv ]]; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init - --no-rehash)"
 
-    if ! builtin command -v pyenv > /dev/null; then
-	echo "pyenv not installed."
-	printf "Install? [y/N]: "
-        if read -q; then
-	    anyenv install pyenv
-	    git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenvwrapper
-        fi
-    else
-	pyenv virtualenvwrapper
+    if $pyenv_install; then
+	if ! builtin command -v pyenv > /dev/null; then
+	    echo "pyenv not installed."
+	    printf "Install? [y/N]: "
+            if read -q; then
+		anyenv install pyenv
+		git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenvwrapper
+	    else
+		echo "pyenv_install=false" >> ~/.my_zsh_envs
+            fi
+	else
+	    pyenv virtualenvwrapper
+	fi
     fi
 else
-    echo "anyenv not installed."
     if builtin command -v git > /dev/null; then
-	printf "Install? [y/N]: "
-        if read -q; then
-	    git clone https://github.com/riywo/anyenv ~/.anyenv
-        fi
+	git clone https://github.com/riywo/anyenv ~/.anyenv
     else
+	echo "anyenv not installed."
 	echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
     fi
 fi

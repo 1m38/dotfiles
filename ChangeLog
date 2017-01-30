@@ -2,6 +2,8 @@
 
 	* .zshrc: TERM設定
 	tmux内ではscreen-256color
+	pyenvのインストールを1度拒否したら、以降聞かない
+	~/.my_zsh_envs に設定を保存
 
 2017-01-28  Masaya Uno  <masaya@FS-PC-ub1604>
 
