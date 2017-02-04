@@ -156,6 +156,19 @@ alias e='emacsclient -c -t -a ""'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 alias restartemacs='killemacs; e'
 
+# pbcopy / cpfile
+if builtin command -v pbcopy > /dev/null; then
+    function cpfile() {
+	cat $1 | pbcopy
+    }
+elif builtin command -v xsel > /dev/null; then
+    alias pbcopy='xsel --clipboard --input'
+    function cpfile() {
+	cat $1 | xsel --clipboard --input
+    }
+fi
+
+
 # =======
 #   fzf
 # =======
