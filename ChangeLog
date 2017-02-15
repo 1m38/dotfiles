@@ -1,3 +1,7 @@
+2017-02-15  Masaya Uno  <masaya@FS-MC-pca308.local>
+
+	* emacs_init.el: add custom-set-faces
+
 2017-02-04  Masaya Uno  <masaya@FS-VB-ub1604>
 
 	* .zshrc: pbcopy, cpfile

@@ -41,4 +41,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(helm-selection ((t (:background "magenta" :distant-foreground "black"))))
- '(hl-line ((t (:background "black")))))
+ '(hl-line ((t (:background "black"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#6faeef"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#69cd69"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#ef6f6f"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#efc300"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#9d9de8"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#c99a9a"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#69cd69"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#9d9de8"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "#c28d8d"))))
+ '(rainbow-delimiters-mismatched-face ((t (:foreground "#88090b"))))
+ '(rainbow-delimiters-unmatched-face ((t (:foreground "#88090b"))))
+ '(sp-pair-overlay-face ((t nil))))
