@@ -1,3 +1,7 @@
+2017-02-15    <uno@basil127>
+
+	* .zshrc: (baracuda)tmuxが無い場合にorange/brewのtmuxを使う
+
 2017-02-15  Masaya Uno  <masaya@FS-MC-pca308.local>
 
 	* emacs_init.el: add custom-set-faces

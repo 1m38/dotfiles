@@ -280,6 +280,9 @@ zle -N accept-line re-prompt
 
 
 # tmux
+if ! builtin command -v tmux > /dev/null && [[ -f /mnt/orange/brew/data/bin/tmux ]]; then
+    alias tmux=/mnt/orange/brew/data/bin/tmux
+fi
 alias t='tmux attach || tmux new-session'
 alias tls='tmux ls'
 if [ "$TMUX" = "" ]; then
