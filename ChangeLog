@@ -1,3 +1,7 @@
+2017-02-16  Masaya Uno  <masaya@FS-MC-pca308.local>
+
+	* emacs_inits/63_js.el
+
 2017-02-15    <uno@basil127>
 
 	* .zshrc: (baracuda)tmuxが無い場合にorange/brewのtmuxを使う

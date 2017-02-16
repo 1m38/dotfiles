@@ -44,6 +44,9 @@
     nlinum
     ess
     rainbow-delimiters
+    js2-mode
+    tern
+    company-tern
     ))
 (let ((not-installed (loop for x in installing-package-list
 			   when (not (package-installed-p x))
