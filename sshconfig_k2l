@@ -22,8 +22,11 @@ Host jungle
      User uno
      IdentityFile ~/.ssh/k2l_local.id_rsa
 
-
 Host baracuda*
+     User uno
+     IdentityFile ~/.ssh/k2l_local.id_rsa
+
+Host moss*
      User uno
      IdentityFile ~/.ssh/k2l_local.id_rsa
 

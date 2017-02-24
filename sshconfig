@@ -26,6 +26,10 @@ Host baracuda*
      User uno
      ProxyCommand ssh -qW %h:%p lotus
 
+Host moss*
+     User uno
+     ProxyCommand ssh -qW %h:%p lotus
+
 Host github
      Hostname github.com
      IdentityFile ~/.ssh/github_1m38.id_rsa
