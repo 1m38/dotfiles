@@ -1,3 +1,8 @@
+2017-03-10  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/autoinsert_template/template.py: modified __main__
+	__main__の内容を_main()に分離
+
 2017-02-24    <uno@basil127>
 
 	* .zshrc, sshconfig: moss設定追加
