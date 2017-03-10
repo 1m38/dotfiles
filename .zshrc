@@ -457,12 +457,9 @@ if [[ -d $HOME/.anyenv ]]; then
 	    printf "Install? [y/N]: "
             if read -q; then
 		anyenv install pyenv
-		git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenvwrapper
 	    else
 		echo "pyenv_install=false" >> ~/.my_zsh_envs
             fi
-	else
-	    pyenv virtualenvwrapper
 	fi
     fi
 else
@@ -472,12 +469,6 @@ else
 	echo "anyenv not installed."
 	echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
     fi
-fi
-
-# python virtualenv
-if [[ -e $HOME/.local/bin/virtualenvwrapper.sh ]]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source $HOME/.local/bin/virtualenvwrapper.sh
 fi
 
 
