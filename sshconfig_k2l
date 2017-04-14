@@ -30,6 +30,10 @@ Host moss*
      User uno
      IdentityFile ~/.ssh/k2l_local.id_rsa
 
+Host web
+     User uno
+     IdentityFile ~/.ssh/k2l_local.id_rsa
+
 Host github
      Hostname github.com
      IdentityFile ~/.ssh/github_1m38.id_rsa
