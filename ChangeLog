@@ -1,3 +1,7 @@
+2017-04-15    <uno@basil127>
+
+	* .zshrc: SSH_AUTH_SOCK固定設定削除
+
 2017-04-14    <uno@basil127>
 
 	* sshconfig_k2l: add host web
