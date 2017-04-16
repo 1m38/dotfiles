@@ -1,3 +1,7 @@
+2017-04-16    <masaya@FS-VB-arch>
+
+	* sshconfig: add host gist
+
 2017-04-15    <uno@basil127>
 
 	* .zshrc: SSH_AUTH_SOCK固定設定削除
