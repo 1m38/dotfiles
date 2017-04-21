@@ -1,3 +1,7 @@
+2017-04-21  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/98_theme.el: tango-dark -> wombat
+
 2017-04-18    <uno@basil127>
 
 	* emacs_inits/02_basics.el (other-window-or-split): windowサイズに関わらず横2分割する
