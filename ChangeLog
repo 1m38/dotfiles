@@ -1,3 +1,7 @@
+2017-05-15    <uno@basil127>
+
+	* .zshrc: spark setting
+
 2017-04-21  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* emacs_inits/97_hiwin.el: 非アクティブウィンドウの背景色変更

@@ -479,6 +479,11 @@ if [[ -d $STCore_DIR ]]; then
     alias stanford-corenlp-zh="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
 fi
 
+# spark
+if [[ -d $HOME/src/spark ]]; then
+    export SPARK_HOME=$HOME/src/spark
+fi
+
 
 # コマンドの実行が終わったらメール
 function rep_mail (){
