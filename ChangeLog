@@ -1,3 +1,8 @@
+2017-05-16  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .zshrc: mac: GNU coreutils導入
+	主要なコマンドをGNUに置き換え(http://qiita.com/eumesy/items/3bb39fc783c8d4863c5f)
+
 2017-05-15    <uno@basil127>
 
 	* .zshrc: spark setting
