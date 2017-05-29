@@ -36,20 +36,20 @@ Host web
 
 Host github
      Hostname github.com
-     IdentityFile ~/.ssh/github_1m38.id_rsa
+     IdentityFile ~/.ssh/github_1m38.id_ed25519
      User git
 
 Host gist
      Hostname gist.github.com
-     IdentityFile ~/.ssh/github_1m38.id_rsa
+     IdentityFile ~/.ssh/github_1m38.id_ed25519
      User git
 
 Host bitbucket
      Hostname bitbucket.org
-     IdentityFile ~/.ssh/bitbucket.uno1038.id_rsa
+     IdentityFile ~/.ssh/bitbucket_uno1038.id_ed25519
      User git
 
 Host bitbucket.fs_lt34
      Hostname bitbucket.org
-     IdentityFile ~/.ssh/bitbucket.fs_lt34.id_rsa
+     IdentityFile ~/.ssh/bitbucket_fs_lt34.id_ed25519
      User git

@@ -1,5 +1,7 @@
 2017-05-29  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* sshconfig (github, bitbucket): use ed25519 keys
+
 	* .zshrc (ssh-addk): use ecdsa key
 
 2017-05-29    <uno@basil127>
