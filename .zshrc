@@ -6,11 +6,19 @@ if [[ -f ~/.my_zsh_envs ]]; then
     source ~/.my_zsh_envs
 fi
 
-# linuxbrew(local)
+# linuxbrew / homebrew(local)
 if [[ -d $HOME/.linuxbrew ]]; then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+elif [[ -d /usr/local/Homebrew ]]; then
+    # export PATH=/usr/local/bin:${PATH}
+    export MANPATH=/usr/local/share/man:${MANPATH}
+    # coreutils
+    if [[ -d /usr/local/opt/coreutils ]]; then
+	export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+	export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+    fi
 fi
 
 # =========
@@ -50,12 +58,13 @@ if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
     fi
 fi
 
+# kuro-lab_cluster: GPU / linuxbrew
 if [[ -f /usr/local/cuda/bin/nvcc ]]; then
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
     export CUDA_HOME="/usr/local/cuda"
     export PATH="$PATH:/usr/local/cuda/bin"
 elif [[ -f /mnt/orange/brew/brew.zsh ]]; then
-    # /orange/brew (kuro-lab_cluster)
+    # /orange/brew
     BREW_ZSH=/mnt/orange/brew/data/bin/zsh
     if [[ -x $BREW_ZSH ]]; then
 	BREW_VER=$($BREW_ZSH --version | cut -f 2 -d ' ')
@@ -65,13 +74,6 @@ elif [[ -f /mnt/orange/brew/brew.zsh ]]; then
 	fi
     fi
     source /mnt/orange/brew/brew.zsh
-fi
-
-# linuxbrew
-if [[ -d $HOME/.linuxbrew ]]; then
-    export PATH="$HOME/.linuxbrew/bin:$PATH"
-    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
 # =================
@@ -309,8 +311,8 @@ case ${OSTYPE} in
 	if [[ -d  $_TeXPATH ]]; then
 	    PATH=$PATH:$_TeXPATH
 	fi
-	alias ls='ls -FG'
-	export LSCOLORS=gxfxcxdxbxegedabagacad
+	# alias ls='ls -FG'
+	# export LSCOLORS=gxfxcxdxbxegedabagacad
 	if ! [[ -z $TMUX ]]; then
 	    alias open='reattach-to-user-namespace open'
 	fi
