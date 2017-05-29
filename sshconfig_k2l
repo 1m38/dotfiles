@@ -53,3 +53,8 @@ Host bitbucket.fs_lt34
      Hostname bitbucket.org
      IdentityFile ~/.ssh/bitbucket_fs_lt34.id_ed25519
      User git
+
+Host laurel
+     Hostname laurel.kudpc.kyoto-u.ac.jp
+     User a0086617
+     IdentityFile ~/.ssh/kudpc.id_ecdsa

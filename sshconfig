@@ -50,6 +50,11 @@ Host bitbucket.fs_lt34
      IdentityFile ~/.ssh/bitbucket_fs_lt34.id_ed25519
      User git
 
+Host laurel
+     Hostname laurel.kudpc.kyoto-u.ac.jp
+     User a0086617
+     IdentityFile ~/.ssh/kudpc.id_ecdsa
+
 Host arch
      Hostname 127.0.0.1
      Port 57691
@@ -60,3 +65,4 @@ Host tp-arch
      Hostname 192.168.111.202
      User masaya
      IdentityFile ~/.ssh/fs-tp-arch.id_rsa
+
