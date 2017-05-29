@@ -8,7 +8,7 @@ Host *
 Host lotus
      Hostname lotus.kuee.kyoto-u.ac.jp
      User uno
-     IdentityFile ~/.ssh/k2l_local.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_ecdsa
 
 Host lotus/*
      User uno
@@ -16,23 +16,23 @@ Host lotus/*
 
 Host basil*
      User uno
-     IdentityFile ~/.ssh/k2l_local.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_ecdsa
 
 Host jungle
      User uno
-     IdentityFile ~/.ssh/k2l_local.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_ecdsa
 
 Host baracuda*
      User uno
-     IdentityFile ~/.ssh/k2l_local.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_ecdsa
 
 Host moss*
      User uno
-     IdentityFile ~/.ssh/k2l_local.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_ecdsa
 
 Host web
      User uno
-     IdentityFile ~/.ssh/k2l_local.id_rsa
+     IdentityFile ~/.ssh/k2l_local.id_ecdsa
 
 Host github
      Hostname github.com

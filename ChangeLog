@@ -1,3 +1,7 @@
+2017-05-29    <uno@basil127>
+
+	* sshconfig: k2l: rsa -> ecdsa
+
 2017-05-15    <uno@basil127>
 
 	* .zshrc: spark setting

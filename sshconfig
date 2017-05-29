@@ -8,7 +8,7 @@ ServerAliveCountMax 10
 Host lotus
      Hostname lotus.kuee.kyoto-u.ac.jp
      User uno
-     IdentityFile ~/.ssh/k2l.id_rsa
+     IdentityFile ~/.ssh/k2l.id_ecdsa
 
 Host lotus/*
      User uno
