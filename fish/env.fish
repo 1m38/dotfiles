@@ -24,7 +24,20 @@ if [ -f /usr/local/cuda/bin/nvcc ]
 	set system_paths /usr/local/cuda/bin $system_paths
 else if [ -f /mnt/orange/brew/brew.zsh ]
 	# /orange/brew
-	. /mnt/orange/brew/brew.sh
+	# . /mnt/orange/brew/brew.sh
+	set --export HOMEBREW_BUILD_FROM_SOURCE 1
+
+	set --export BREW_HOME /mnt/orange/brew/data
+	set --export HOMEBREW_CACHE /mnt/orange/brew/cache
+	set --export HOMEBREW_LOGS /mnt/orange/brew/logs
+	set --export HOMEBREW_TEMP /dev/shm
+	set --export HOMEBREW_ARCH core2
+
+	set --export system_paths $BREW_HOME/bin $system_paths
+	set --export MANPATH $BREW_HOME/share/man $MANPATH
+	set --export INFOPATH $BREW_HOME/share/info $INFOPATH
+
+	set --export JAVA_HOME $BREW_HOME/opt/jdk
 end
 
 # loadaverage(OSごとの設定)
