@@ -1,3 +1,7 @@
+2017-07-09    <uno@basil127>
+
+	* .tmux.conf: 研究室サーバーで、tmux内でfishを使用する
+
 2017-07-09    <masaya@FS-VB-arch>
 
 	* .zshrc_for_fish: login shellがzshの場合に、exec fishする
