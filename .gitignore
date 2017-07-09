@@ -1,2 +1,9 @@
 /emacs_inits/emacs_inits
-/fish/fishd.FS-VB-arch
+/fish/fishd.*
+/fish/functions/__*
+/fish/functions/await.fish
+/fish/functions/fisher.fish
+/fish/functions/get.fish
+/fish/functions/getopts.fish
+/fish/functions/last_job_id.fish
+/fish/completions/
