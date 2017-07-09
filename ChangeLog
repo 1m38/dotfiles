@@ -1,5 +1,8 @@
 2017-07-09    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
+	* fish/functions/fish_prompt.fish: fishマーク追加
+	fishとわかりやすいように
+
 	* emacs_inits/00_package.el: added fish-mode
 
 	* .zshrc_for_fish: deleted

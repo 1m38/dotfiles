@@ -47,9 +47,9 @@ function fish_prompt --description 'Write out the prompt'
 
 	# set prompt "$USER" @ (prompt_hostname) ' [' (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) '] '(set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
 	if [ -z $git_branch ]
-		set prompt "[ " (set_color --bold $prompt_hostname_color)  (prompt_hostname) (set_color normal) " | " (set_color $color_cwd) (prompt_pwd) (set_color normal) " | " (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) " | " (date "+%y-%m-%d %H:%M:%S") " ]"
+		set prompt "[ " (set_color --bold $prompt_hostname_color)  (prompt_hostname) (set_color normal) " " (set_color --bold blue) "><>" (set_color normal) " | " (set_color $color_cwd) (prompt_pwd) (set_color normal) " | " (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) " | " (date "+%y-%m-%d %H:%M:%S") " ]"
 	else
-		set prompt "[ " (set_color --bold $prompt_hostname_color)  (prompt_hostname) (set_color normal) " | " (set_color $color_cwd) (prompt_pwd) (set_color $color_git_branch) " $git_branch" (set_color --bold $color_git_diff) "$git_diff" (set_color --bold $color_git_untracked) "$git_untracked" (set_color normal) " | " (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) " | " (date "+%y-%m-%d %H:%M:%S") " ]"
+		set prompt "[ " (set_color --bold $prompt_hostname_color)  (prompt_hostname) (set_color normal) " " (set_color --bold blue) "><>" (set_color normal) " | " (set_color $color_cwd) (prompt_pwd) (set_color $color_git_branch) " $git_branch" (set_color --bold $color_git_diff) "$git_diff" (set_color --bold $color_git_untracked) "$git_untracked" (set_color normal) " | " (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) " | " (date "+%y-%m-%d %H:%M:%S") " ]"
 	end
 
 	echo -n -s $prompt
