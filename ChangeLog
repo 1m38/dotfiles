@@ -1,3 +1,7 @@
+2017-07-09    <masaya@FS-VB-arch>
+
+	* fish: fish shell設定追加
+
 2017-05-29  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* sshconfig (github, bitbucket): use ed25519 keys
