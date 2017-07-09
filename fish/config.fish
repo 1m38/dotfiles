@@ -18,6 +18,11 @@ end
 # disable shortening dirnames in function prompt_pwd
 set -g fish_prompt_pwd_dir_length 0
 
+# install fisherman
+if not [ -f ~/.config/fish/functions/fisher.fish ]
+	curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+end
+
 # OS,hostごとの設定
 # ulimit
 

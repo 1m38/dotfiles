@@ -1,5 +1,7 @@
 2017-07-09    <uno@basil127.lang-private.kuee.kyoto-u.ac.jp>
 
+	* fish/config.fish: install fisherman
+
 	* .gitignore: add files related to fish and fisherman
 
 	* fish/functions/fish_prompt.fish: fishマーク追加
