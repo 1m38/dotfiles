@@ -1,0 +1,9 @@
+if [[ -o login ]]; then
+    if builtin command -v fish > /dev/null; then
+	exec fish
+    elif [ -f $HOME/usr/bin/fish ]; then
+	exec $HOME/usr/bin/fish
+    else
+	source $HOME/dotfiles/.zshrc
+    fi
+fi

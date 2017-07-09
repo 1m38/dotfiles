@@ -1,5 +1,10 @@
 2017-07-09    <masaya@FS-VB-arch>
 
+	* .zshrc_for_fish: login shellがzshの場合に、exec fishする
+	研究室サーバー用
+
+	* init.zsh: modified for fish shell
+
 	* fish: fish shell設定追加
 
 2017-05-29  Masaya Uno  <masaya@FS-MC-pca308>

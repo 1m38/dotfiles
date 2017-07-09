@@ -50,6 +50,13 @@ ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
 ln -sf ~/dotfiles/.flake8 ~/.flake8
 
+# fish
+mkdir -p ~/.config
+ln -sf ~/dotfiles/fish ~/.config/fish
+if [[ `domainname` = "Kurohashi-Lab" ]]; then
+    ln -sf ~/dotfiles/.zshrc_for_fish ~/.zshrc
+fi
+
 # dotfilesへのURL変更
 function change-repo-url() {
     cd `dirname $1`
