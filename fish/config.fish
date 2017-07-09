@@ -38,10 +38,14 @@ switch (uname)
 	case 'linux*'
 		# ulimit (hostごとに変更)
 		switch $HOSTNAME_S
-			case basil300 basil301 basil302 jungle
+			case basil300 basil301 basil302
 				# 128GB
 				ulimit -m 128000000
 				ulimit -v 128000000
+			case jungle
+				# 600GB
+				ulimit -m 600000000
+				ulimit -v 600000000
 			case 'basil2*' 'basil3*' 'basil4*'
 				# basil200/300/400series: 32GB
 				ulimit -m 32000000
@@ -55,9 +59,9 @@ switch (uname)
 				ulimit -m 20000000
 				ulimit -v 20000000
 			case 'moss*'
-				# 40GB
-				ulimit -m 40000000
-				ulimit -v 40000000
+				# 200GB
+				ulimit -m 200000000
+				ulimit -v 200000000
 		end
 end
 
