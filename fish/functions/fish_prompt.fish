@@ -14,6 +14,7 @@ function fish_prompt --description 'Write out the prompt'
 			set color_cwd 'yellow'
 			set suffix '>'
 	end
+	set -l prompt_gxp_hostname_color 'red'
 	set -l exit_code $status
 	set -l color_exit_code
 	set -l bold_exit_code
@@ -47,14 +48,23 @@ function fish_prompt --description 'Write out the prompt'
 
 	# set prompt "$USER" @ (prompt_hostname) ' [' (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) '] '(set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
 	set -l prompt "[ "
-	set prompt $prompt (set_color --bold $prompt_hostname_color)  (prompt_hostname) (set_color normal) " "
+	if [ -n "$GXP_ON" ]	# change hostname color when gxp is activated
+		set prompt $prompt (set_color --bold $prompt_gxp_hostname_color)
+	else
+		set prompt $prompt (set_color --bold $prompt_hostname_color)
+	end
+	set prompt $prompt (prompt_hostname) (set_color normal) " "
 	set prompt $prompt (set_color --bold blue) "><>" (set_color normal) " | "
 	set prompt $prompt (set_color $color_cwd) (prompt_pwd) (set_color normal) 
-	if [ -n "$git_branch" ]
+	if [ -n "$git_branch" ]	# branch_name, dirty markerを表示
 		set prompt $prompt (set_color $color_git_branch) " $git_branch" (set_color --bold $color_git_diff) "$git_diff" (set_color --bold $color_git_untracked) "$git_untracked" (set_color normal)
 	end
 	set prompt $prompt " | "
 	set prompt $prompt (set_color $bold_exit_code $color_exit_code) "$exit_code" (set_color normal) " | "
+	if [ -n "$GXP_ON" ]	# gxp: [N/N/N] を表示
+		set prompt $prompt (set_color 'cyan') (gxpc prompt 2> /dev/null) (set_color normal)
+		set prompt $prompt " | "
+	end
 	set prompt $prompt (date "+%y-%m-%d %H:%M:%S") " ]"
 
 	echo -n -s $prompt
