@@ -95,7 +95,8 @@ if [ -n $TMUX ]
 	tmux set-option -g window-status-last-style "$window_status_last_style" > /dev/null
 end
 
-
+# virtualfish
+eval (python -m virtualfish)
 
 
 

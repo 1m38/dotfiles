@@ -55,6 +55,9 @@ function fish_prompt --description 'Write out the prompt'
 	end
 	set prompt $prompt (prompt_hostname) (set_color normal) " "
 	set prompt $prompt (set_color --bold blue) "><>" (set_color normal) " | "
+	if set -q VIRTUAL_ENV
+		set prompt $prompt (set_color -b blue white) (basename "$VIRTUAL_ENV") (set_color normal) " | "
+	end
 	set prompt $prompt (set_color $color_cwd) (prompt_pwd) (set_color normal) 
 	if [ -n "$git_branch" ]	# branch_name, dirty markerを表示
 		set prompt $prompt (set_color $color_git_branch) " $git_branch" (set_color --bold $color_git_diff) "$git_diff" (set_color --bold $color_git_untracked) "$git_untracked" (set_color normal)
