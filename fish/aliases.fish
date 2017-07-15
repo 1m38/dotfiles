@@ -24,12 +24,12 @@ alias restartemacs 'killemacs; e'
 # pbcopy / cpfile
 if builtin command -v pbcopy > /dev/null
 	function cpfile
-		cat $1 | pbcopy
+		cat $argv | pbcopy
 	end
 else if builtin command -v xsel > /dev/null
 	alias pbcopy='xsel --clipboard --input'
 	function cpfile
-		cat $1 | xsel --clipboard --input
+		cat $argv | xsel --clipboard --input
 	end
 end
 

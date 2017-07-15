@@ -1,3 +1,7 @@
+2017-07-15    <masaya@FS-VB-arch>
+
+	* fish/aliases.fish: fix cpfile
+
 2017-07-14  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* fish/config.fish: add virtualfish
