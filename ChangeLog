@@ -1,3 +1,8 @@
+2017-08-20  Masaya Uno  <masaya@FS-vb-ub1704>
+
+	* fish/env.fish: linuxbrew設定追加
+	ubuntu用設定追加(/home/linuxbrew)
+
 2017-07-15    <masaya@FS-VB-arch>
 
 	* fish/aliases.fish: fix cpfile

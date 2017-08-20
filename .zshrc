@@ -11,7 +11,11 @@ if [[ -d $HOME/.linuxbrew ]]; then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-elif [[ -d /usr/local/Homebrew ]]; then
+fi
+if [[ -d /home/linuxbrew/.linuxbrew ]]; then
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+if [[ -d /usr/local/Homebrew ]]; then
     # export PATH=/usr/local/bin:${PATH}
     export MANPATH=/usr/local/share/man:${MANPATH}
     # coreutils

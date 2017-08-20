@@ -8,7 +8,11 @@ if [ -d $HOME/.linuxbrew ]
 	set system_paths $HOME/.linuxbrew/bin $system_paths
 	#     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 	#     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-else if [ -d /usr/local/Homebrew ]
+end
+if [ -d /home/linuxbrew/.linuxbrew ]
+	set system_paths /home/linuxbrew/.linuxbrew/bin $system_paths
+end
+if [ -d /usr/local/Homebrew ]
 	#     export MANPATH=/usr/local/share/man:${MANPATH}
 	# coreutils
 	if [ -d /usr/local/opt/coreutils ]
