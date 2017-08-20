@@ -401,7 +401,7 @@ else
     zstyle ':vcs_info:*' formats "%F{green}%b%f%c%u "
     zstyle ':vcs_info:*' actionformats '%b | %a'
     precmd () { vcs_info }
-    PROMPT='[ %B%F{$prompt_hostname_color}%m%f%b | %F{yellow}%~%f ${vcs_info_msg_0_}| %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
+    PROMPT='[ %B%F{$prompt_hostname_color}%m%f%b %B%F{green}Z%f%b | %F{yellow}%~%f ${vcs_info_msg_0_}| %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
  %# '
 fi
 
