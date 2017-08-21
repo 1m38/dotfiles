@@ -324,10 +324,15 @@ case ${OSTYPE} in
     linux*)
 	# ulimit (hostごとに変更)
 	case $HOSTNAME_S in
-	    basil300|basil301|basil302|jungle)
+	    basil300|basil301|basil302)
 		# 128GB
 		ulimit -m 128000000
 		ulimit -v 128000000
+		;;
+	    jungle)
+		# 600GB
+		ulimit -m 600000000
+		ulimit -v 600000000
 		;;
 	    basil2*|basil3*|basil4*)
 		# basil200/300/400series: 32GB
@@ -345,9 +350,9 @@ case ${OSTYPE} in
 		ulimit -v 20000000
 		;;
 	    moss*)
-		# 40GB
-		ulimit -m 40000000
-		ulimit -v 40000000
+		# 200GB
+		ulimit -m 200000000
+		ulimit -v 200000000
 		;;
 
 	esac

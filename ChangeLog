@@ -1,3 +1,7 @@
+2017-08-21    <uno@basil127>
+
+	* .zshrc: ulimit設定
+
 2017-08-20  Masaya Uno  <masaya@FS-vb-ub1704>
 
 	* fish/functions/fish_prompt.fish: マーク削除
