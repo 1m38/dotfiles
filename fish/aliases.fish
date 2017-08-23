@@ -7,6 +7,10 @@ alias jk 'jumanpp | knp'
 alias sort 'LANG=C sort'
 alias uniq 'LANG=C uniq'
 
+alias ipython 'ipython --colors=linux'
+alias ipython2 'ipython2 --colors=linux'
+alias ipython3 'ipython3 --colors=linux'
+
 # history
 
 # # '...RET'で階層を2つ上がる
