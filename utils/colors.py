@@ -2,6 +2,7 @@
 """print terminal 256 colors"""
 
 from __future__ import print_function
+import sys
 
 
 def main():
