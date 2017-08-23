@@ -12,6 +12,8 @@ call plug#end()
 " colorscheme
 syntax on
 set t_Co=256
+autocmd ColorScheme * highlight Identifier ctermfg=2 guifg=#00C300
+autocmd ColorScheme * highlight Comment ctermfg=91 guifg=#8725AF
 colorscheme solarized
 let g:solarized_termtrans=1
 set background=dark
