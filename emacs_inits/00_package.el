@@ -26,7 +26,6 @@
     flycheck
     helm-flycheck
     nav
-    yatex
     open-junk-file
     elpy
     python-mode
