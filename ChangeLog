@@ -1,6 +1,7 @@
 2017-09-11    <uno@basil127>
 
 	* .zshrc : promptマーク削除
+	ulimit変更
 
 	* .tmux.conf: fish設定削除
 
