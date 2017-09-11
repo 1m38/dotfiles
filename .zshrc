@@ -467,6 +467,18 @@ else
     fi
 fi
 
+# python virtualenvwrapper
+case $HOSTNAME_S in
+    baracuda*|moss*)
+    ;;
+    *)
+	if [[ -e $HOME/.local/bin/virtualenvwrapper.sh ]]; then
+	    export WORKON_HOME=$HOME/.virtualenvs
+	    source $HOME/.local/bin/virtualenvwrapper.sh
+	fi
+	;;
+esac
+
 
 # 実験環境
 KyotoEBMT_DIR=$HOME/tools/kyotoebmt

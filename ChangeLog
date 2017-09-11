@@ -2,6 +2,7 @@
 
 	* .zshrc : promptマーク削除
 	ulimit変更
+	virtualenvwrapper設定追加
 
 	* .tmux.conf: fish設定削除
 
