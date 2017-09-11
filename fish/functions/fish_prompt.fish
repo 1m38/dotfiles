@@ -53,7 +53,8 @@ function fish_prompt --description 'Write out the prompt'
 	else
 		set prompt $prompt (set_color --bold $prompt_hostname_color)
 	end
-	set prompt $prompt (prompt_hostname) (set_color normal) " | "
+	set prompt $prompt (prompt_hostname) (set_color normal) " "
+	set prompt $prompt (set_color --bold blue) "><>" (set_color normal) " | "
 	if set -q VIRTUAL_ENV
 		set prompt $prompt (set_color -b blue white) (basename "$VIRTUAL_ENV") (set_color normal) " | "
 	end
