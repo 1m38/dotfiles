@@ -30,10 +30,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(custom-safe-themes
- ;;   (quote
- ;;    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(company-ghc-show info)
  '(markdown-css-paths (quote ("markdown.css")))
+ '(package-selected-packages
+   (quote
+    (nlinum yatex nav helm-flycheck flycheck key-combo helm-descbinds helm-ls-git helm real-auto-save markdown-mode emmet-mode rhtml-mode smartparens key-chord magit company auto-install init-loader)))
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
