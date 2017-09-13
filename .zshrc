@@ -32,9 +32,9 @@ fi
 # install
 if [[ ! -d $HOME/.zplug ]]; then
     if (( $+commands[curl] )); then
-	curl -sL zplug.sh/installer | zsh
+	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     else
-	echo "zplug install: curl -sL zplug.sh/installer | zsh"
+	echo "zplug install: curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh"
     fi
 fi
 source ~/.zplug/init.zsh
