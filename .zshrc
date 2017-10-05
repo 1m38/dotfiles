@@ -154,7 +154,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias ssh-addk='ssh-add ~/.ssh/k2l.id_ecdsa'
+alias ssh-addk='ssh-add ~/.ssh/k2l.id_ed25519'
 
 # emacsclient
 alias e='emacsclient -c -t -a ""'
