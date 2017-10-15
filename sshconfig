@@ -66,3 +66,8 @@ Host tp-arch
      User masaya
      IdentityFile ~/.ssh/fs-tp-arch.id_rsa
 
+Host leaf
+     Hostname frtsk.mydns.jp
+     Port 57334
+     User masaya
+     IdentityFile ~/.ssh/leaf_raspi.id_ed25519
