@@ -1,3 +1,7 @@
+2017-10-30  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .zshrc (cpfile): tmux内で動作するように修正
+
 2017-10-16  FS-PC-win10  <masaya@FS-PC-win10.localdomain>
 
 	* sshconfig: add leaf

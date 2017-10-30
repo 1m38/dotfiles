@@ -164,7 +164,7 @@ alias restartemacs='killemacs; e'
 # pbcopy / cpfile
 if builtin command -v pbcopy > /dev/null; then
     function cpfile() {
-	cat $1 | pbcopy
+	cat $1 | reattach-to-user-namespace pbcopy
     }
 elif builtin command -v xsel > /dev/null; then
     alias pbcopy='xsel --clipboard --input'
