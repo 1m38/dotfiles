@@ -1,13 +1,9 @@
 #!/usr/bin/env perl
 
-# http://konn-san.com/prog/why-not-latexmk.html
-$latex        = 'platex -synctex=1 -halt-on-error';
-$latex_silent = 'platex -synctex=1 -halt-on-error -interaction=batchmode';
-$bibtex       = 'pbibtex';
-$dvipdf       = 'dvipdfmx %O -o %D %S';
-$makeindex    = 'mendex %O -o %D %S';
-$max_repeat   = 5;
-$pdf_mode     = 3; # generates pdf via dvipdfmx
+# http://qnighy.hatenablog.com/entry/2016/02/04/131601
+$pdf_mode = 1;
+$pdflatex = 'lualatex -synctex=1 -file-line-error -halt-on-error -interaction=nonstopmode %O %S';
+$bibtex = 'pbibtex %O %B';
 
 if ($^O eq 'darwin') {
     $pvc_view_file_via_temporary = 0;

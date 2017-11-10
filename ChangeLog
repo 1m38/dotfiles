@@ -1,3 +1,7 @@
+2017-11-10  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* .latexmkrc, emacs_inits/65_yatex.el: lualatexに移行
+
 2017-10-30  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .zshrc (cpfile): tmux内で動作するように修正
