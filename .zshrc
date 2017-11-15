@@ -329,7 +329,7 @@ case ${OSTYPE} in
 		ulimit -m 192000000
 		ulimit -v 192000000
 		;;
-	    jungle)
+	    jungle*)
 		# 600GB
 		ulimit -m 600000000
 		ulimit -v 600000000
@@ -363,7 +363,7 @@ case $HOSTNAME_S in
 	tmux_window_color="colour20"
 	prompt_hostname_color="blue"
 	;;
-    basil*|jungle)
+    basil*|jungle*)
 	tmux_hostname_color="fg=white,bg=colour22"
 	tmux_window_color="colour22"
 	prompt_hostname_color="green"

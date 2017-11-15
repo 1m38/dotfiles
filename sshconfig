@@ -18,7 +18,7 @@ Host basil*
      User uno
      ProxyCommand ssh -qW %h:%p lotus
 
-Host jungle
+Host jungle*
      User uno
      ProxyCommand ssh -qW %h:%p lotus
 

@@ -1,3 +1,7 @@
+2017-11-15    <uno@basil127>
+
+	* .zshrc, sshconfig: jungle -> jungle*
+
 2017-11-10  Masaya Uno  <masaya@FS-MC-pca308>
 
 	* .latexmkrc, emacs_inits/65_yatex.el: lualatexに移行
