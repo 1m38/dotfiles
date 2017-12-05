@@ -34,6 +34,7 @@
 	matlab-mode-hook
 	haskell-mode-hook
 	R-mode-hook
+	go-mode-hook
 	))
 
 (setq key-combo-common-default
@@ -80,6 +81,7 @@
 	;("(" . ("(`!!')" "("))
 	;; ("(" . ("(`!!')"))
 	;; ("[" . ("[`!!']"))
+	(":=" . " := ")
 	))
 
 
