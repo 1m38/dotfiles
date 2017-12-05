@@ -1,3 +1,7 @@
+2017-12-06  FS-PC-win10  <masaya@FS-PC-win10.localdomain>
+
+	* .zshrc: add GOPATH
+
 2017-12-04    <uno@basil127>
 
 	* .zshrc: stanford-corenlp 20151209 -> 20170609
