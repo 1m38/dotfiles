@@ -8,7 +8,7 @@ function notify_preexec {
   notified=false
 }
 
-ignore_cmds=(man less lv zless)
+ignore_cmds=(man less lv zless tmux)
 SLACK_NOTIF_THRESHOLD=120
 
 function notify_precmd {
