@@ -99,6 +99,14 @@ if [[ -d $GOPATH/bin ]]; then
     export PATH=$GOPATH/bin:$PATH
 fi
 
+# sensitive env variables
+if [[ -f $HOME/dotfiles/secret/secret_envs.zsh ]]; then
+    source $HOME/dotfiles/secret/secret_envs.zsh
+fi
+
+# slack notification
+source $HOME/dotfiles/utils/slack_notify.zsh
+
 # ===========
 #   options
 # ===========
