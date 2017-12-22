@@ -104,8 +104,10 @@ if [[ -f $HOME/dotfiles/secret/secret_envs.zsh ]]; then
     source $HOME/dotfiles/secret/secret_envs.zsh
 fi
 
-# slack notification
-source $HOME/dotfiles/utils/slack_notify.zsh
+# slack notification (tmux内のみ)
+if [[ -n $TMUX ]]; then
+    source $HOME/dotfiles/utils/slack_notify.zsh
+fi
 
 # ===========
 #   options
