@@ -59,3 +59,4 @@ function ghosts(){
 # ここから下は basil 用の設定
 # T2K や InTrigger で使う場合には適宜変更
 gxpc use ssh `hostname` basil
+gxpc use ssh `hostname` jungle
