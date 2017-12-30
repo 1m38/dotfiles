@@ -1,3 +1,7 @@
+2017-12-31    <uno@basil127>
+
+	* utils/slack_notify.zsh (ignore_cmds): add nvidia-smi
+
 2017-12-26    <uno@basil127>
 
 	* emacs_inits/00_package.el: add yaml-mode

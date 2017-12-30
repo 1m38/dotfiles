@@ -8,7 +8,7 @@ function notify_preexec {
   notified=false
 }
 
-ignore_cmds=(man less lv zless tmux)
+ignore_cmds=(man less lv zless tmux nvidia-smi)
 SLACK_NOTIF_THRESHOLD=120
 
 function notify_precmd {
