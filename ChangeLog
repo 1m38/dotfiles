@@ -1,3 +1,7 @@
+2018-01-23  Masaya Uno  <masaya@FS-MC-pca308>
+
+	* emacs_inits/11_org.el: enable markdown export
+
 2017-12-31    <uno@basil127>
 
 	* utils/slack_notify.zsh (ignore_cmds): add nvidia-smi
