@@ -3,7 +3,7 @@
 
 function notify_preexec {
   notif_prev_executed_at=`date +"%Y/%-m/%-d(%a) %k:%M:%S"`
-  notif_prev_command=$2
+  notif_prev_command=$1
   notif_prev_cmd="${notif_prev_command[(ws: :)1]}"
   notified=false
 }

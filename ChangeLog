@@ -1,3 +1,7 @@
+2018-01-23    <uno@basil127>
+
+	* utils/slack_notify.zsh: prev_commandを全部表示するようにした
+
 2017-12-31    <uno@basil127>
 
 	* utils/slack_notify.zsh (ignore_cmds): add nvidia-smi
