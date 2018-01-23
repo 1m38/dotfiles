@@ -18,6 +18,8 @@ function notify_precmd {
     notif_color=$([ $notif_status -eq 0 ] && echo "good" || echo "danger")
     # notif_icon=$([ $notif_status -eq 0 ] && echo ":angel:" || echo ":smiling_imp:")
     notif_icon=":clock3:"
+    script_dir=$HOME/dotfiles/utils
+    elapsed_time=`echo $TTYIDLE | python3 ${script_dir}/strftime.py`
     payload=`cat << EOS
 {
   "username": "command result",
@@ -56,7 +58,7 @@ function notify_precmd {
         },
         {
           "title": "elapsed time",
-          "value": "$TTYIDLE seconds",
+          "value": "$elapsed_time",
           "short": true
         }
       ]
