@@ -1,5 +1,9 @@
 2018-01-23  Masaya Uno  <masaya@FS-MC-pca308>
 
+	* utils/slack_notify.zsh: elapsed timeを整形
+
+	* utils/strftime.py: 入力された秒数を整形
+
 	* emacs_inits/11_org.el: enable markdown export
 
 2017-12-31    <uno@basil127>
