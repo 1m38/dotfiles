@@ -66,8 +66,7 @@ Host tp-arch
      User masaya
      IdentityFile ~/.ssh/fs-tp-arch.id_rsa
 
-Host leaf
-     Hostname frtsk.sytes.net
-     Port 57334
+Host leafeon
+     Hostname frtsk.pgw.jp
      User masaya
-     IdentityFile ~/.ssh/leaf_raspi.id_ed25519
+     IdentityFile ~/.ssh/leafeon_nuc.id_ed25519
