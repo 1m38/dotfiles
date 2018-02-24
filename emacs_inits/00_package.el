@@ -4,7 +4,6 @@
 (defvar installing-package-list
   '(
     ;; ここに使っているパッケージを書く。
-    auto-install
     company
     magit
     key-chord

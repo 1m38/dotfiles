@@ -1,3 +1,7 @@
+2018-02-24  FS-TP-win10  <masaya@FS-TP-win10.localdomain>
+
+	* emacs_inits/00_package.el: delete package auto-install
+
 2018-01-23    <uno@basil127>
 
 	* utils/slack_notify.zsh: prev_commandを全部表示するようにした
