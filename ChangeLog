@@ -1,3 +1,7 @@
+2018-12-24  Masaya Uno  <masaya@FS-LV-ub1810>
+
+	* .zshrc: add pyenv-virtualenv init
+
 2018-02-24  FS-TP-win10  <masaya@FS-TP-win10.localdomain>
 
 	* emacs_inits/00_package.el: delete package auto-install

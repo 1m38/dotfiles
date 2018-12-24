@@ -483,17 +483,13 @@ else
     fi
 fi
 
-# python virtualenvwrapper
-case $HOSTNAME_S in
-    baracuda*|moss*)
-    ;;
-    *)
-	if [[ -e $HOME/.local/bin/virtualenvwrapper.sh ]]; then
-	    export WORKON_HOME=$HOME/.virtualenvs
-	    source $HOME/.local/bin/virtualenvwrapper.sh
-	fi
-	;;
-esac
+# pyenv-virtualenv
+if builtin command -v pyenv > /dev/null; then
+    if [ -d `pyenv root`/plugins/pyenv-virtualenv ]; then
+	eval "$(pyenv virtualenv-init -)"
+    fi
+fi
+
 
 
 # 実験環境
