@@ -2,6 +2,7 @@
 secret
 
 # fish
+/fish/fish_variables
 /fish/completions/
 
 # fish: created by plugins
@@ -10,13 +11,14 @@ secret
 /fish/functions/peco_select_history.fish
 /fish/functions/__ghq_crtl_g.fish
 /fish/conf.d/ghq_key_bindings.fish
-fish/functions/__z.fish
-fish/functions/__z_add.fish
-fish/functions/__z_clean.fish
-fish/functions/__z_complete.fish
-fish/functions/bd.fish
-fish/functions/getopts.fish
-fish/functions/gitignore.fish
-fish/functions/peco_recentd.fish
-fish/functions/spin.fish
+/fish/functions/__z.fish
+/fish/functions/__z_add.fish
+/fish/functions/__z_clean.fish
+/fish/functions/__z_complete.fish
+/fish/conf.d/z.fish
+/fish/functions/bd.fish
+/fish/functions/getopts.fish
+/fish/functions/gitignore.fish
+/fish/functions/peco_recentd.fish
+/fish/functions/spin.fish
 
