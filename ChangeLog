@@ -1,5 +1,7 @@
 2019-04-07  Masaya Uno  <masaya@FS-VB-mj-xfce>
 
+	* init.zsh: 実行ディレクトリに依存しないようにした
+
 	* init.zsh: .ssh/config: 研究室用設定を削除
 
 2018-12-24  Masaya Uno  <masaya@FS-LV-ub1810>
