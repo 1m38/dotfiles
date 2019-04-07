@@ -63,24 +63,6 @@ if [[ -n $TMUX ]] && builtin command -v zplug > /dev/null; then
     fi
 fi
 
-# kuro-lab_cluster: GPU / linuxbrew
-if [[ -f /usr/local/cuda/bin/nvcc ]]; then
-    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
-    export CUDA_HOME="/usr/local/cuda"
-    export PATH="$PATH:/usr/local/cuda/bin"
-elif [[ -f /mnt/orange/brew/brew.zsh ]]; then
-    # /orange/brew
-    BREW_ZSH=/mnt/orange/brew/data/bin/zsh
-    if [[ -x $BREW_ZSH ]]; then
-	BREW_VER=$($BREW_ZSH --version | cut -f 2 -d ' ')
-	if [[ $BREW_VER != $ZSH_VERSION ]]; then
-	    exec $BREW_ZSH -l
-	    exit
-	fi
-    fi
-    source /mnt/orange/brew/brew.zsh
-fi
-
 # =================
 #   env variables
 # =================
@@ -301,9 +283,6 @@ zle -N accept-line re-prompt
 
 
 # tmux
-if ! builtin command -v tmux > /dev/null && [[ -f /mnt/orange/brew/data/bin/tmux ]]; then
-    alias tmux=/mnt/orange/brew/data/bin/tmux
-fi
 alias t='tmux attach || tmux new-session'
 alias tls='tmux ls'
 if [ "$TMUX" = "" ]; then
@@ -337,57 +316,13 @@ case ${OSTYPE} in
 	    alias open='reattach-to-user-namespace open'
 	fi
     ;;
-    linux*)
-	# ulimit (hostごとに変更)
-	case $HOSTNAME_S in
-	    basil300|basil301|basil302)
-		# 192GB
-		ulimit -m 192000000
-		ulimit -v 192000000
-		;;
-	    jungle*)
-		# 600GB
-		ulimit -m 600000000
-		ulimit -v 600000000
-		;;
-	    basil2*|basil3*|basil4*)
-		# basil200/300/400series: 32GB
-		ulimit -m 32000000
-		ulimit -v 32000000
-		;;
-	    basil*)
-		# 10GB
-		ulimit -m 10000000
-		ulimit -v 10000000
-		;;
-	    baracuda*)
-		# 20GB
-		ulimit -m 20000000
-		ulimit -v 20000000
-		;;
-	    moss*)
-		# 200GB
-		ulimit -m 200000000
-		ulimit -v 200000000
-		;;
-	esac
 esac
 
 case $HOSTNAME_S in
-    masaya-*|FS-*|fs-*)
+    FS-*|fs-*)
 	tmux_hostname_color="fg=black,bg=colour249"
 	tmux_window_color="colour20"
 	prompt_hostname_color="blue"
-	;;
-    basil*|jungle*)
-	tmux_hostname_color="fg=white,bg=colour22"
-	tmux_window_color="colour22"
-	prompt_hostname_color="green"
-	;;
-    baracuda*|moss*)
-	tmux_hostname_color="fg=white,bg=colour166"
-	tmux_window_color="colour166"
-	prompt_hostname_color="green"
 	;;
     *)
 	tmux_hostname_color="fg=white,bg=colour52"
@@ -489,51 +424,6 @@ if builtin command -v pyenv > /dev/null; then
 	eval "$(pyenv virtualenv-init -)"
     fi
 fi
-
-
-
-# 実験環境
-KyotoEBMT_DIR=$HOME/tools/kyotoebmt
-if [[ -d $KyotoEBMT_DIR ]]; then
-    alias kyotoebmt_server="nice -n 19 $KyotoEBMT_DIR/parse_tools/src/parse_server.pl --port 13351 --n_best_num 1"
-    alias kyotoebmt_client='nice -n 19 $KyotoEBMT_DIR/bin/KyotoEBMT -c ~/kyotoebmt.ini --input_filter_type 2 --input_threshold 50 --nb_threads 10 --parse_command "echo \"%SENTENCE%\" | $KyotoEBMT_DIR/parse_tools/src/parse_client.pl --lang ja --port 13351" --input_mode plain'
-    alias klm_query="nice -n 19 /share/tool/MT/tool/kenlm/bin/query /windroot/uno/kyotoebmt_ems/lm/ja"
-fi
-if [[ -d $HOME/svm_rank ]]; then
-   alias svm-rank-learn="~/svm_rank/svm_rank_learn"
-   alias svm-rank-classify="~/svm_rank/svm_rank_classify"
-fi
-STP_DIR=$HOME/tools/stanford-parser-full-2015-04-20
-if [[ -d $STP_DIR ]]; then
-    alias stanford-parser="/mnt/orange/brew/data/bin/java -mx4000m -cp $STP_DIR/\* edu.stanford.nlp.parser.lexparser.LexicalizedParser -tokenized -maxLength 200 -outputFormat penn,typedDependencies -escaper edu.stanford.nlp.process.PTBEscapingProcessor -sentences newline edu/stanford/nlp/models/lexparser/englishRNN.ser.gz -"
-fi
-STCore_DIR=$HOME/tools/stanford-corenlp-full-2017-06-09
-if [[ -d $STCore_DIR ]]; then
-    alias stanford-corenlp="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref,depparse -ssplit.eolonly true"
-    alias stanford-corenlp-zh="/mnt/orange/brew/data/bin/java -Xmx5g -cp $STCore_DIR/\* edu.stanford.nlp.pipeline.StanfordCoreNLP -props StanfordCoreNLP-chinese.properties"
-fi
-
-# spark
-if [[ -d $HOME/src/spark ]]; then
-    export SPARK_HOME=$HOME/src/spark
-fi
-
-
-# コマンドの実行が終わったらメール
-function rep_mail (){
-    subj="report mail:$HOSTNAME_S"
-    mail_from="uno@nlp.ist.i.kyoto-u.ac.jp"
-    mail_to="uno@nlp.ist.i.kyoto-u.ac.jp"
-
-    cmd=$@
-    start_time=`date "+%m/%d %H:%M:%S"`
-    text="${cmd}\n開始 ${start_time}\n"
-
-    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}強制終了\"  ;trap INT  EXIT ERR;" INT
-    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}異常終了\"  ;trap INT  EXIT ERR;" ERR
-    trap "python3 ~/src/ReportMail/sendmail.py -s \"$subj\" -b \"${text}正常終了\"  ;trap INT  EXIT ERR;" EXIT
-    $@
-}
 
 # Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
 VTE_CJK_WIDTH=1
