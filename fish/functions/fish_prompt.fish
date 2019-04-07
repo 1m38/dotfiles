@@ -1,42 +1,70 @@
 function fish_prompt --description 'Write out the prompt'
-	
-    set stat $status
 
-    if not set -q __fish_prompt_normal
-        set -g __fish_prompt_normal (set_color normal)
+    set -l stat $status
+
+
+    set -l prompt "[ "
+
+    # hostname
+    set -l l_prompt_hostname (set_color --bold blue)(prompt_hostname)(set_color normal)
+    set -l prompt $prompt $l_prompt_hostname
+
+    # fish
+    set -l prompt $prompt " " (set_color blue) "><>" (set_color normal)
+
+    set -l prompt $prompt " | "
+
+    # working directory
+    set -l l_prompt_pwd (set_color yellow)(prompt_pwd)(set_color normal)
+    set -l prompt $prompt $l_prompt_pwd
+
+    # git branch
+    set l_prompt_git
+    git rev-parse --is-inside-work-tree >/dev/null ^/dev/null
+    if [ $status -eq 0 ]
+	set -l color_git_branch 'green'
+	set -l color_git_diff 'red'
+	set -l color_git_untracked 'yellow'
+	set -l git_branch (git rev-parse --abbrev-ref HEAD ^/dev/null)
+	set -l git_diff
+	git status --porcelain | grep -E '^ *M' >/dev/null
+	if [ $status -eq 0 ]
+	    set git_diff (set_color --bold $color_git_diff) '+'
+	end
+	set -l git_untracked
+	git status --porcelain | grep -E '^ *\?\?' >/dev/null
+	if [ $status -eq 0 ]
+	    set git_untracked (set_color --bold $color_git_untracked) '?'
+	end
+	set l_prompt_git " " \
+	    (set_color $color_git_branch) $git_branch \
+	    $git_diff \
+	    $git_untracked \
+	    (set_color normal)
     end
+    set -l prompt $prompt $l_prompt_git
 
-    if not set -q __fish_color_blue
-        set -g __fish_color_blue (set_color -o blue)
+    set -l prompt $prompt " | "
+
+    # status
+    set -l l_stat_color
+    if [ $stat -ne 0 ]
+	set l_stat_color (set_color --bold yellow)
     end
+    set -l prompt $prompt $l_stat_color $stat (set_color normal) " | "
 
-    #Set the color for the status depending on the value
-    set __fish_color_status (set_color -o green)
-    if test $stat -gt 0
-        set __fish_color_status (set_color -o red)
-    end
+    # date
+    set -l prompt $prompt (date "+%y-%m-%d %H:%M:%S")
 
+    set -l prompt $prompt " ]"
+    echo -n -s $prompt
+
+    # prompt character
     switch "$USER"
-
         case root toor
-
-            if not set -q __fish_prompt_cwd
-                if set -q fish_color_cwd_root
-                    set -g __fish_prompt_cwd (set_color $fish_color_cwd_root)
-                else
-                    set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-                end
-            end
-
-            printf '%s@%s %s%s%s# ' $USER (prompt_hostname) "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal"
-
-        case '*'
-
-            if not set -q __fish_prompt_cwd
-                set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-            end
-
-            printf '[%s] %s%s@%s %s%s %s(%s)%s \f\r> ' (date "+%H:%M:%S") "$__fish_color_blue" $USER (prompt_hostname) "$__fish_prompt_cwd" "$PWD" "$__fish_color_status" "$stat" "$__fish_prompt_normal"
-
+	    printf "\n # "
+	case '*'
+	    printf "\n %% "
     end
+
 end
