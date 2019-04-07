@@ -3,21 +3,25 @@
 local -A opthash
 zparseopts -D -A opthash -- -change-repo -no-change-repo
 
+# emacs
 if [[ ! -d ~/.emacs.d ]]; then
     mkdir -p ~/.emacs.d
 fi
 ln -sf ~/dotfiles/emacs_init.el ~/.emacs.d/init.el
 ln -sf ~/dotfiles/emacs_inits ~/.emacs.d/inits
 
+# git
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+# screen
 ln -sf ~/dotfiles/.screenrc ~/.screenrc
+# zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
 # ssh
 mkdir -p ~/.ssh
 ln -sf ~/dotfiles/sshconfig ~/.ssh/config
 
-
+# vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 if [[ ! -d ~/.vimbackup ]]; then
     mkdir -p ~/.vimbackup
@@ -27,16 +31,22 @@ if [[ ! -d ~/.vim ]]; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+
 # neovim
 if [[ ! -d ~/.config ]]; then
     mkdir -p ~/.config
 fi
 ln -sf ~/.vim ~/.config/nvim
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
+
+# tmux
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
+# aspell
 ln -sf ~/dotfiles/.aspell.conf ~/.aspell.conf
+# latex
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
+# flake8
 ln -sf ~/dotfiles/.flake8 ~/.flake8
 
 # fish
