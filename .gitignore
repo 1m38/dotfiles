@@ -8,3 +8,6 @@ secret
 /fish/functions/fisher.fish
 /fish/functions/peco_kill.fish
 /fish/functions/peco_select_history.fish
+/fish/functions/__ghq_crtl_g.fish
+/fish/conf.d/ghq_key_bindings.fish
+
