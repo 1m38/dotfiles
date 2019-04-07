@@ -23,6 +23,13 @@ alias e 'emacsclient -c -t -a ""'
 alias killemacs 'emacsclient -e "(kill-emacs)"'
 alias restartemacs 'killemacs; e'
 
+# ls automatically after cd
+# ref: https://blog.matzryo.com/entry/2018/09/02/cd-then-ls-with-fish-shell
+functions --copy cd standard_cd
+function cd
+    standard_cd $argv; and ls
+end
+
 # pbcopy / cpfile
 if builtin command -v pbcopy > /dev/null
 	function cpfile
