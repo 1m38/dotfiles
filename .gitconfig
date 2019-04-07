@@ -1,6 +1,6 @@
 [user]
-	name = Masaya Uno
-	email = uno@nlp.ist.i.kyoto-u.ac.jp
+	name = 1m38
+	email = 13414029+1m38@users.noreply.github.com
 
 [alias]
 	# http://qiita.com/peccul/items/90dd469e2f72babbc106
@@ -10,3 +10,5 @@
 	b = branch -v
 	br = branch -avv
 	s = status
+[ghq]
+	root = ~/ghq/
