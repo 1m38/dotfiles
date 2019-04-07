@@ -1,10 +1,10 @@
 /emacs_inits/emacs_inits
-/fish/fishd.*
-/fish/functions/__*
-/fish/functions/await.fish
-/fish/functions/fisher.fish
-/fish/functions/get.fish
-/fish/functions/getopts.fish
-/fish/functions/last_job_id.fish
-/fish/completions/
 secret
+
+# fish
+/fish/completions/
+
+# fish: created by plugins
+/fish/functions/fisher.fish
+/fish/functions/peco_kill.fish
+/fish/functions/peco_select_history.fish
