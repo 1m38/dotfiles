@@ -16,6 +16,9 @@ end
 # disable shortening dirnames in function prompt_pwd
 set -g fish_prompt_pwd_dir_length 0
 
+# disable greeting
+set fish_greeting
+
 # OS specific settings
 switch (uname)
     case 'darwin*'		# mac
