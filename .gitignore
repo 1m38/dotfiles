@@ -1,10 +1,24 @@
 /emacs_inits/emacs_inits
-/fish/fishd.*
-/fish/functions/__*
-/fish/functions/await.fish
-/fish/functions/fisher.fish
-/fish/functions/get.fish
-/fish/functions/getopts.fish
-/fish/functions/last_job_id.fish
-/fish/completions/
 secret
+
+# fish
+/fish/fish_variables
+/fish/completions/
+
+# fish: created by plugins
+/fish/functions/fisher.fish
+/fish/functions/peco_kill.fish
+/fish/functions/peco_select_history.fish
+/fish/functions/__ghq_crtl_g.fish
+/fish/conf.d/ghq_key_bindings.fish
+/fish/functions/__z.fish
+/fish/functions/__z_add.fish
+/fish/functions/__z_clean.fish
+/fish/functions/__z_complete.fish
+/fish/conf.d/z.fish
+/fish/functions/bd.fish
+/fish/functions/getopts.fish
+/fish/functions/gitignore.fish
+/fish/functions/peco_recentd.fish
+/fish/functions/spin.fish
+

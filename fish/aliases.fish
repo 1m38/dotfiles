@@ -1,9 +1,7 @@
-# alias ls 'ls -F --color=tty'
 alias cp 'cp -i'
 alias mv 'mv -i'
 alias rm 'rm -i'
-alias j jumanpp
-alias jk 'jumanpp | knp'
+
 alias sort 'LANG=C sort'
 alias uniq 'LANG=C uniq'
 
@@ -11,19 +9,26 @@ alias ipython 'ipython --colors=linux'
 alias ipython2 'ipython2 --colors=linux'
 alias ipython3 'ipython3 --colors=linux'
 
-# history
-
-# # '...RET'で階層を2つ上がる
+# '...RET'で階層を2つ上がる
 alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 
-alias ssh-addk 'ssh-add ~/.ssh/k2l.id_ecdsa'
+# tmux
+alias t 'tmux attach; or tmux new-session'
+alias tls 'tmux ls'
 
 # emacsclient
 alias e 'emacsclient -c -t -a ""'
 alias killemacs 'emacsclient -e "(kill-emacs)"'
 alias restartemacs 'killemacs; e'
+
+# ls automatically after cd
+# ref: https://blog.matzryo.com/entry/2018/09/02/cd-then-ls-with-fish-shell
+functions --copy cd standard_cd
+function cd
+    standard_cd $argv; and ls
+end
 
 # pbcopy / cpfile
 if builtin command -v pbcopy > /dev/null
@@ -36,13 +41,3 @@ else if builtin command -v xsel > /dev/null
 		cat $argv | xsel --clipboard --input
 	end
 end
-
-# tmux(baracuda/moss)
-builtin command -v tmux > /dev/null
-if [ $status -ne 0 -a -f /mnt/orange/brew/data/bin/tmux ]
-	alias tmux /mnt/orange/brew/data/bin/tmux
-end
-
-alias t 'tmux attach; or tmux new-session'
-alias tls 'tmux ls'
-
