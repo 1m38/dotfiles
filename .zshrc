@@ -392,38 +392,5 @@ if which lesspipe.sh > /dev/null; then
     export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-
-# anyenv
-if [[ -d $HOME/.anyenv ]]; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init - --no-rehash)"
-
-    if $pyenv_install; then
-	if ! builtin command -v pyenv > /dev/null; then
-	    echo "pyenv not installed."
-	    printf "Install? [y/N]: "
-            if read -q; then
-		anyenv install pyenv
-	    else
-		echo "pyenv_install=false" >> ~/.my_zsh_envs
-            fi
-	fi
-    fi
-else
-    if builtin command -v git > /dev/null; then
-	git clone https://github.com/riywo/anyenv ~/.anyenv
-    else
-	echo "anyenv not installed."
-	echo "run: git clone https://github.com/riywo/anyenv ~/.anyenv"
-    fi
-fi
-
-# pyenv-virtualenv
-if builtin command -v pyenv > /dev/null; then
-    if [ -d `pyenv root`/plugins/pyenv-virtualenv ]; then
-	eval "$(pyenv virtualenv-init -)"
-    fi
-fi
-
 # Ubuntu terminalなどVTE環境での一部全角記号ズレ軽減
 VTE_CJK_WIDTH=1
