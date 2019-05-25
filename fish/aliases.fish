@@ -15,6 +15,12 @@ if command --search python3 > /dev/null
     alias pip 'pip3'
 end
 
+# OnlineJudgeHelper
+if [ -f ~/ghq/github.com/1m38/OnlineJudgeHelper/oj-helper ]
+    alias oj-helper 'python3 ~/ghq/github.com/1m38/OnlineJudgeHelper/oj-helper'
+end
+
+
 # '...RET'で階層を2つ上がる
 alias ... 'cd ../..'
 alias .... 'cd ../../..'
