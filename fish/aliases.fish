@@ -9,6 +9,12 @@ alias ipython 'ipython --colors=linux'
 alias ipython2 'ipython2 --colors=linux'
 alias ipython3 'ipython3 --colors=linux'
 
+# python3を使う
+if command --search python3 > /dev/null
+    alias python 'python3'
+    alias pip 'pip3'
+end
+
 # '...RET'で階層を2つ上がる
 alias ... 'cd ../..'
 alias .... 'cd ../../..'
