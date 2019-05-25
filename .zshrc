@@ -292,12 +292,6 @@ else
 fi
 
 
-# loadaverage(OSごとの設定)
-# http://yonchu.hatenablog.com/entry/20120414/1334422075
-if [[ -d $HOME/dotfiles/bin ]]; then
-    PATH=$PATH:$HOME/dotfiles/bin
-fi
-
 # OS,hostごとの設定
 # ulimit
 # mac: TeX Live

@@ -55,6 +55,10 @@ ln -sf $SCRIPT_DIR/.flake8 ~/.flake8
 mkdir -p ~/.config
 ln -sf $SCRIPT_DIR/fish ~/.config/fish
 
+# ~/usr/bin
+mkdir -p ~/usr/bin
+ln -sf $SCRIPT_DIR/bin/* ~/usr/bin
+
 # dotfiles repoへのURL変更
 function change-repo-url() {
     cd $SCRIPT_DIR
