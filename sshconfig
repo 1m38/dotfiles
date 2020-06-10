@@ -2,36 +2,7 @@
 ServerAliveInterval 60
 ServerAliveCountMax 10
 
-# Host *
-#      ForwardAgent yes
-
-Host lotus
-     Hostname lotus.kuee.kyoto-u.ac.jp
-     User uno
-     IdentityFile ~/.ssh/k2l.id_ed25519
-
-Host lotus/*
-     User uno
-     ProxyCommand ssh -W "$(basename "%h")":%p "$(dirname "%h")"
-
-Host basil*
-     User uno
-     ProxyCommand ssh -qW %h:%p lotus
-
-Host jungle*
-     User uno
-     ProxyCommand ssh -qW %h:%p lotus
-
-Host baracuda*
-     User uno
-     ProxyCommand ssh -qW %h:%p lotus
-
-Host moss*
-     User uno
-     ProxyCommand ssh -qW %h:%p lotus
-
-Host github
-     Hostname github.com
+Host github.com
      IdentityFile ~/.ssh/github_1m38.id_ed25519
      User git
 
@@ -39,32 +10,6 @@ Host gist
      Hostname gist.github.com
      IdentityFile ~/.ssh/github_1m38.id_ed25519
      User git
-
-Host bitbucket
-     Hostname bitbucket.org
-     IdentityFile ~/.ssh/bitbucket_uno1038.id_ed25519
-     User git
-
-Host bitbucket.fs_lt34
-     Hostname bitbucket.org
-     IdentityFile ~/.ssh/bitbucket_fs_lt34.id_ed25519
-     User git
-
-Host laurel
-     Hostname laurel.kudpc.kyoto-u.ac.jp
-     User a0086617
-     IdentityFile ~/.ssh/kudpc.id_ecdsa
-
-Host arch
-     Hostname 127.0.0.1
-     Port 57691
-     User masaya
-     IdentityFile ~/.ssh/fs-vb-arch-ng.id_rsa
-
-Host tp-arch
-     Hostname 192.168.111.202
-     User masaya
-     IdentityFile ~/.ssh/fs-tp-arch.id_rsa
 
 Host leafeon
      Hostname frtsk.pgw.jp
