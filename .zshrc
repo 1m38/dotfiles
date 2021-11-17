@@ -46,3 +46,40 @@ fi
 if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+setopt correct              # 間違ったcommandを修正
+setopt share_history        # 他zshインスタンスと履歴を共有
+setopt extended_history     # コマンドの開始時間と終了時間をhistory fileに記録
+setopt hist_ignore_dups     # 連続で同じコマンドが実行されたら履歴に記録しない
+setopt hist_reduce_blanks   # 余分な空白を削除して履歴に記録
+setopt auto_pushd
+disable r
+
+# ==== aliases ====
+alias ls='ls -F --color=tty'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# history
+alias h='history -i'
+alias history-all='history -i 1'
+alias histgrep='history-all | grep --color=auto'
+
+# '...RET'で階層を2つ上がる
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# pbcopy / cpfile
+if builtin command -v pbcopy > /dev/null; then
+    function cpfile() {
+        cat $1 | reattach-to-user-namespace pbcopy
+    }
+elif builtin command -v xsel > /dev/null; then
+    alias pbcopy='xsel --clipboard --input'
+    function cpfile() {
+        cat $1 | xsel --clipboard --input
+    }
+fi
+
