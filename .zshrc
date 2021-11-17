@@ -113,3 +113,10 @@ zstyle ':vcs_info:*' actionformats '%b | %a'
 precmd () { vcs_info }
 PROMPT='[ %B%F{blue}%m%f%b | %F{yellow}%~%f ${vcs_info_msg_0_}| %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
  %# '
+
+# コマンド実行時にプロンプトをリセット(RPROMPTの時刻を更新)
+re-prompt() {
+    zle .reset-prompt
+    zle .accept-line
+}
+zle -N accept-line re-prompt
