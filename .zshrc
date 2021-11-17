@@ -71,6 +71,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# tmux
+alias t='tmux attach || tmux new-session'
+alias tls='tmux ls'
+
 # pbcopy / cpfile
 if builtin command -v pbcopy > /dev/null; then
     function cpfile() {
