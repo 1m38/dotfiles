@@ -1,0 +1,12 @@
+[user]
+	name = 1m38
+	email = 13414029+1m38@users.noreply.github.com
+
+[alias]
+	# http://qiita.com/peccul/items/90dd469e2f72babbc106
+	l = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(yellow)%cn %Cred%d %Creset%s'
+	ll = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(yellow)%cn %Cred%d %Creset%s' --branches --tags --remotes
+	wdiff = diff --word-diff
+	b = branch -v
+	br = branch -avv
+	s = status
