@@ -12,6 +12,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+export PATH=$HOME/usr/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
 # ==== zplug ====
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
@@ -34,3 +36,13 @@ fi
 zplug load --verbose
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# nim
+if [[ -d $HOME/.nimble/bin ]]; then
+    export PATH=$HOME/.nimble/bin:$PATH
+fi
+
+# brew
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
