@@ -14,9 +14,7 @@ proc add_simple_link(symlinks: var OrderedTable[string, string], path: string) =
   ## register to create a symlink from projectDir()/path to ~/path
   symlinks[path] = joinPath(home(), path)
 
-proc main() =
-  cd projectDir()
-
+proc make_symlinks() =
   # symlinks[src_path] = dst_path
   # src_path: relative path from projectDir()
   # dst_path: absolute path
@@ -25,8 +23,20 @@ proc main() =
   symlinks.add_simple_link(".gitconfig")
   symlinks.add_simple_link(".zshrc")
 
+  # make symlinks
   for src, dst in symlinks.pairs:
     if dirExists(parentDir dst):
       exec &"ln -sf {projectDir()}/{src} {dst}"
+
+proc install_zplug() =
+  let zplug_home = joinPath(home(), ".zplug")
+  if not dirExists(zplug_home):
+    exec &"git clone https://github.com/zplug/zplug {zplug_home}"
+  else:
+    echo "zplug seems already installed"
+
+proc main() =
+  make_symlinks()
+  install_zplug()
 
 main()
