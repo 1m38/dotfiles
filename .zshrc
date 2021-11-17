@@ -52,6 +52,7 @@ setopt share_history        # 他zshインスタンスと履歴を共有
 setopt extended_history     # コマンドの開始時間と終了時間をhistory fileに記録
 setopt hist_ignore_dups     # 連続で同じコマンドが実行されたら履歴に記録しない
 setopt hist_reduce_blanks   # 余分な空白を削除して履歴に記録
+setopt magic_equal_subst    # `opt=arg`の形のオプションも補完できる
 setopt auto_pushd
 disable r
 
