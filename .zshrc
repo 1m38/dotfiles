@@ -95,3 +95,17 @@ fd() {
             -o -type d -print 2> /dev/null | fzf +m) &&
     cd "$dir"
 }
+
+# ==== prompt ====
+# gitのbranch名を表示
+# http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr " %B%F{yellow}!%b%f"
+zstyle ':vcs_info:git:*' unstagedstr " %B%F{red}+%b%f"
+zstyle ':vcs_info:*' formats "%F{green}%b%f%c%u "
+zstyle ':vcs_info:*' actionformats '%b | %a'
+precmd () { vcs_info }
+PROMPT='[ %B%F{blue}%m%f%b | %F{yellow}%~%f ${vcs_info_msg_0_}| %(?.%?.%F{yellow}%B%?%b%f) | %D %* ]
+ %# '
