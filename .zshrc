@@ -56,10 +56,15 @@ setopt auto_pushd
 disable r
 
 # ==== aliases ====
-alias ls='ls -F --color=tty'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+if builtin command -v exa > /dev/null; then
+    alias ls='exa --time-style long-iso'
+else
+    alias ls='ls -F --color=tty'
+fi
 
 # history
 alias h='history -i'
