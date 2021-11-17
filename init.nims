@@ -35,8 +35,18 @@ proc install_zplug() =
   else:
     echo "zplug seems already installed"
 
+proc install_fzf() =
+  let fzf_home = joinPath(home(), ".fzf")
+  if not dirExists(fzf_home):
+    exec &"git clone --depth 1 https://github.com/junegunn/fzf.git {fzf_home}"
+    let install_cmd = joinPath(fzf_home, "install")
+    exec install_cmd
+  else:
+    echo "fzf seems already installed"
+
 proc main() =
   make_symlinks()
   install_zplug()
+  install_fzf()
 
 main()

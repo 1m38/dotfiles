@@ -83,3 +83,15 @@ elif builtin command -v xsel > /dev/null; then
     }
 fi
 
+# ==== fzf ====
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# https://qiita.com/kamykn/items/aa9920f07487559c0c7e
+# fd - cd to selected directory
+fd() {
+    local dir
+    dir=$(find ${1:-.} -path '*/\.*' -prune \
+            -o -type d -print 2> /dev/null | fzf +m) &&
+    cd "$dir"
+}
