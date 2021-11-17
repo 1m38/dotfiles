@@ -3,26 +3,30 @@ import std/os
 import std/strformat
 import std/tables
 
-proc echo_exec(cmd: string) =
-  echo &"exec: {cmd}"
-  exec cmd
+mode = ScriptMode.Verbose
+
+proc home(): string =
+  ## returns user's home directory path
+  let user_name = gorgeEx("whoami").output
+  return &"/home/{user_name}"
+
+proc add_simple_link(symlinks: var OrderedTable[string, string], path: string) =
+  ## register to create a symlink from projectDir()/path to ~/path
+  symlinks[path] = joinPath(home(), path)
 
 proc main() =
   cd projectDir()
 
-  let
-    user_name = gorgeEx("whoami").output
-    home = &"/home/{user_name}"
-
   # symlinks[src_path] = dst_path
   # src_path: relative path from projectDir()
   # dst_path: absolute path
-  var symlinks = initTable[string, string]()
-  symlinks["sshconfig"] = joinPath(home, ".ssh/config")
-  symlinks[".gitconfig"] = joinPath(home, ".gitconfig")
+  var symlinks = initOrderedTable[string, string]()
+  symlinks["sshconfig"] = joinPath(home(), ".ssh/config")
+  symlinks.add_simple_link(".gitconfig")
+  symlinks.add_simple_link(".zshrc")
 
   for src, dst in symlinks.pairs:
     if dirExists(parentDir dst):
-      echo_exec &"ln -sf {projectDir()}/{src} {dst}"
+      exec &"ln -sf {projectDir()}/{src} {dst}"
 
 main()
