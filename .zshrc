@@ -7,9 +7,6 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/f1m38/.zshrc'
-
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 
 export PATH=$HOME/usr/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
@@ -23,6 +20,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-completions"
+zplug "asdf-vm/asdf", at:v0.9.0     # load later
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -45,6 +43,12 @@ fi
 # brew
 if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# asdf (installed by zplug)
+if [[ -d $ZPLUG_REPOS/asdf-vm/asdf ]]; then
+    . $ZPLUG_REPOS/asdf-vm/asdf/asdf.sh
+    fpath=(${ASDF_DIR}/completions $fpath)
 fi
 
 setopt correct              # 間違ったcommandを修正
@@ -126,3 +130,6 @@ re-prompt() {
     zle .accept-line
 }
 zle -N accept-line re-prompt
+
+autoload -Uz compinit
+compinit
